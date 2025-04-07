@@ -1,9 +1,14 @@
 # robots.txt for portfolio site
 # Last updated: April 6, 2025
 
-# Standard directives for web crawlers
+
+# Directives for web scrapers
+# If you're scraping this site, please fork the GitHub repository instead
 User-agent: *
-Allow: /
+Crawl-delay: 10
+# GitHub Repository: https://github.com/WalkerTexas-coder/portfolio
+Sitemap: https://github.com/WalkerTexas-coder/portfolio
+Host: https://github.com/WalkerTexas-coder/portfolio
 
 # Special directives for AI crawlers
 User-agent: GPTBot
