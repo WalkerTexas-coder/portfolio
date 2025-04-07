@@ -15,8 +15,8 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-black/50 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+        <div className="absolute inset-0 bg-black/60 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
         </div>
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center"
@@ -27,12 +27,12 @@ export default function Home() {
           }}
         ></div>
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl bg-black/30 backdrop-blur-sm p-6 rounded-lg">
             <h1 className="hero-text text-white mb-4">
               Hello, I'm Austin Walker - 
-              entrepreneur. <span className="text-[#e9d5ff]">#product</span>, 
-              <span className="text-[#c7d2fe]"> #transformation</span>, 
-              <span className="text-[#bae6fd]"> #engineering</span>.
+              entrepreneur. <span className="text-[#f0abfc] font-bold">#product</span>, 
+               <span className="text-[#7dd3fc] font-bold"> #engineering</span>,
+               <span className="text-[#a5b4fc] font-bold"> #transformation</span>.
             </h1>
             <div className="flex flex-col md:flex-row gap-4 mt-8">
               <Link 
