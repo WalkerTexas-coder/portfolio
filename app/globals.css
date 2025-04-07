@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent-gradient-1: #e9d5ff;
+  --accent-gradient-2: #c7d2fe;
+  --accent-gradient-3: #bae6fd;
 }
 
 @theme inline {
@@ -16,11 +19,50 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent-gradient-1: #4c1d95;
+    --accent-gradient-2: #1e3a8a;
+    --accent-gradient-3: #0c4a6e;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--accent-gradient-1), var(--accent-gradient-2), var(--accent-gradient-3));
+}
+
+.hero-text {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.project-card {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.outline-text {
+  -webkit-text-stroke: 1px var(--foreground);
+  color: transparent;
+}
+
+@media (max-width: 768px) {
+  .outline-text {
+    -webkit-text-stroke: 0.5px var(--foreground);
+  }
 }
