@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import ProjectCard from "./components/ProjectCard";
 import ExperienceItem from "./components/ExperienceItem";
 import Contact from "./components/Contact";
-import rugietImg from "../public/CleanShot 2025-04-06 at 19.05.18.png";
+// Use a direct URL path instead of importing the image
+const rugietImgPath = "/portfolio/CleanShot 2025-04-06 at 19.05.18.png";
 
 export default function Home() {
   return (
@@ -141,7 +142,7 @@ export default function Home() {
               company="Ruiget Men"
               description="Specialized in onboarding and implementing the comprehensive telehealth platform for healthcare brands. Configured and customized the end-to-end software solution to help brands effectively serve their patients through a secure, compliant system."
               projectName="Men's Health Ruby on Rails Application"
-              imageUrl={rugietImg}
+              imageUrl={rugietImgPath}
             />
             
             <ExperienceItem 

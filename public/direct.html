@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Austin Walker | Portfolio</title>
+  <!-- Use a script to dynamically set the correct CSS path -->
+  <script>
+    // This script ensures the CSS path is correct regardless of the deployment environment
+    (function() {
+      var repo = 'portfolio';
+      var cssPath = '/_next/static/css/046f068e65e2458f.css';
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      
+      // Check if we're on GitHub Pages or local development
+      if (window.location.hostname.includes('github.io')) {
+        // We're on GitHub Pages, use the full path with repo name
+        link.href = '/' + repo + cssPath;
+      } else {
+        // We're in local development, use the path as is
+        link.href = cssPath;
+      }
+      
+      document.head.appendChild(link);
+    })();
+  </script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #171717;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #0a0a0a;
+        color: #ededed;
+      }
+    }
+    /* Fallback styles in case the CSS file doesn't load */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    .p-6 {
+      padding: 1.5rem;
+    }
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+    .text-xl {
+      font-size: 1.25rem;
+    }
+    .font-bold {
+      font-weight: 700;
+    }
+    .text-white {
+      color: white;
+    }
+    .bg-white {
+      background-color: white;
+    }
+    @media (prefers-color-scheme: dark) {
+      .dark\:bg-gray-800 {
+        background-color: #1f2937;
+      }
+      .dark\:text-blue-400 {
+        color: #60a5fa;
+      }
+    }
+    .text-blue-600 {
+      color: #2563eb;
+    }
+    .hover\:underline:hover {
+      text-decoration: underline;
+    }
+    .gradient-bg {
+      background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    }
+    /* Simple grid fallback */
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+    .grid-cols-1 {
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      .md\:grid-cols-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="container mx-auto px-6 py-12">
+    <h1 class="text-2xl font-bold mb-4">Austin Walker | Portfolio</h1>
+    <p class="mb-4">This is a direct HTML file that references the CSS file dynamically.</p>
+    <p class="mb-4">If you can see this page with proper styling, then the CSS file is being served correctly.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-2">Test Card 1</h2>
+        <p class="mb-4">This card should have proper styling if the CSS is loaded correctly.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-2">Test Card 2</h2>
+        <p class="mb-4">This card should have proper styling if the CSS is loaded correctly.</p>
+      </div>
+    </div>
+    <div class="gradient-bg p-6 rounded-lg text-white mb-8">
+      <h2 class="text-xl font-bold mb-2">Gradient Background</h2>
+      <p>This div should have a gradient background if the CSS is loaded correctly.</p>
+    </div>
+    <p><a href="/portfolio/" class="text-blue-600 dark:text-blue-400 hover:underline">Go back to the portfolio</a></p>
+    
+    <!-- Debug information -->
+    <div class="mt-8 p-4 border border-gray-300 rounded-lg">
+      <h3 class="text-lg font-bold mb-2">Debug Information</h3>
+      <div id="debug-info"></div>
+      <script>
+        // Display some debug information about the environment
+        var debugInfo = document.getElementById('debug-info');
+        debugInfo.innerHTML = `
+          <p><strong>Hostname:</strong> ${window.location.hostname}</p>
+          <p><strong>Path:</strong> ${window.location.pathname}</p>
+          <p><strong>Full URL:</strong> ${window.location.href}</p>
+        `;
+      </script>
+    </div>
+  </div>
+</body>
+</html>

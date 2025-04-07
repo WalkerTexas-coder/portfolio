@@ -1,0 +1,65 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Make fix-asset-paths.js executable
+        run: chmod +x fix-asset-paths.js
+      
+      - name: Build
+        run: npm run build
+        env:
+          # This ensures Next.js knows it's being built for GitHub Pages
+          GITHUB_REPOSITORY: ${{ github.repository }}
+      
+      - name: Prepare for deployment
+        run: |
+          # Add .nojekyll file to disable Jekyll processing
+          touch ./out/.nojekyll
+          
+          # Verify _next directory exists and contains static assets
+          if [ ! -d "./out/_next" ]; then
+            echo "Error: _next directory not found in build output"
+            exit 1
+          fi
+          
+          if [ ! -d "./out/_next/static" ]; then
+            echo "Error: _next/static directory not found in build output"
+            exit 1
+          fi
+          
+          # List the contents of the _next/static directory for debugging
+          echo "Contents of _next/static directory:"
+          ls -la ./out/_next/static
+          
+          # Ensure all HTML files in the out directory have correct asset paths
+          echo "Running fix-asset-paths.js again to ensure all paths are correct..."
+          node fix-asset-paths.js
+      
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: out
+          clean: true
