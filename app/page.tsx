@@ -68,7 +68,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-xl md:text-2xl leading-relaxed">
-                I am a digital transformation specialist and telehealth architect with experience at companies like Axacraft, Teligant, Hedfirst, and Rugiet. 
+                I am a digital transformation specialist and telehealth architect with experience at companies like Axacraft, Teligant, hedfirst, and Rugiet. 
                 I create innovative solutions that enable businesses to execute their digital strategies and healthcare brands to launch and scale their platforms.
                 I am passionate about building products that solve real problems and improve lives.
               </p>
@@ -77,7 +77,7 @@ export default function Home() {
               <p className="text-xl md:text-2xl leading-relaxed">
                 I have a strong background in software engineering and systems integration, with expertise in CRM implementations, data migrations, and e-commerce solutions.
                 I am also a mentor and educator, helping aspiring developers learn modern web technologies and best practices.
-                I believe in the power of technology to transform businesses and improve lives.
+                I believe in the power of technology to transform businesses, and drive real world solutions that impact our daily life.
               </p>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function Home() {
           <div className="gradient-bg p-12 rounded-lg">
             <h3 className="text-2xl font-bold mb-4 text-white">Building the future of digital business and healthcare.</h3>
             <p className="text-white mb-8">
-              Working with forward-thinking companies to create innovative solutions that transform industries, enhance customer experiences, and deliver measurable results.
+              Building forward-thinking companies to create innovative solutions that transform industries, improve lives, and deliver measurable results.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -131,7 +131,7 @@ export default function Home() {
           
           <div className="mb-20">
             <p className="text-xl mb-12">
-              As a hands-on technology leader, I am proud that millions of people use products that I have helped to build.
+              An aspiring polymath with a passion for democratizing medicine. I have a diverse background in software engineering, education, and telehealth solutions.
             </p>
             
             <ExperienceItem 
