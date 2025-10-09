@@ -29,9 +29,6 @@ jobs:
       
       - name: Build
         run: npm run build
-        env:
-          # This ensures Next.js knows it's being built for GitHub Pages
-          GITHUB_REPOSITORY: ${{ github.repository }}
       
       - name: Prepare for deployment
         run: |
