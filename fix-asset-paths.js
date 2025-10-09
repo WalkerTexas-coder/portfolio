@@ -11,8 +11,8 @@ const { execSync } = require('child_process');
 
 // Configuration
 const outDir = path.join(__dirname, 'out');
-const repo = 'portfolio'; // Your repository name
-const basePath = `/${repo}`;
+// No basePath needed for custom domain deployment
+const basePath = '';
 
 console.log('🔍 Checking asset paths in Next.js static export...');
 
@@ -41,26 +41,9 @@ function fixHtmlAssetPaths(htmlFile) {
   let content = fs.readFileSync(htmlFile, 'utf8');
   let modified = false;
   
-  // Fix asset paths that don't include the basePath
-  const assetPathRegex = /(src|href)="(\/_next\/[^"]+)"/g;
-  content = content.replace(assetPathRegex, (match, attr, assetPath) => {
-    if (!assetPath.startsWith(basePath)) {
-      modified = true;
-      return `${attr}="${basePath}${assetPath}"`;
-    }
-    return match;
-  });
-  
-  // Fix JSON data that might contain asset paths
-  const jsonDataRegex = /("|\\')\/_next\/data\/[^"']+("|\\')/g;
-  content = content.replace(jsonDataRegex, (match) => {
-    if (!match.includes(basePath)) {
-      modified = true;
-      // Insert basePath after the opening quote and before /_next
-      return match.replace(/("|\\')\/_next/, `$1${basePath}/_next`);
-    }
-    return match;
-  });
+  // For custom domain deployment, asset paths should already be correct
+  // This script now mainly ensures .nojekyll exists and provides debugging info
+  console.log(`✓ Asset paths should be correct for custom domain deployment in ${htmlFile}`);
   
   if (modified) {
     fs.writeFileSync(htmlFile, content, 'utf8');

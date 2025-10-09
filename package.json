@@ -12,7 +12,7 @@
     "deploy": "gh-pages -d out",
     "fix-paths": "node fix-asset-paths.js"
   },
-  "homepage": "https://walkertexas-coder.github.io/portfolio",
+  "homepage": "https://hirethiswalker.com",
   "dependencies": {
     "next": "15.2.4",
     "react": "^18.2.0",
