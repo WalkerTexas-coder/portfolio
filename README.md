@@ -28,6 +28,10 @@ This is a Next.js portfolio site deployed to GitHub Pages.
 
 The site is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment process is handled by GitHub Actions.
 
+**Hosting Infrastructure:**
+- **GitHub Pages**: Hosts the static site files from the `gh-pages` branch
+- **AWS Route 53**: Provides DNS management and routes the custom domain to GitHub Pages
+
 To manually deploy the site:
 
 1. Build the site:
