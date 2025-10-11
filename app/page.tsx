@@ -46,7 +46,7 @@ export default function Home() {
                 Recent Work
               </Link>
               <Link
-                href="#projects"
+                href="/projects"
                 className="inline-block px-6 py-3 border-b-2 border-white text-white hover:bg-white/10 transition-colors"
               >
                 Major Projects
@@ -55,7 +55,7 @@ export default function Home() {
                 href="#connect"
                 className="inline-block px-6 py-3 border-b-2 border-white text-white hover:bg-white/10 transition-colors"
               >
-                Connect
+                Book a Meeting
               </Link>
             </div>
           </div>
@@ -70,38 +70,13 @@ export default function Home() {
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-2xl mb-8">What I Do</h2>
           <p className="text-xl md:text-2xl leading-relaxed">
-            I draw ERD diagrams during stakeholder calls. I ask obvious questions fast. 
+            I draw ERD diagrams during stakeholder calls. I ask obvious questions fast.
             I code enough to know when developers are hedging, and ship enough to know when I'm overcomplicating.
           </p>
         </div>
       </section>
 
-      {/* Location Section */}
-      <section className="border-t border-gray-200 dark:border-gray-800">
-        {/* Full-width Austin Image */}
-        <div className="w-full">
-          <Image
-            src={atxImage}
-            alt="Austin, Texas skyline"
 
-            className="w-full h-[500px] object-cover"
-          />
-        </div>
-
-        {/* Content below image */}
-        <div className="py-20 px-6 md:px-12">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Based in Austin, Texas</h2>
-            <p className="text-xl md:text-2xl leading-relaxed mb-8">
-              Working from the heart of Texas tech, where healthcare innovation meets startup energy.
-              Available for remote collaboration and local Austin partnerships.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
-              Central Time Zone • Remote-first • Austin meetups welcome
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Recent Work Section */}
       <section id="work" className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
@@ -119,75 +94,26 @@ export default function Home() {
               lab testing, AI diagnostics, and HIPAA-compliant data processing.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ProjectCard
                 title="Teligant Platform"
                 description="Multi-tenant SaaS architecture with patient portals, doctor workflows, admin dashboards, and pharmacy integrations. 499 medications across 20+ disease states, 48-state prescription fulfillment."
-                link="https://www.teligant.com/"
+                slug="teligant"
                 imageSrc="https://cdn.prod.website-files.com/67ad2c6bdcb40e4e1f8634c9/67af2f828dde99af89ddfdfa_2image.avif"
               />
               <ProjectCard
                 title="Hedfirst Launch"
                 description="First brand implementation on Teligant platform. Launched August 2025 with 25 beta patients, $499/year AI Care Membership, integrated Choose Health lab testing, and DoseSpot e-prescribing."
-                link="https://www.hedfirst.com/"
+                slug="hedfirst"
                 imageSrc="https://cdn.prod.website-files.com/67a509f5940083778a2478d0/67d16eb0733bbcccda908f61_hedfirst-home-screen.avif"
-              />
-              <ProjectCard
-                title="150+ Features Shipped"
-                description="Pharmacy fulfillment workflows, Choose Health lab integration (7-endpoint API), PayTheory billing, DoseSpot e-prescribing, LegitScript certification, AI Medical Assessment framework, appointment system (24-ticket epic)."
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Major Projects Section */}
-      <section id="projects" className="py-20 px-6 md:px-12">
-        <div className="container mx-auto">
-          <h2 className="section-title">Major Projects</h2>
-          <p className="text-xl mb-12">
-            I don't just manage products—I ship them. Here's how I turn complex healthcare requirements into working software
-            that doctors, patients, and pharmacy partners actually use.
-          </p>
-
-          <div className="mb-20">
-            <ExperienceItem
-              title="Pharmacy Fulfillment Workflow"
-              company="Problem Solved"
-              description="Doctors were manually routing prescriptions across 3+ pharmacy partners with no systematic guidance, risking missed/duplicate prescriptions. Created systematic pharmacy-by-pharmacy queue workflow, wrote 12 Jira tickets with detailed acceptance criteria. Eliminated prescription routing errors in 2-3 weeks, established foundation for clinical review system."
-              projectName="Healthcare Workflow Optimization"
-              imageBgColor="from-emerald-500 to-teal-500"
-            />
-
-            <ExperienceItem
-              title="Choose Health Lab Integration"
-              company="Revenue Expansion"
-              description="Hedfirst was migraine-only; needed comprehensive health monitoring to increase patient lifetime value. Analyzed designer mockups, mapped 7-endpoint API integration, wrote 13 implementation tickets across patient portal, admin system, and backend. Created entirely new revenue stream, transformed single-condition platform into comprehensive health partner."
-              projectName="Strategic Integration"
-              imageBgColor="from-blue-500 to-cyan-500"
-            />
-
-            <ExperienceItem
-              title="Platform Launch"
-              company="August 4, 2025"
-              description="Shipped 150+ features in 9 months coordinating 4 engineers + CTO across pharmacy integration, e-prescribing, lab testing, AI assessment, and membership management. Platform launched with 499 medications across 20+ disease states, 25 beta patients, 48-state prescription fulfillment, $499/year membership model. Real patients, live prescriptions, operational pharmacy fulfillment."
-              projectName="Production Healthcare SaaS"
-              imageBgColor="from-purple-500 to-pink-500"
-            />
-
-            <ExperienceItem
-              title="PayTheory Billing Integration"
-              company="Membership Architecture"
-              description="Built recurring billing subscription system with flexible billing cycles (30-365 days). Designed complete subscription lifecycle including creation, modification, cancellation, payment retries. Created membership benefits configuration system. Implemented $499/year AI Care Membership model with comprehensive benefits package."
-              projectName="Healthcare Payment Processing"
-              imageBgColor="from-orange-500 to-red-500"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Previous Experience Section */}
-      <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 px-6 md:px-12">
         <div className="container mx-auto">
           <h2 className="section-title">Previous Experience</h2>
 
@@ -226,6 +152,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
 
       {/* Let's Build Section */}
       <section className="py-20 border-t border-gray-200 dark:border-gray-800">

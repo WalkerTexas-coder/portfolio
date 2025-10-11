@@ -14,7 +14,7 @@ export default function About() {
       <section className="py-20 px-6 md:px-12">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">About Austin</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Austin In Austin (Texas)</h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
               Product manager, healthcare builder, Austin local
             </p>
@@ -22,34 +22,34 @@ export default function About() {
         </div>
       </section>
 
-      {/* Austin Section */}
-      <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Based in Austin, Texas</h2>
-              <p className="text-xl leading-relaxed mb-6">
-                Working from the heart of Texas tech, where healthcare innovation meets startup energy.
-                I love the collaborative spirit here—whether it's grabbing coffee on South Lamar,
-                attending meetups downtown, or working from one of the many great spots around town.
-              </p>
-              <p className="text-xl leading-relaxed mb-6">
-                Austin's unique blend of tech innovation and laid-back culture perfectly matches
-                how I approach product management: serious about results, but human-centered in execution.
-              </p>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
-                Central Time Zone • Remote-first • Always up for local Austin collaborations
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src={atxImage}
-                alt="Austin, Texas"
-                width={400}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
+      {/* Austin Location Section */}
+      <section className="border-t border-gray-200 dark:border-gray-800">
+        {/* Full-width Austin Image */}
+        <div className="w-full">
+          <Image
+            src={atxImage}
+            alt="Austin, Texas skyline"
+            className="w-full h-[500px] object-cover"
+          />
+        </div>
+
+        {/* Content below image */}
+        <div className="py-20 px-6 md:px-12">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Based in Austin, Texas</h2>
+            <p className="text-xl md:text-2xl leading-relaxed mb-8">
+              Working from the heart of Texas tech, where healthcare innovation meets startup energy.
+              I love the collaborative spirit here—whether it's grabbing coffee on South Lamar,
+              attending meetups downtown, or working from one of the many great spots around town.
+            </p>
+            <p className="text-xl md:text-2xl leading-relaxed mb-8">
+              Austin's unique blend of tech innovation and laid-back culture perfectly matches
+              how I approach product management: serious about results, but human-centered in execution.
+              Available for remote collaboration and local Austin partnerships.
+            </p>
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              Central Time Zone • Remote-first • Austin meetups welcome
+            </p>
           </div>
         </div>
       </section>

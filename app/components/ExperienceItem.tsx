@@ -12,10 +12,10 @@ interface ExperienceItemProps {
   slug?: string;
 }
 
-export default function ExperienceItem({ 
-  title, 
-  company, 
-  description, 
+export default function ExperienceItem({
+  title,
+  company,
+  description,
   imageBgColor = "from-blue-500 to-purple-500",
   projectName,
   imageUrl,
@@ -38,7 +38,7 @@ export default function ExperienceItem({
       <div className="md:col-span-2 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
         <div className="aspect-w-16 aspect-h-9 relative h-64">
           {imageUrl ? (
-            <Image 
+            <Image
               src={imageUrl}
               alt={`${company} - ${projectName || title}`}
               fill
