@@ -58,10 +58,16 @@ export default function Navbar() {
             Companies
           </Link>
           <Link 
-            href="#projects" 
+            href="/projects" 
             className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
           >
             Projects
+          </Link>
+          <Link 
+            href="/shift-f1" 
+            className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
+          >
+            Shift + F1
           </Link>
           <Link 
             href="#connect" 
@@ -147,11 +153,18 @@ export default function Navbar() {
               Companies
             </Link>
             <Link 
-              href="#projects" 
+              href="/projects" 
               className="text-foreground hover:opacity-70 transition-opacity"
               onClick={() => setMobileMenuOpen(false)}
             >
               Projects
+            </Link>
+            <Link 
+              href="/shift-f1" 
+              className="text-foreground hover:opacity-70 transition-opacity"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Shift + F1
             </Link>
             <Link 
               href="#connect" 
