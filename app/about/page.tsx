@@ -94,40 +94,141 @@ export default function About() {
         </div>
       </section>
 
-      {/* Background Story Section */}
+      {/* Origin Story Section */}
       <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-8">How I Got Here</h2>
+          <h2 className="text-3xl font-bold mb-8">How I Got Into Healthcare Product Management</h2>
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-4">From Code to Product</h3>
+              <h3 className="text-2xl font-semibold mb-4">Started as a Developer, Found Product</h3>
               <p className="text-xl leading-relaxed">
-                Started as a full-stack developer building healthcare platforms, but kept finding myself
+                I started as a full-stack developer at Rugiet Health, building prescription management features
+                for a men's health telehealth platform. I was good at writing code, but I kept finding myself
                 in the gap between "what we're building" and "what actually needs to work."
-                Turns out I'm really good at translating complex healthcare requirements into
-                specifications that developers can actually implement.
+              </p>
+              <p className="text-xl leading-relaxed mt-4">
+                When I saw our patient retention numbers dropping, I didn't just implement the feature request
+                on the Jira ticket. I dug into the data, talked to support, and realized the real problem was
+                inflexible subscription management. I proposed a solution, wrote the specs, and built it.
+                Retention increased 35%. That's when I realized I was doing product management, not just engineering.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4">Healthcare Focus</h3>
+              <h3 className="text-2xl font-semibold mb-4">Why Healthcare?</h3>
               <p className="text-xl leading-relaxed">
-                Three years deep in telehealth, from prescription management to lab integrations
-                to pharmacy fulfillment. I've seen what breaks, what works, and what actually
-                ships on time. Healthcare software is hard—but that's exactly why it needs
-                someone who understands both the technical and regulatory complexity.
+                Healthcare software is uniquely challenging: technical complexity + regulatory compliance +
+                operational dependencies + real-world consequences. Most industries, if your product has a bug,
+                someone is inconvenienced. In healthcare, if your prescription routing fails, a patient doesn't
+                get their medication.
+              </p>
+              <p className="text-xl leading-relaxed mt-4">
+                That weight motivates me. I love building products where quality matters, where "good enough"
+                isn't good enough, where you have to understand the entire ecosystem—not just the code. Three
+                years in telehealth taught me: the hardest problems aren't technical, they're operational.
+                The best product managers understand both.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4">Austin Energy</h3>
+              <h3 className="text-2xl font-semibold mb-4">The Technical PM Path</h3>
               <p className="text-xl leading-relaxed">
-                Austin's tech scene is the perfect environment for what I do. The city's
-                collaborative culture, combined with serious healthcare innovation happening here,
-                creates the ideal space for building products that actually matter.
-                Plus, the breakfast tacos don't hurt.
+                Some PMs come from consulting or business backgrounds. I came from engineering, and I consider
+                that my superpower. When a developer says "that'll take 3 weeks," I can ask why. When we're
+                debating technical architecture, I can read the ERD diagram and spot the problem. When I write
+                a Jira ticket, developers don't come back asking "what did you mean?"
               </p>
+              <p className="text-xl leading-relaxed mt-4">
+                But I'm not an engineer who became a PM because I couldn't code. I became a PM because I realized
+                my highest impact isn't writing the code—it's deciding what code to write, and more importantly,
+                what not to write. I ship faster by saying no more often.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What I'm Looking For Section */}
+      <section className="py-20 px-6 md:px-12">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl font-bold mb-8">What I'm Looking For</h2>
+
+          <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-lg border-l-4 border-blue-500 mb-8">
+            <h3 className="text-2xl font-semibold mb-4">Ideal Roles</h3>
+            <p className="text-lg mb-4">
+              I'm seeking senior product management roles in healthcare technology where I can leverage
+              my domain expertise and technical depth.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <span className="text-blue-600 dark:text-blue-400 mr-3 text-xl">✓</span>
+                <span><strong>Healthcare/Health Tech:</strong> B2B SaaS, telehealth platforms, care coordination tools, prescription management, digital health</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 dark:text-blue-400 mr-3 text-xl">✓</span>
+                <span><strong>Technical PM Roles:</strong> Where my ability to write detailed specs, read code, and challenge engineering estimates adds value</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 dark:text-blue-400 mr-3 text-xl">✓</span>
+                <span><strong>Stage:</strong> Series A-C startups or established healthcare platforms in rapid growth mode. I've built 0-to-1 and optimized at scale</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 dark:text-blue-400 mr-3 text-xl">✓</span>
+                <span><strong>Complex Domains:</strong> Healthcare's regulatory + technical + operational complexity excites me, not scares me</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg mb-8">
+            <h3 className="text-2xl font-semibold mb-4">Not a Good Fit</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <span className="text-gray-400 mr-3 text-xl">✗</span>
+                <span>Pure consumer social products without healthcare focus</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gray-400 mr-3 text-xl">✗</span>
+                <span>Roles requiring relocation outside Austin (remote-first is perfect)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gray-400 mr-3 text-xl">✗</span>
+                <span>Companies without clear product-market fit or path to revenue</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gray-400 mr-3 text-xl">✗</span>
+                <span>Organizations where PM role is purely project management or feature documentation</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-green-50 dark:bg-green-900/20 p-8 rounded-lg border-l-4 border-green-500">
+            <h3 className="text-2xl font-semibold mb-4">Ways to Connect</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold mb-2 text-lg">☕ Austin Coffee Chats</h4>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Based locally? I'm always happy to meet fellow healthcare tech folks. Coffee's on me.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2 text-lg">💼 Job Opportunities</h4>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Hiring for a healthcare PM role? Let's talk about how I can help your team ship.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2 text-lg">🤝 Portfolio Reviews</h4>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Fellow healthcare PM looking for feedback? Happy to do a 15-minute portfolio review.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2 text-lg">🎤 Speaking/Advisory</h4>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Need someone to speak on healthcare product topics or advise on telehealth strategy? I'm open to it.
+                </p>
+              </div>
             </div>
           </div>
         </div>
