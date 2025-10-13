@@ -43,8 +43,8 @@ export default function Navbar() {
           >
             About
           </Link>
-          <Link 
-            href="/resume.pdf" 
+          <Link
+            href="/Austin_Walker_TechnicalProductManager_Healthcare.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
@@ -136,8 +136,8 @@ export default function Navbar() {
             >
               About
             </Link>
-            <Link 
-              href="/resume.pdf" 
+            <Link
+              href="/Austin_Walker_TechnicalProductManager_Healthcare.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:opacity-70 transition-opacity"

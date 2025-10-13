@@ -33,14 +33,9 @@ export default function Home() {
               I'm Austin Walker, a
               {" "}
               <span className="text-[#f0abfc] font-bold">technical product manager</span>
-              {" "}who turns complex{" "}
-              <span className="text-[#a5b4fc] font-bold">healthcare requirements</span>
-              {" "}into shippable specifications.
+              {" "}for hire.{" "}
             </h1>
-            <p className="text-xl text-white/90 mb-6">
-              I code enough to challenge engineering estimates. I ship fast enough to know when I'm overcomplicating.
-              I measure success by patient outcomes, not feature counts.
-            </p>
+           
             <div className="flex flex-col md:flex-row gap-4 mt-8">
               <Link
                 href="#work"
@@ -71,7 +66,14 @@ export default function Home() {
       {/* About Section */}
       <section className="py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl mb-8">What I Do</h2>
+          <h2 className="text-2xl mb-8">What do I do?</h2>
+          {/*  I moved this information that used to be part of the title into "What Do I Do?"  {" "}who turns complex{" "}
+              <span className="text-[#a5b4fc] font-bold">healthcare requirements</span>
+              {" "}into shippable specifications. */}
+           <p className="text-xl text-white/90 mb-6">
+              I code enough to challenge engineering estimates. I ship fast enough to know when I'm overcomplicating.
+              I measure success by patient outcomes, not feature counts.
+            </p>
           <p className="text-xl md:text-2xl leading-relaxed mb-6">
             I draw ERD diagrams during stakeholder calls. I ask obvious questions fast.
             I code enough to know when developers are hedging, and ship enough to know when I'm overcomplicating.
@@ -83,55 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Track Record Section */}
-      <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl font-bold mb-12 text-center">Track Record</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-blue-500">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">9 months</div>
-              <div className="text-lg font-semibold mb-2">Multi-tenant platform from zero to production</div>
-              <div className="text-gray-600 dark:text-gray-400">
-                {/* [TODO: Update patient count and revenue from MCP memory] */}
-                25 paying patients, $12,475 first-month revenue, 48-state pharmacy fulfillment
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-green-500">
-              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">5 months → 5 weeks</div>
-              <div className="text-lg font-semibold mb-2">Client implementation optimization</div>
-              <div className="text-gray-600 dark:text-gray-400">
-                30% increase in satisfaction, 25% boost in deal closure rates
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-purple-500">
-              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">35% increase</div>
-              <div className="text-lg font-semibold mb-2">Patient retention improvement</div>
-              <div className="text-gray-600 dark:text-gray-400">
-                Solved retention crisis through subscription management features
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-red-500">
-              <div className="text-3xl font-bold text-red-600 dark:text-red-400 mb-2">0 errors</div>
-              <div className="text-lg font-semibold mb-2">Pharmacy routing accuracy</div>
-              <div className="text-gray-600 dark:text-gray-400">
-                {/* [TODO: Update prescription volume from MCP memory if different] */}
-                Eliminated prescription routing errors across 200+ monthly prescriptions
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <p className="text-lg text-gray-600 dark:text-gray-400">
-              <strong>Healthcare Domain Expertise:</strong> 3 years across prescription management, lab integration,
-              e-prescribing, pharmacy fulfillment, and HIPAA compliance
-            </p>
-          </div>
-        </div>
-      </section>
+      
 
 
 
@@ -139,21 +93,26 @@ export default function Home() {
       <section id="work" className="py-20 px-6 md:px-12">
         <div className="container mx-auto">
           <h2 className="section-title">Recent Work</h2>
-          <div className="max-w-3xl mb-12">
-            <h3 className="text-2xl font-bold mb-4">Teligant Platform: Multi-Tenant Healthcare SaaS</h3>
-            <p className="text-xl mb-4">
-              {/* [TODO: Verify timeline from MCP memory] */}
-              In 9 months at Hedfirst/Teligant, I led product strategy for a multi-tenant telehealth platform
-              from concept to production—with real patients, live prescriptions, and operational pharmacy fulfillment.
-            </p>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Left Column - Summary */}
+            <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg flex flex-col justify-center">
+              <h3 className="text-2xl font-bold mb-4">Teligant Platform: Multi-Tenant Healthcare SaaS</h3>
+              <p className="text-xl">
+                {/* [TODO: Verify timeline from MCP memory] */}
+                In 9 months at Hedfirst/Teligant, I led product strategy for a multi-tenant telehealth platform
+                from concept to production—with real patients, live prescriptions, and operational pharmacy fulfillment.
+              </p>
+            </div>
+
+            {/* Right Column - Key Results */}
             <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
               <p className="font-semibold mb-3">Key Results:</p>
               <ul className="space-y-2">
-                <li>✅ Launched August 4, 2025 with {/* [TODO: Update from MCP] */}25 beta patients generating $12,475 in first-month revenue</li>
-                <li>✅ Validated $499/year AI Care Membership model through user research with chronic migraine patients</li>
-                <li>✅ {/* [TODO: Verify counts from MCP] */}499 medications across 20+ disease states, 48-state prescription fulfillment</li>
-                <li>✅ Zero prescription routing errors across {/* [TODO: Update volume from MCP] */}200+ monthly prescriptions</li>
-                <li>✅ {/* [TODO: Add satisfaction rating from MCP if available] */}4.8/5 average patient satisfaction rating</li>
+                <li>Launched August 4, 2025 with {/* [TODO: Update from MCP] */}25 beta patients generating $12,475 in first-month revenue</li>
+                <li>Validated $499/year AI Care Membership model through user research with chronic migraine patients</li>
+                <li>{/* [TODO: Verify counts from MCP] */}499 medications across 20+ disease states, 48-state prescription fulfillment</li>
+                <li>Zero prescription routing errors across {/* [TODO: Update volume from MCP] */}200+ monthly prescriptions</li>
+                <li>{/* [TODO: Add satisfaction rating from MCP if available] */}4.8/5 average patient satisfaction rating</li>
               </ul>
             </div>
           </div>
@@ -249,7 +208,7 @@ export default function Home() {
                 Book a Meeting
               </Link>
               <Link
-                href="/resume.pdf"
+                href="/Austin_Walker_TechnicalProductManager_Healthcare.pdf"
                 className="inline-block px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               >
                 View Resume

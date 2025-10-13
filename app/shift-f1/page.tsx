@@ -28,7 +28,7 @@ export default function ShiftF1() {
             Austin Tech Go-Karting at Circuit of the Americas
           </p>
           <p className="text-lg text-white/80 mb-8">
-            Celebrating HireThisWalker.com's sponsorship of the Shift+F1 podcast!
+            Celebrating HireThisWalker.com's sponsorship of the Shift+F1 podcast! 
           </p>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-white">
             <h2 className="text-2xl font-bold mb-4">📅 December 6th, 2025</h2>
@@ -45,9 +45,9 @@ export default function ShiftF1() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Ready to Race?</h2>
               <p className="text-xl leading-relaxed mb-6">
-                Join Austin's tech community for an adrenaline-fueled day at Circuit of the Americas.
+                Join Austin's Shift + F1 community for an adrenaline-fueled day at Circuit of the Americas.
                 Whether you're a seasoned racer or first-time driver, this is your chance to experience
-                the thrill of go-karting on one of the world's premier racing circuits.
+                the thrill of go-karting on one of the world's premier racing circuits. 
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
                 Perfect for networking, team building, or just having an epic Saturday with fellow tech folks.
@@ -86,11 +86,11 @@ export default function ShiftF1() {
                 <h4 className="font-semibold mb-3 text-lg">⏰ Schedule (Tentative)</h4>
                 <div className="space-y-2 mb-4">
                   <p><strong>11:00 AM</strong> - Check-in & Safety Briefing</p>
-                  <p><strong>11:30 AM</strong> - Practice Sessions</p>
-                  <p><strong>1:00 PM</strong> - Lunch Break</p>
-                  <p><strong>2:00 PM</strong> - Qualifying Rounds</p>
-                  <p><strong>3:00 PM</strong> - Final Races</p>
-                  <p><strong>3:45 PM</strong> - Awards & Wrap-up</p>
+                  <p><strong>11:30 AM</strong> - Race 1</p>
+                  <p><strong>1:00 PM</strong> - Break</p>
+                  <p><strong>2:00 PM</strong> - Race 2</p>
+                  <p><strong>3:00 PM</strong> - Race 3</p>
+                  <p><strong>3:45 PM</strong> - Photos, "Awards," & Wrap-up</p>
                 </div>
                 <p className="text-sm text-orange-600 dark:text-orange-400 font-medium">
                   ⚠️ Schedule is preliminary - actual race times will be confirmed closer to the event
@@ -98,7 +98,7 @@ export default function ShiftF1() {
 
                 <h4 className="font-semibold mb-3 text-lg mt-6">💰 Expected Costs</h4>
                 <div className="space-y-2">
-                  <p><strong>$30 per 10-minute race</strong> (standard COTA pricing)</p>
+                  <p><strong>~$45 per 10-minute race</strong> (standard COTA pricing)</p>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     Includes kart rental, safety gear, and track access
                   </p>
@@ -127,7 +127,7 @@ export default function ShiftF1() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <Link
-                href="mailto:walkertexasdriver@gmail.com?subject=Shift+F1 Early Bird - Count Me In!"
+                href="mailto:walkertexasaustin@gmail.com?subject=Shift+F1 Early Bird - Count Me In!"
                 className="inline-block px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
               >
                 🏁 Claim My Spot!

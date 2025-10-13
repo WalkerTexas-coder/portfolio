@@ -93,6 +93,56 @@ export default function About() {
           </div>
         </div>
       </section>
+      {/* Track Record Section */}
+            <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
+              <div className="container mx-auto max-w-5xl">
+                <h2 className="text-3xl font-bold mb-6 text-center">Track Record</h2>
+                <div className="mt-4 text-center">
+                <p className="text-lg text-gray-600 dark:text-gray-400">
+                  <strong>Healthcare Domain Expertise:</strong> 3 years across prescription management, lab integration,
+                  e-prescribing, pharmacy fulfillment, HIPAA and SOC 2 compliance
+                </p>
+                </div>
+                <br />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-blue-500">
+                    <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">9 months</div>
+                    <div className="text-lg font-semibold mb-2">Multi-tenant platform from zero to production</div>
+                    <div className="text-gray-600 dark:text-gray-400">
+                      {/* [TODO: Update patient count and revenue from MCP memory] */}
+                      25 paying patients, $12,475 first-month revenue, 48-state pharmacy fulfillment
+                    </div>
+                  </div>
+      
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-green-500">
+                    <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">5 months → 5 weeks</div>
+                    <div className="text-lg font-semibold mb-2">Client implementation optimization</div>
+                    <div className="text-gray-600 dark:text-gray-400">
+                      30% increase in satisfaction, 25% boost in deal closure rates
+                    </div>
+                  </div>
+      
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-purple-500">
+                    <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">35% increase</div>
+                    <div className="text-lg font-semibold mb-2">Patient retention improvement</div>
+                    <div className="text-gray-600 dark:text-gray-400">
+                      Solved retention crisis through subscription management features
+                    </div>
+                  </div>
+      
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-red-500">
+                    <div className="text-3xl font-bold text-red-600 dark:text-red-400 mb-2">0 errors</div>
+                    <div className="text-lg font-semibold mb-2">Pharmacy routing accuracy</div>
+                    <div className="text-gray-600 dark:text-gray-400">
+                      {/* [TODO: Update prescription volume from MCP memory if different] */}
+                      Eliminated prescription routing errors across 200+ monthly prescriptions
+                    </div>
+                  </div>
+                </div>
+      
+               
+              </div>
+            </section>
 
       {/* Origin Story Section */}
       <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
@@ -244,7 +294,7 @@ export default function About() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link
-              href="mailto:walkertexasdriver@gmail.com"
+              href="mailto:walkertexasaustin@gmail.com"
               className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               Email Me
