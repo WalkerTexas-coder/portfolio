@@ -16,122 +16,192 @@ export default function LearnAcademyPage() {
             </Link>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Lead Instructor at LEARN Academy</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              Developer Education • 2019-2021
+              Developer Education • April 2021 - February 2023
             </p>
           </div>
 
           {/* Hero Image */}
-          <div className="mb-12 rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500 h-[400px] flex items-center justify-center">
-            <div className="text-white text-center">
-              <h2 className="text-4xl font-bold mb-4">LEARN Academy</h2>
-              <p className="text-xl">Transforming Careers Through Code</p>
-            </div>
+          <div className="mb-12 rounded-lg overflow-hidden">
+            <Image
+              src="https://cdn.prod.website-files.com/6529b289fd19962a33e120c8/652fde252e2b5971fbcd3be6_hero-team-values.webp"
+              alt="LEARN Academy"
+              width={800}
+              height={400}
+              className="w-full h-[400px] object-cover"
+            />
           </div>
 
           {/* Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <h2>Teaching the Next Generation of Developers</h2>
+            <h2>From Student to Lead Instructor</h2>
             <p>
-              At LEARN Academy, I had the privilege of transforming people's lives through code education. 
-              This wasn't just about teaching syntax—it was about taking people from complete beginners 
-              to job-ready developers in 16 intensive weeks.
+              I completed LEARN Academy's bootcamp in August 2020, did a 6-month internship at Victorise, then 
+              returned to LEARN Academy as an instructor. This role solidified my technical fundamentals while I 
+              recovered from losing my mother during the internship. Teaching became both professional development 
+              and personal healing.
             </p>
 
-            <h2>Curriculum Development</h2>
-            <p>
-              I developed and delivered comprehensive technical curriculum covering the full stack:
-            </p>
-            <ul>
-              <li><strong>Frontend Technologies:</strong> React, JavaScript ES6+, HTML5, CSS3, responsive design</li>
-              <li><strong>Backend Development:</strong> Ruby on Rails, RESTful APIs, database design</li>
-              <li><strong>Database Management:</strong> PostgreSQL, SQL queries, data modeling</li>
-              <li><strong>Development Tools:</strong> Git version control, testing frameworks, deployment</li>
-            </ul>
-
-            <h2>Teaching Methodology</h2>
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-              <h3>Hands-On Learning</h3>
-              <p>
-                Every concept was taught through practical application. Students didn't just learn about APIs—they 
-                built them. They didn't just study React—they created full applications.
-              </p>
-
-              <h3>Code Reviews & Mentorship</h3>
-              <p>
-                Conducted over 200 individual code reviews, providing detailed feedback on code quality, 
-                best practices, and architectural decisions. This one-on-one mentorship was crucial for 
-                student development.
-              </p>
-
-              <h3>Technical Assessments</h3>
-              <p>
-                Designed and administered 450+ technical assessments, from basic algorithm challenges to 
-                full-stack application builds. These assessments helped students track their progress and 
-                identify areas for improvement.
-              </p>
-            </div>
-
-            <h2>Student Success Stories</h2>
-            <p>
-              The most rewarding part of teaching was watching students transform their careers:
-            </p>
-            <ul>
-              <li>Former restaurant manager who became a senior React developer at a fintech startup</li>
-              <li>Military veteran who transitioned to backend engineering at a healthcare company</li>
-              <li>Stay-at-home parent who landed a remote full-stack position at a SaaS company</li>
-              <li>Career changer from retail who became a technical lead at a nonprofit</li>
-            </ul>
-
-            <h2>Program Impact</h2>
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-              <ul className="list-none space-y-2">
-                <li><strong>👥 Students Trained:</strong> 170+ students across 9 cohorts</li>
-                <li><strong>📚 Lectures Delivered:</strong> 120+ technical lectures and workshops</li>
-                <li><strong>💼 Job Placement Rate:</strong> 85% of students placed in tech roles within 6 months</li>
-                <li><strong>🔍 Code Reviews:</strong> 200+ individual code reviews and technical assessments</li>
-                <li><strong>📊 Technical Assessments:</strong> 450+ assessments designed and administered</li>
+            <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500 my-8">
+              <h3 className="text-2xl font-semibold mb-4">Career Progression</h3>
+              <ul className="space-y-2">
+                <li><strong>Associate Instructor:</strong> April 2021 - January 2022 (10 months)</li>
+                <li><strong>Lead Instructor:</strong> January 2022 - February 2023 (13 months)</li>
+                <li><strong>Total Tenure:</strong> 23 months teaching full-stack web development</li>
               </ul>
             </div>
 
-            <h2>Key Lessons in Technical Communication</h2>
+            <h2>What I Taught</h2>
             <p>
-              Teaching at LEARN Academy fundamentally changed how I approach technical communication. 
+              LEARN Academy runs intensive 3-month bootcamps (480+ hours of hands-on training) transforming 
+              complete beginners into job-ready full-stack developers. I designed and delivered comprehensive 
+              curriculum covering:
+            </p>
+            
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg my-6">
+              <h3 className="text-xl font-semibold mb-4">Full Stack Curriculum</h3>
+              <ul className="space-y-2">
+                <li><strong>Frontend:</strong> React, JavaScript ES6+, HTML5, CSS3, responsive design</li>
+                <li><strong>Backend:</strong> Ruby on Rails, Node.js, RESTful API development</li>
+                <li><strong>Database:</strong> PostgreSQL, SQL queries, database design</li>
+                <li><strong>Tools:</strong> Git/GitHub version control, testing frameworks, deployment</li>
+                <li><strong>Computer Science:</strong> Object-oriented programming, algorithms, data structures</li>
+              </ul>
+            </div>
+
+            <h2>Teaching Methodology</h2>
+            
+            <h3>Hands-On Learning</h3>
+            <p>
+              Every concept was taught through practical application. Students didn't just learn about APIs—they 
+              built them. They didn't just study React—they created full applications with real user interactions 
+              and database persistence.
+            </p>
+
+            <h3>Code Reviews & Mentorship</h3>
+            <p>
+              Conducted 200+ individual code reviews across 9 cohorts, providing detailed feedback on:
+            </p>
+            <ul>
+              <li>Code quality and best practices</li>
+              <li>Architectural decisions and design patterns</li>
+              <li>Debugging strategies and problem-solving approaches</li>
+              <li>Professional development practices</li>
+            </ul>
+
+            <h3>Technical Assessments</h3>
+            <p>
+              Designed and administered 450+ technical assessments ranging from basic algorithm challenges to 
+              full-stack application builds. These assessments helped students:
+            </p>
+            <ul>
+              <li>Track progress throughout the bootcamp</li>
+              <li>Identify areas needing additional practice</li>
+              <li>Prepare for technical interviews</li>
+              <li>Build confidence in their abilities</li>
+            </ul>
+
+            <h2>Impact & Results</h2>
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg my-8">
+              <ul className="list-none space-y-3">
+                <li><strong>👥 Students Trained:</strong> 170+ students across 9 cohorts</li>
+                <li><strong>📚 Lectures Delivered:</strong> 120+ comprehensive technical lectures and workshops</li>
+                <li><strong>💼 Job Placement:</strong> 85% of students placed in tech roles within 6 months</li>
+                <li><strong>😊 Satisfaction Rate:</strong> 95% student satisfaction across all cohorts</li>
+                <li><strong>🔍 Code Reviews:</strong> 200+ individual code reviews with detailed feedback</li>
+                <li><strong>📊 Assessments:</strong> 450+ technical assessments designed and administered</li>
+              </ul>
+            </div>
+
+            <h2>What Teaching Taught Me</h2>
+            <p>
+              Nothing tests your technical depth like explaining recursion to 30 people staring at you, or 
+              debugging someone else's code in real-time. Teaching fundamentally changed how I approach 
+              technical communication.
+            </p>
+
+            <h3>Technical Communication Skills</h3>
+            <p>
               I learned that the best technical explanations are:
             </p>
             <ul>
-              <li><strong>Concrete:</strong> Always start with a specific example before explaining the concept</li>
-              <li><strong>Progressive:</strong> Build complexity gradually, ensuring each step is understood</li>
-              <li><strong>Practical:</strong> Connect every concept to real-world applications</li>
-              <li><strong>Empathetic:</strong> Remember what it feels like to not understand something</li>
+              <li><strong>Concrete First:</strong> Always start with a specific example before explaining the abstract concept</li>
+              <li><strong>Progressive Complexity:</strong> Build understanding gradually, ensuring each step is solid before moving forward</li>
+              <li><strong>Practical Context:</strong> Connect every concept to real-world applications students will encounter</li>
+              <li><strong>Empathetic Patience:</strong> Remember what it feels like to not understand something</li>
             </ul>
 
-            <h2>From Teaching to Product Management</h2>
+            <h3>Debugging & Problem-Solving</h3>
             <p>
-              My experience at LEARN Academy was invaluable preparation for product management. Teaching 
-              developers taught me how to:
+              Debugging other people's code in real-time during office hours made me a significantly better 
+              problem-solver. You can't just brute-force solutions when 30 students are waiting—you need 
+              systematic approaches to:
             </p>
             <ul>
-              <li>Break down complex technical concepts into digestible pieces</li>
-              <li>Communicate effectively with engineers at all skill levels</li>
-              <li>Understand the learning curve for new technologies</li>
-              <li>Write clear, actionable documentation and specifications</li>
+              <li>Read error messages methodically</li>
+              <li>Trace code execution mentally</li>
+              <li>Identify likely failure points quickly</li>
+              <li>Explain your reasoning process out loud</li>
             </ul>
 
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg my-6">
+              <h3 className="text-xl font-semibold mb-4">Skills That Transferred to Product Management</h3>
+              <ul className="space-y-2">
+                <li>✅ Breaking down complex technical concepts into digestible pieces</li>
+                <li>✅ Communicating effectively with engineers at all skill levels</li>
+                <li>✅ Understanding learning curves for new technologies</li>
+                <li>✅ Writing clear, actionable documentation and specifications</li>
+                <li>✅ Explaining technical tradeoffs to non-technical stakeholders</li>
+                <li>✅ Teaching others how to think about problems, not just solutions</li>
+              </ul>
+            </div>
+
+            <h2>Curriculum Design & Iteration</h2>
             <p>
-              Most importantly, it taught me that the best technical leaders are teachers at heart. 
-              Whether you're explaining a new feature to stakeholders or writing acceptance criteria 
-              for developers, it's all about clear communication and empathy for your audience.
+              As Lead Instructor, I was responsible for curriculum improvements based on student outcomes and 
+              industry feedback. This meant:
             </p>
+            <ul>
+              <li>Analyzing which concepts students struggled with most</li>
+              <li>Gathering feedback from hiring partners about skill gaps</li>
+              <li>Iterating on lesson plans and project assignments</li>
+              <li>Measuring success through placement rates and student satisfaction</li>
+            </ul>
+            <p>
+              This experience taught me to think like a product manager: measure outcomes, gather feedback, 
+              iterate based on data, and always focus on end-user success (in this case, job placement).
+            </p>
+
+            <h2>Why I Left</h2>
+            <p>
+              After almost two years of teaching, I wanted to transition back into hands-on software engineering 
+              to gain real-world production experience. Teaching solidified my fundamentals, but I needed to apply 
+              them in a professional development environment. That's when I got the opportunity at Rugiet Health.
+            </p>
+
+            <p>
+              In retrospect, teaching was perfect preparation for becoming a Technical Product Manager. The best 
+              technical leaders are teachers at heart—whether you're explaining a new feature to stakeholders, 
+              writing acceptance criteria for developers, or onboarding new team members.
+            </p>
+
+            <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-500 mt-8">
+              <p className="mb-0">
+                <strong>Learn More:</strong> Visit LEARN Academy at{" "}
+                <Link href="https://www.learnacademy.org/" className="text-green-600 dark:text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">
+                  learnacademy.org
+                </Link>
+              </p>
+            </div>
           </div>
 
           {/* Navigation */}
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
             <div className="flex justify-between">
-              <Link href="/experience/compoundlive" className="text-blue-600 dark:text-blue-400 hover:underline">
-                ← Previous: CompoundLive
-              </Link>
               <Link href="/experience/rugiet-health" className="text-blue-600 dark:text-blue-400 hover:underline">
-                Next: Rugiet Health →
+                ← Next: Rugiet Health
+              </Link>
+              <Link href="/" className="text-blue-600 dark:text-blue-400 hover:underline">
+                Back to Portfolio →
               </Link>
             </div>
           </div>

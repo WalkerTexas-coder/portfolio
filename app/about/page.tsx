@@ -103,7 +103,6 @@ export default function About() {
                   e-prescribing, pharmacy fulfillment, AI diagnostics, HIPAA and SOC 2 compliance
                 </p>
                 </div>
-                <br />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-blue-500">
                     <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">12 months</div>

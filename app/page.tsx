@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import atxImage from "./images/atx.png";
 import rugietImage from "./images/rugiet-health.png";
 import cplImage from "./images/cpl2.png";
+import learnImage from "./images/learn.png";
 
 export default function Home() {
   return (
@@ -66,21 +67,18 @@ export default function Home() {
       {/* About Section */}
       <section className="py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl mb-8">What do I do?</h2>
-          {/*  I moved this information that used to be part of the title into "What Do I Do?"  {" "}who turns complex{" "}
-              <span className="text-[#a5b4fc] font-bold">healthcare requirements</span>
-              {" "}into shippable specifications. */}
-           <p className="text-xl text-white/90 mb-6">
-              I code enough to challenge engineering estimates. I ship fast enough to know when I'm overcomplicating.
-              I measure success by patient outcomes, not feature counts.
-            </p>
           <p className="text-xl md:text-2xl leading-relaxed mb-6">
-            I draw ERD diagrams during stakeholder calls. I ask obvious questions fast.
-            I code enough to know when developers are hedging, and ship enough to know when I'm overcomplicating.
+            I draw ERDs during stakeholder calls. I code enough to challenge estimates. I ship fast enough to catch overengineering.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            I don't just build what stakeholders ask for—I ask what they actually need.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6 text-gray-700 dark:text-gray-300">
+            Patient outcomes over feature counts. Working software over perfect specs. The best product decisions aren't about what to build—they're about what not to build.
           </p>
           <p className="text-xl md:text-2xl leading-relaxed text-gray-700 dark:text-gray-300">
-            I measure success by patient outcomes and business impact—not feature counts. The best product
-            decisions aren't about what to build, they're about what not to build.
+            Looking for a senior PM? Need someone to gut-check your roadmap? Either way, let's talk.
+
           </p>
         </div>
       </section>
@@ -133,7 +131,7 @@ export default function Home() {
               />
               <ProjectCard
                 title="Hedfirst Launch"
-                description="First brand implementation on Teligant platform. Launched August 2025 with beta patients, validating $499/year membership model. Integrated Choose Health lab testing and DoseSpot e-prescribing based on user research insights."
+                description="First brand implementation on Teligant platform. Launched August 4th, 2025 with beta patients, validating $499/year membership model. Integrated Choose Health lab testing and DoseSpot e-prescribing based on user research insights."
                 slug="hedfirst"
                 imageSrc="https://cdn.prod.website-files.com/67a509f5940083778a2478d0/67d16eb0733bbcccda908f61_hedfirst-home-screen.avif"
               />
@@ -177,7 +175,7 @@ export default function Home() {
               company="LEARN Academy"
               description="Trained 170+ developers across 9 cohorts in full-stack development. Designed curriculum based on industry feedback, iterated based on student outcomes, and achieved 85% placement rate within 6 months. Teaching taught me to break down complex technical concepts—a skill I now use daily to bridge gaps between clinical stakeholders, engineers, and business leaders. Nothing tests your technical depth like explaining recursion to 30 people staring at you, or debugging someone else's code in real-time. Those skills directly translate to writing specs developers can implement and explaining technical tradeoffs to non-technical executives."
               projectName="Curriculum Design → Technical Communication Skills"
-              imageUrl="https://cdn.prod.website-files.com/6529b289fd19962a33e120c8/652fde252e2b5971fbcd3be6_hero-team-values.webp"
+              imageUrl={learnImage}
               slug="learn-academy"
             />
           </div>
@@ -236,7 +234,7 @@ export default function Home() {
               { name: "Github", url: "https://github.com/WalkerTexas-coder" },
               { name: "LinkedIn", url: "https://www.linkedin.com/in/walkeratx/" },
               { name: "X", url: "https://x.com/WalkerTXdriver" },
-              { name: "Email", url: "mailto:walkertexasdriver@gmail.com" }
+              { name: "Email", url: "mailto:walkertexasaustin@gmail.com" }
             ]}
           />
         </div>

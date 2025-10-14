@@ -14,9 +14,9 @@ export default function HedfirstPage() {
             <Link href="/" className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block">
               ← Back to Portfolio
             </Link>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Hedfirst Launch: From Beta to Production</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Hedfirst: First Brand on Teligant Platform</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              First Brand Implementation • August 2025
+              Product Lead • September 2024 - September 2025
             </p>
           </div>
 
@@ -33,132 +33,151 @@ export default function HedfirstPage() {
 
           {/* Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <h2>The First Real Test</h2>
+            <h2>The Challenge</h2>
             <p>
-              Hedfirst wasn't just another client implementation—it was the proving ground for everything we built 
-              with the Teligant platform. This was where theory met reality: real patients, live prescriptions, 
-              actual pharmacy fulfillment, and a $499/year membership model that had to work from day one.
+              Hedfirst was the first brand implementation on the Teligant platform—the proving ground for everything we built. 
+              This wasn't just a demo. It was launching an Idaho-based telehealth clinic from concept to operational with real 
+              patients, live prescriptions, and multi-state pharmacy fulfillment in 6 months.
             </p>
 
-            <h2>The Challenge: Migraine Care Reimagined</h2>
-            <p>
-              Traditional migraine treatment is reactive—patients suffer through attacks, then try to get emergency 
-              care or wait weeks for specialist appointments. Hedfirst's vision was different: proactive, AI-powered 
-              migraine management with immediate access to both preventive and rescue medications.
-            </p>
-
-            <h2>Product Strategy</h2>
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-              <h3>AI Care Membership Model</h3>
-              <ul>
-                <li><strong>$499/year membership:</strong> All-inclusive migraine care</li>
-                <li><strong>Unlimited consultations:</strong> No per-visit fees</li>
-                <li><strong>Medication included:</strong> Both preventive and rescue medications</li>
-                <li><strong>Lab testing:</strong> Comprehensive health monitoring through Choose Health</li>
-                <li><strong>AI assessment:</strong> Personalized treatment recommendations</li>
-              </ul>
-
-              <h3>Clinical Approach</h3>
-              <ul>
-                <li><strong>Preventive Focus:</strong> Reduce frequency and severity of migraines</li>
-                <li><strong>Rescue Protocol:</strong> Fast-acting medications for breakthrough attacks</li>
-                <li><strong>Lifestyle Integration:</strong> Sleep, stress, and trigger management</li>
-                <li><strong>Continuous Monitoring:</strong> Regular check-ins and medication adjustments</li>
+            <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500 my-8">
+              <h3 className="text-2xl font-semibold mb-4">My Role</h3>
+              <p className="mb-4">
+                I led the end-to-end product experience for Hedfirst, bridging business objectives, clinical requirements, 
+                and technical execution. This meant:
+              </p>
+              <ul className="space-y-2">
+                <li>Co-leading complete clinic buildout including LegitScript certification and pharmacy network integration</li>
+                <li>Configuring 39 disease states and 514 medication protocols with HIPAA-compliant data integrity</li>
+                <li>Collaborating directly with contracted physicians and medical director to optimize clinical workflows</li>
+                <li>Coordinating with pharmacy partners to ensure seamless fulfillment and compliance</li>
+                <li>Managing the Hedfirst launch as flagship telehealth compounding clinic for migraine treatments</li>
               </ul>
             </div>
 
-            <h2>Implementation Challenges</h2>
+            <h2>Product Strategy & Implementation</h2>
+            
+            <h3>LegitScript Certification</h3>
             <p>
-              Launching Hedfirst taught me that healthcare product management is 50% technology and 50% operations. 
-              The platform could handle the technical requirements, but making it work for real patients required 
-              solving dozens of operational details.
+              Led the LegitScript certification process with minimal executive oversight—managing all documentation, 
+              coordinating with LegitScript compliance team, responding to certification requirements, and achieving 
+              successful approval. This certification was critical for operating telehealth across multiple states 
+              and established our healthcare regulatory compliance framework.
             </p>
 
-            <h3>Pharmacy Coordination</h3>
-            <ul>
-              <li>Migraine medications have complex insurance coverage patterns</li>
-              <li>Some rescue medications require special handling and shipping</li>
-              <li>Patients needed clear guidance on when to use preventive vs. rescue medications</li>
-              <li>Pharmacy routing had to account for medication availability and patient location</li>
-            </ul>
-
-            <h3>Clinical Workflows</h3>
-            <ul>
-              <li>Doctors needed streamlined protocols for migraine assessment</li>
-              <li>AI assessment had to capture migraine-specific triggers and patterns</li>
-              <li>Follow-up scheduling had to align with medication adjustment timelines</li>
-              <li>Emergency protocols for severe or unusual migraine presentations</li>
-            </ul>
-
-            <h2>Launch Execution</h2>
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-              <h3>Beta Phase (July 2025)</h3>
-              <ul>
-                <li>Recruited 25 beta patients with chronic migraines</li>
-                <li>Conducted comprehensive onboarding and AI assessments</li>
-                <li>Established baseline migraine frequency and severity metrics</li>
-                <li>Fine-tuned pharmacy routing and medication protocols</li>
-              </ul>
-
-              <h3>Production Launch (August 4, 2025)</h3>
-              <ul>
-                <li>Platform went live with full payment processing</li>
-                <li>All 25 beta patients converted to paid memberships</li>
-                <li>First live prescriptions processed through DoseSpot</li>
-                <li>Choose Health lab orders placed and processed</li>
-                <li>Pharmacy fulfillment operational across 48 states</li>
-              </ul>
-            </div>
-
-            <h2>Real-World Results</h2>
+            <h3>Pharmacy Network Integration</h3>
             <p>
-              The true test of any healthcare platform isn't the demo—it's what happens when real patients 
-              need real care. Hedfirst's launch proved that our platform could handle the complexity of 
-              actual healthcare delivery.
+              Coordinated integration with 3 pharmacy partners for prescription fulfillment. This included:
             </p>
+            <ul>
+              <li>DoseSpot e-prescribing implementation for HIPAA-compliant electronic prescriptions</li>
+              <li>SureScripts network connectivity for pharmacy transmission across 48 states</li>
+              <li>ShipStation fulfillment integration for order management and tracking</li>
+              <li>Multi-pharmacy routing logic to prevent prescription errors</li>
+            </ul>
 
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+            <h3>Medication & Disease State Configuration</h3>
+            <p>
+              Configured comprehensive medication catalog supporting the clinic's therapeutic focus:
+            </p>
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg my-6">
               <ul className="list-none space-y-2">
-                <li><strong>👥 Beta Patients:</strong> 25 patients with chronic migraines</li>
-                <li><strong>💊 Prescriptions:</strong> 100% successfully routed and fulfilled</li>
-                <li><strong>🔬 Lab Tests:</strong> Comprehensive health panels for all patients</li>
-                <li><strong>💰 Revenue:</strong> $12,475 in first-month memberships</li>
-                <li><strong>⭐ Satisfaction:</strong> 4.8/5 average patient rating</li>
-                <li><strong>🏥 Coverage:</strong> 48-state prescription fulfillment operational</li>
+                <li><strong>514 Medication Protocols:</strong> Complete dosing, form factors, and compounding specifications</li>
+                <li><strong>39 Disease States:</strong> Migraine, peptide therapy, weight loss, hair growth, sexual wellness, and more</li>
+                <li><strong>Clinical Setup Efficiency:</strong> 70% reduction in setup time through systematic configuration</li>
+                <li><strong>HIPAA-Compliant Data:</strong> All medication data maintained regulatory compliance standards</li>
               </ul>
             </div>
 
-            <h2>Patient Stories</h2>
+            <h3>AI Integration & Clinical Documentation</h3>
             <p>
-              The most rewarding part of launching Hedfirst was hearing from patients whose lives were actually 
-              improved by what we built:
+              Architected and deployed Claude AI integration for clinical documentation automation:
             </p>
             <ul>
-              <li><strong>Sarah, 34:</strong> "First time in years I have preventive medication that actually works. The AI assessment caught triggers I never connected to my migraines."</li>
-              <li><strong>Mike, 42:</strong> "Having rescue medication on hand gives me confidence to travel again. The consultation process was so much easier than going to urgent care."</li>
-              <li><strong>Jennifer, 28:</strong> "The lab results showed vitamin deficiencies that were contributing to my migraines. Now I have a complete treatment plan, not just pain management."</li>
+              <li>Created 13-section Universal AI Medical Assessment template serving as operational backbone</li>
+              <li>Integrated Claude 4 Sonnet via AWS Bedrock with Business Associate Agreement (BAA)</li>
+              <li>Configured zero retention policy for HIPAA compliance</li>
+              <li>Reduced manual processing time by 60% while maintaining 92% clinical accuracy</li>
+              <li>Built Store Admin AI Chat for patient analysis and treatment planning</li>
             </ul>
 
-            <h2>Operational Lessons</h2>
+            <h3>Lab Testing Integration</h3>
             <p>
-              Launching Hedfirst taught me that successful healthcare products require obsessive attention to 
-              operational details that most SaaS products never consider:
+              Integrated Choose Health for at-home lab testing, expanding Hedfirst from migraine-focused to 
+              comprehensive health monitoring:
             </p>
             <ul>
-              <li><strong>Pharmacy Relationships:</strong> Technology is only as good as the fulfillment network</li>
-              <li><strong>Clinical Protocols:</strong> Doctors need clear, evidence-based treatment guidelines</li>
-              <li><strong>Patient Education:</strong> Complex medical information must be accessible and actionable</li>
-              <li><strong>Regulatory Compliance:</strong> Every feature must consider HIPAA, state regulations, and medical standards</li>
+              <li>Analyzed 7-endpoint REST API plus webhook system for real-time results</li>
+              <li>Designed patient-facing lab ordering, tracking, and results viewing</li>
+              <li>Created store admin lab management with Choose Health panel integration</li>
+              <li>Established HIPAA-compliant data storage with 7-year retention requirements</li>
+              <li>Product catalog: 6 lab test panels priced $99-$145 targeting complex conditions</li>
             </ul>
 
-            <h2>From Launch to Scale</h2>
+            <h2>Launch Results</h2>
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg my-8">
+              <h3 className="text-2xl font-semibold mb-4">August 4, 2025 Launch Metrics</h3>
+              <ul className="list-none space-y-3">
+                <li><strong>🚀 Beta Patients:</strong> 25 patients onboarded in first 3 weeks post-launch</li>
+                <li><strong>💰 First-Month Revenue:</strong> $12,475 generated through AI Care Membership</li>
+                <li><strong>💊 Medication Catalog:</strong> 514 medications across 39 disease states operational</li>
+                <li><strong>🏥 Fulfillment Coverage:</strong> 48-state prescription fulfillment through multi-pharmacy network</li>
+                <li><strong>🔬 Lab Adoption:</strong> 40% of beta patients ordered lab tests within first month</li>
+                <li><strong>⚕️ Clinical Accuracy:</strong> 92% diagnostic accuracy with AI enhancement vs. 74-76% for physicians alone</li>
+                <li><strong>✅ Routing Accuracy:</strong> Zero prescription routing errors through systematic workflow design</li>
+              </ul>
+            </div>
+
+            <h2>Key Projects During Hedfirst Launch</h2>
+            <h3>Pharmacy Fulfillment Workflow System</h3>
             <p>
-              Hedfirst's successful launch validated our multi-tenant platform approach. The same infrastructure 
-              that powers migraine care can be configured for other chronic conditions—diabetes, hypertension, 
-              mental health, and more. Each new brand benefits from the operational excellence we built with Hedfirst.
+              Doctors were manually routing prescriptions across 4 pharmacy partners with no systematic guidance. 
+              I spent two days shadowing doctors and discovered they had no audit trail to track what they'd sent. 
+              Created pharmacy-by-pharmacy queue workflow positioned above DoseSpot iframe, preventing prescription 
+              errors while maintaining doctor flexibility. Wrote 12 Jira tickets across 2 sprint cycles. Result: 
+              Zero routing errors across 200+ monthly prescriptions.
             </p>
 
-            <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-500">
+            <h3>Order Hierarchy System</h3>
+            <p>
+              Healthcare transactions have complex structures—medications with recurring fills, consultations with 
+              multiple appointments, memberships with benefits. Designed 3-tier order hierarchy (Master order → 
+              Sub-categories → Sub-sub categories) handling all product types. This foundation enabled appointment 
+              tokens, subscription management, and complete customer service tracking.
+            </p>
+
+            <h3>PayTheory Billing Integration</h3>
+            <p>
+              User research revealed different patient payment preferences—some wanted annual plans for savings, 
+              others needed quarterly for cash flow. Designed flexible subscription architecture supporting 30-365 
+              day billing cycles. Created membership benefits configuration system. Result: Enabled $499/year AI 
+              Care Membership model that became Hedfirst's primary revenue driver.
+            </p>
+
+            <h2>Clinical Collaboration</h2>
+            <p>
+              Worked directly with contracted physicians and medical director to optimize clinical workflows:
+            </p>
+            <ul>
+              <li>Developed patient questionnaires and assessment workflows balancing clinical needs with user experience</li>
+              <li>Ensured appropriate prescribing protocols and quality assurance systems across telehealth platform</li>
+              <li>Maintained 98% quality assurance score with zero regulatory violations</li>
+              <li>Directed physician collaboration across 100+ weekly patient cases</li>
+            </ul>
+
+            <h2>What I Learned</h2>
+            <p>
+              Hedfirst taught me that successful healthcare products require obsessive attention to operational 
+              details most SaaS products never consider:
+            </p>
+            <ul>
+              <li><strong>Pharmacy relationships are critical:</strong> Technology is only as good as the fulfillment network</li>
+              <li><strong>Clinical protocols need clarity:</strong> Doctors need evidence-based treatment guidelines, not just features</li>
+              <li><strong>Regulatory compliance is non-negotiable:</strong> Every feature must consider HIPAA, state regulations, and medical standards</li>
+              <li><strong>Operational excellence beats technical perfection:</strong> The hardest problems aren't technical—they're workflow and coordination</li>
+            </ul>
+
+            <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-500 mt-8">
               <p className="mb-0">
                 <strong>Experience Hedfirst:</strong> See the platform in action at{" "}
                 <Link href="https://www.hedfirst.com/" className="text-green-600 dark:text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">
