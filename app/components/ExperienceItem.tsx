@@ -36,7 +36,7 @@ export default function ExperienceItem({
         )}
       </div>
       <div className="md:col-span-2 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
-        <div className="aspect-w-16 aspect-h-9 relative h-64">
+        <div className="aspect-w-16 aspect-h-9 relative h-full">
           {imageUrl ? (
             <Image
               src={imageUrl}
