@@ -68,75 +68,36 @@ body {
   }
 }
 
-/* Enhanced Prose Typography for Experience Pages */
-.prose h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1.25rem;
-  line-height: 1.2;
-  color: var(--foreground);
-  letter-spacing: -0.025em;
+/* Enhanced Typography for Experience Pages */
+/* Scoped to avoid conflicts with potential @tailwindcss/typography plugin */
+.experience-prose h2 {
+  @apply text-3xl font-bold mt-10 mb-5 leading-tight tracking-tight;
 }
 
-.prose h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  line-height: 1.3;
-  color: var(--foreground);
-  letter-spacing: -0.015em;
+.experience-prose h3 {
+  @apply text-2xl font-semibold mt-8 mb-4 leading-snug tracking-tight;
 }
 
-.prose p {
-  font-size: 1.125rem;
-  line-height: 1.75;
-  margin-bottom: 1.25rem;
-  color: var(--foreground);
+.experience-prose p {
+  @apply text-lg leading-relaxed mb-5;
 }
 
-.prose ul {
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
+.experience-prose ul {
+  @apply mt-4 mb-6 pl-6;
 }
 
-.prose ul li {
-  margin-bottom: 0.75rem;
-  line-height: 1.75;
-  padding-left: 0.5rem;
+.experience-prose ul li {
+  @apply mb-3 leading-relaxed pl-2;
 }
 
-.prose ul li::marker {
-  color: #3b82f6; /* blue-500 */
+.experience-prose ul li::marker {
+  @apply text-blue-500 dark:text-blue-400;
 }
 
-@media (prefers-color-scheme: dark) {
-  .prose ul li::marker {
-    color: #60a5fa; /* blue-400 */
-  }
+.experience-prose strong {
+  @apply font-semibold text-blue-800 dark:text-blue-300;
 }
 
-.prose strong {
-  font-weight: 600;
-  color: #1e40af; /* blue-800 */
-}
-
-@media (prefers-color-scheme: dark) {
-  .prose strong {
-    color: #93c5fd; /* blue-300 */
-  }
-}
-
-.prose .list-none li {
-  margin-bottom: 0.5rem;
-}
-
-.prose .space-y-2 > * + * {
-  margin-top: 0.5rem;
-}
-
-.prose .space-y-3 > * + * {
-  margin-top: 0.75rem;
+.experience-prose .list-none li {
+  @apply mb-2;
 }

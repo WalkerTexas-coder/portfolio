@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import ProjectCard from "./components/ProjectCard";
 import ExperienceItem from "./components/ExperienceItem";
 import Contact from "./components/Contact";
+import FadeInOnScroll from "./components/FadeInOnScroll";
 import atxImage from "./images/atx.png";
 import rugietImage from "./images/rugiet-health.png";
 import cplImage from "./images/cpl2.png";
@@ -65,21 +66,72 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-6 md:px-12">
-        <div className="container mx-auto max-w-4xl">
-          <p className="text-xl md:text-2xl leading-relaxed mb-6">
-            I draw ERDs during stakeholder calls. I code enough to challenge estimates. I ship fast enough to catch overengineering.
-          </p>
-          <p className="text-xl md:text-2xl leading-relaxed mb-6">
-            I don't just build what stakeholders ask for—I ask what they actually need.
-          </p>
-          <p className="text-xl md:text-2xl leading-relaxed mb-6 text-gray-700 dark:text-gray-300">
-            Patient outcomes over feature counts. Working software over perfect specs. The best product decisions aren't about what to build—they're about what not to build.
-          </p>
-          <p className="text-xl md:text-2xl leading-relaxed text-gray-700 dark:text-gray-300">
-            Looking for a senior PM? Need someone to gut-check your roadmap? Either way, let's talk.
+      <section className="py-20 px-6 md:px-12 gradient-bg">
+        <div className="container mx-auto max-w-6xl">
+          {/* Statement Cards Grid */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <FadeInOnScroll delay={0}>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/15 transition-all duration-300 hover:translate-y-[-4px] h-full flex items-center">
+                <p className="text-xl md:text-2xl leading-relaxed text-white font-semibold">
+                  I draw ERDs during stakeholder calls. 
+                  <br/>
+                  I code enough to challenge estimates. 
+                  <br/>
+                  I ship fast enough to catch overengineering.
+                </p>
+              </div>
+            </FadeInOnScroll>
 
-          </p>
+            <FadeInOnScroll delay={100}>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/15 transition-all duration-300 hover:translate-y-[-4px] h-full flex items-center">
+                <p className="text-xl md:text-2xl leading-relaxed text-white font-semibold">
+                  I don't just build what stakeholders ask for—I ask what they actually need.
+                </p>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={200}>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/15 transition-all duration-300 hover:translate-y-[-4px] h-full flex items-center">
+                <p className="text-xl md:text-2xl leading-relaxed text-white/90 font-semibold">
+                  Patient outcomes over feature counts. Working software over perfect specs. The best product decisions aren't about what to build—they're about what not to build.
+                </p>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={300}>
+              <Link href="#connect" className="block h-full">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/15 transition-all duration-300 hover:translate-y-[-4px] h-full flex items-center cursor-pointer">
+                  <p className="text-xl md:text-2xl leading-relaxed text-white/90 font-semibold">
+                    Looking for a senior PM? Need someone to gut-check your roadmap? Either way, let's connect.
+                  </p>
+                </div>
+              </Link>
+            </FadeInOnScroll>
+          </div>
+
+          {/* Expertise Badges */}
+          <FadeInOnScroll delay={400}>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                Healthcare Domain
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                Technical PM
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                0-1 Builds
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                Compliance (HIPAA/SOC 2)
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                Data Architecture
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                AI Integration
+              </span>
+            </div>
+          </FadeInOnScroll>
         </div>
       </section>
 
@@ -88,54 +140,36 @@ export default function Home() {
 
 
       {/* Recent Work Section */}
-      <section id="work" className="py-20 px-6 md:px-12">
+      <section id="work" className="py-20 px-6 md:px-12 gradient-bg">
         <div className="container mx-auto">
-          <h2 className="section-title">Recent Work</h2>
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Left Column - Summary */}
-            <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-4">Teligant Platform: Multi-Tenant Healthcare SaaS</h3>
-              <p className="text-xl">
-                In 12 months at Hedfirst/Teligant, I co-led product strategy for a multi-tenant telehealth platform
-                from concept to production—with real patients, live prescriptions, and operational pharmacy fulfillment.
-              </p>
-            </div>
+          <h2 className="section-title text-white mb-8">Recent Work</h2>
 
-            {/* Right Column - Key Results */}
-            <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
-              <p className="font-semibold mb-3">Key Results:</p>
-              <ul className="space-y-2">
-                <li>Launched August 4, 2025 with 25 beta patients generating $12,475 in first-month revenue</li>
-                <li>Validated $499/year AI Care Membership model through user research with chronic migraine patients</li>
-                <li>499 medications across 39 disease states, 48-state prescription fulfillment</li>
-                <li>Zero prescription routing errors across 200+ monthly prescriptions through systematic workflow design</li>
-                <li>40% of beta patients ordered lab tests within first month, revealing deficiencies in 60%</li>
-              </ul>
-            </div>
+          <div className="max-w-4xl mb-12">
+            <p className="text-xl md:text-2xl text-white mb-6 leading-relaxed">
+              In 12 months at Hedfirst/Teligant, I co-led product strategy for a multi-tenant telehealth platform
+              from concept to production—with real patients, live prescriptions, and operational pharmacy fulfillment.
+            </p>
+            <p className="text-lg text-white/90 leading-relaxed">
+              Launched August 4, 2025 with 25 beta patients generating $12,475 in first-month revenue •
+              499 medications across 39 disease states •
+              48-state prescription fulfillment •
+              Zero routing errors across 200+ monthly prescriptions
+            </p>
           </div>
 
-          <div className="gradient-bg p-12 rounded-lg">
-            <h3 className="text-2xl font-bold mb-4 text-white">From Strategy to Execution</h3>
-            <p className="text-white mb-8">
-              Multi-tenant healthcare SaaS platform powering direct-to-consumer telehealth brands with integrated
-              e-prescribing, lab testing, AI diagnostics, and HIPAA-compliant data processing. I defined product
-              strategy, prioritized roadmap, and wrote detailed technical specifications for implementation.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <ProjectCard
-                title="Teligant Platform"
-                description="Multi-tenant SaaS architecture with patient portals, doctor workflows, admin dashboards, and pharmacy integrations. Led product strategy, coordinated 4 engineers + CTO, and prioritized features that enabled 48-state fulfillment."
-                slug="teligant"
-                imageSrc="https://cdn.prod.website-files.com/67ad2c6bdcb40e4e1f8634c9/67af2f828dde99af89ddfdfa_2image.avif"
-              />
-              <ProjectCard
-                title="Hedfirst Launch"
-                description="First brand implementation on Teligant platform. Launched August 4th, 2025 with beta patients, validating $499/year membership model. Integrated Choose Health lab testing and DoseSpot e-prescribing based on user research insights."
-                slug="hedfirst"
-                imageSrc="https://cdn.prod.website-files.com/67a509f5940083778a2478d0/67d16eb0733bbcccda908f61_hedfirst-home-screen.avif"
-              />
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ProjectCard
+              title="Teligant Platform"
+              description="Multi-tenant SaaS architecture with patient portals, doctor workflows, admin dashboards, and pharmacy integrations. Led product strategy, coordinated 4 engineers + CTO, and prioritized features that enabled 48-state fulfillment."
+              slug="teligant"
+              imageSrc="https://cdn.prod.website-files.com/67ad2c6bdcb40e4e1f8634c9/67af2f828dde99af89ddfdfa_2image.avif"
+            />
+            <ProjectCard
+              title="Hedfirst Launch"
+              description="First brand implementation on Teligant platform. Launched August 4th, 2025 with beta patients, validating $499/year membership model. Integrated Choose Health lab testing and DoseSpot e-prescribing based on user research insights."
+              slug="hedfirst"
+              imageSrc="https://cdn.prod.website-files.com/67a509f5940083778a2478d0/67d16eb0733bbcccda908f61_hedfirst-home-screen.avif"
+            />
           </div>
         </div>
       </section>
