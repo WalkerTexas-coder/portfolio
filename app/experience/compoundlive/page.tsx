@@ -114,7 +114,7 @@ export default function CompoundLivePage() {
               <h3 className="text-xl font-semibold mb-4">Key Insights</h3>
               <ul className="space-y-2">
                 <li>✅ Healthcare implementations fail due to process problems, not technical problems</li>
-                <li>✅ Reusable frameworks > Custom solutions (even when clients request customization)</li>
+                <li>✅ Reusable frameworks {`>`} Custom solutions (even when clients request customization)</li>
                 <li>✅ Technical discovery sessions during sales prevent implementation surprises</li>
                 <li>✅ Clear documentation reduces back-and-forth and accelerates deployment</li>
                 <li>✅ Client satisfaction increases when implementation is predictable and fast</li>
