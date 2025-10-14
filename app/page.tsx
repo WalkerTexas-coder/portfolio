@@ -98,8 +98,7 @@ export default function Home() {
             <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg flex flex-col justify-center">
               <h3 className="text-2xl font-bold mb-4">Teligant Platform: Multi-Tenant Healthcare SaaS</h3>
               <p className="text-xl">
-                {/* [TODO: Verify timeline from MCP memory] */}
-                In 9 months at Hedfirst/Teligant, I led product strategy for a multi-tenant telehealth platform
+                In 12 months at Hedfirst/Teligant, I co-led product strategy for a multi-tenant telehealth platform
                 from concept to production—with real patients, live prescriptions, and operational pharmacy fulfillment.
               </p>
             </div>
@@ -108,11 +107,11 @@ export default function Home() {
             <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
               <p className="font-semibold mb-3">Key Results:</p>
               <ul className="space-y-2">
-                <li>Launched August 4, 2025 with {/* [TODO: Update from MCP] */}25 beta patients generating $12,475 in first-month revenue</li>
+                <li>Launched August 4, 2025 with 25 beta patients generating $12,475 in first-month revenue</li>
                 <li>Validated $499/year AI Care Membership model through user research with chronic migraine patients</li>
-                <li>{/* [TODO: Verify counts from MCP] */}499 medications across 20+ disease states, 48-state prescription fulfillment</li>
-                <li>Zero prescription routing errors across {/* [TODO: Update volume from MCP] */}200+ monthly prescriptions</li>
-                <li>{/* [TODO: Add satisfaction rating from MCP if available] */}4.8/5 average patient satisfaction rating</li>
+                <li>499 medications across 39 disease states, 48-state prescription fulfillment</li>
+                <li>Zero prescription routing errors across 200+ monthly prescriptions through systematic workflow design</li>
+                <li>40% of beta patients ordered lab tests within first month, revealing deficiencies in 60%</li>
               </ul>
             </div>
           </div>
@@ -158,8 +157,8 @@ export default function Home() {
             <ExperienceItem
               title="Solutions Engineer → Technical Product Lead"
               company="CompoundLive"
-              description="Transitioned from implementation engineer to technical product owner, leading client customizations and workflow optimizations. Reduced implementation time from 5 months to 5 weeks through systematic process improvements. These optimizations increased client satisfaction by 30% and deal closure rates by 25%, directly contributing to revenue growth."
-              projectName="Client Implementation & Process Optimization"
+              description="Started as Solutions Engineer helping enterprise healthcare clients deploy CompoundLive's white-label telehealth platform. Through discovery sessions with 6+ C-suite teams, I identified that our 5-month deployment cycles were killing sales velocity—not because features were missing, but because implementation was too bespoke. Built reusable integration frameworks and streamlined compliance workflows that cut deployment to 5 weeks. Result: 4 successful client implementations, 30% satisfaction increase, 25% boost in deal closures. This taught me that the fastest way to ship isn't more features—it's better processes."
+              projectName="Discovery → Process Redesign → Revenue Impact"
               imageUrl={cplImage}
               slug="compoundlive"
             />
@@ -167,8 +166,8 @@ export default function Home() {
             <ExperienceItem
               title="Full Stack Developer"
               company="Rugiet Health"
-              description="Built prescription management and subscription features for men's health telehealth platform using Ruby on Rails. Identified retention issues through user data analysis and implemented flexible subscription management system, increasing patient retention by 35%. This engineering role taught me to think beyond features to business outcomes—the foundation of my product management approach."
-              projectName="Prescription Management & Retention Engineering"
+              description="Started as IC2 Software Engineer building prescription and subscription features in Ruby on Rails. When retention metrics dropped, I didn't just implement the feature request on the ticket. Analyzed user data, talked to support, and discovered the real problem: inflexible subscription management was forcing patients to cancel when they wanted to pause. Proposed a solution, wrote detailed specs, and built it. Result: 35% retention increase. This was my 'product manager moment'—realizing my highest impact wasn't writing code faster, it was asking better questions first."
+              projectName="Data Analysis → Root Cause → Business Impact"
               imageUrl={rugietImage}
               slug="rugiet-health"
             />
@@ -176,8 +175,8 @@ export default function Home() {
             <ExperienceItem
               title="Lead Instructor"
               company="LEARN Academy"
-              description="Trained 170+ developers across 9 cohorts in full-stack development. Designed curriculum based on industry feedback, iterated based on student outcomes, and achieved 85% placement rate within 6 months. Teaching taught me to break down complex technical concepts—a skill I now use to bridge gaps between clinical stakeholders, engineers, and business leaders."
-              projectName="Developer Education & Technical Communication"
+              description="Trained 170+ developers across 9 cohorts in full-stack development. Designed curriculum based on industry feedback, iterated based on student outcomes, and achieved 85% placement rate within 6 months. Teaching taught me to break down complex technical concepts—a skill I now use daily to bridge gaps between clinical stakeholders, engineers, and business leaders. Nothing tests your technical depth like explaining recursion to 30 people staring at you, or debugging someone else's code in real-time. Those skills directly translate to writing specs developers can implement and explaining technical tradeoffs to non-technical executives."
+              projectName="Curriculum Design → Technical Communication Skills"
               imageUrl="https://cdn.prod.website-files.com/6529b289fd19962a33e120c8/652fde252e2b5971fbcd3be6_hero-team-values.webp"
               slug="learn-academy"
             />
@@ -208,7 +207,7 @@ export default function Home() {
                 Book a Meeting
               </Link>
               <Link
-                href="/Austin_Walker_TechnicalProductManager_Healthcare.pdf"
+                href="/resume"
                 className="inline-block px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               >
                 View Resume

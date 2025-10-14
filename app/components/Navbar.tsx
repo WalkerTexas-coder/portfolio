@@ -44,18 +44,10 @@ export default function Navbar() {
             About
           </Link>
           <Link
-            href="/Austin_Walker_TechnicalProductManager_Healthcare.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/resume"
             className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
           >
             Resume
-          </Link>
-          <Link 
-            href="#companies" 
-            className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
-          >
-            Companies
           </Link>
           <Link 
             href="/projects" 
@@ -69,8 +61,8 @@ export default function Navbar() {
           >
             Shift + F1
           </Link>
-          <Link 
-            href="#connect" 
+          <Link
+            href="/#connect"
             className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
           >
             Connect
@@ -137,20 +129,11 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              href="/Austin_Walker_TechnicalProductManager_Healthcare.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/resume"
               className="text-foreground hover:opacity-70 transition-opacity"
               onClick={() => setMobileMenuOpen(false)}
             >
               Resume
-            </Link>
-            <Link 
-              href="#companies" 
-              className="text-foreground hover:opacity-70 transition-opacity"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Companies
             </Link>
             <Link 
               href="/projects" 
@@ -166,8 +149,8 @@ export default function Navbar() {
             >
               Shift + F1
             </Link>
-            <Link 
-              href="#connect" 
+            <Link
+              href="/#connect"
               className="text-foreground hover:opacity-70 transition-opacity"
               onClick={() => setMobileMenuOpen(false)}
             >

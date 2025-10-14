@@ -100,16 +100,15 @@ export default function About() {
                 <div className="mt-4 text-center">
                 <p className="text-lg text-gray-600 dark:text-gray-400">
                   <strong>Healthcare Domain Expertise:</strong> 3 years across prescription management, lab integration,
-                  e-prescribing, pharmacy fulfillment, HIPAA and SOC 2 compliance
+                  e-prescribing, pharmacy fulfillment, AI diagnostics, HIPAA and SOC 2 compliance
                 </p>
                 </div>
                 <br />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border-l-4 border-blue-500">
-                    <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">9 months</div>
+                    <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">12 months</div>
                     <div className="text-lg font-semibold mb-2">Multi-tenant platform from zero to production</div>
                     <div className="text-gray-600 dark:text-gray-400">
-                      {/* [TODO: Update patient count and revenue from MCP memory] */}
                       25 paying patients, $12,475 first-month revenue, 48-state pharmacy fulfillment
                     </div>
                   </div>
@@ -134,7 +133,6 @@ export default function About() {
                     <div className="text-3xl font-bold text-red-600 dark:text-red-400 mb-2">0 errors</div>
                     <div className="text-lg font-semibold mb-2">Pharmacy routing accuracy</div>
                     <div className="text-gray-600 dark:text-gray-400">
-                      {/* [TODO: Update prescription volume from MCP memory if different] */}
                       Eliminated prescription routing errors across 200+ monthly prescriptions
                     </div>
                   </div>
@@ -155,13 +153,16 @@ export default function About() {
               <p className="text-xl leading-relaxed">
                 I started as a full-stack developer at Rugiet Health, building prescription management features
                 for a men's health telehealth platform. I was good at writing code, but I kept finding myself
-                in the gap between "what we're building" and "what actually needs to work."
+                in the gap between "what we're building" and "what actually needs to work." The Jira tickets
+                had clear acceptance criteria, but they didn't always solve the right problem.
               </p>
               <p className="text-xl leading-relaxed mt-4">
-                When I saw our patient retention numbers dropping, I didn't just implement the feature request
-                on the Jira ticket. I dug into the data, talked to support, and realized the real problem was
-                inflexible subscription management. I proposed a solution, wrote the specs, and built it.
+                When patient retention numbers dropped, I didn't just implement the feature request on the ticket.
+                I pulled user data, talked to customer support, analyzed churn patterns. The real problem wasn't
+                missing features—it was inflexible subscription management forcing patients to cancel when they
+                wanted to pause or adjust. I proposed a solution, wrote detailed specs with edge cases, and built it.
                 Retention increased 35%. That's when I realized I was doing product management, not just engineering.
+                And I was better at it than I was at writing code.
               </p>
             </div>
 
@@ -171,13 +172,15 @@ export default function About() {
                 Healthcare software is uniquely challenging: technical complexity + regulatory compliance +
                 operational dependencies + real-world consequences. Most industries, if your product has a bug,
                 someone is inconvenienced. In healthcare, if your prescription routing fails, a patient doesn't
-                get their medication.
+                get their medication. If your lab results integration breaks, a doctor misses a critical diagnosis.
               </p>
               <p className="text-xl leading-relaxed mt-4">
                 That weight motivates me. I love building products where quality matters, where "good enough"
                 isn't good enough, where you have to understand the entire ecosystem—not just the code. Three
-                years in telehealth taught me: the hardest problems aren't technical, they're operational.
-                The best product managers understand both.
+                years in telehealth taught me: the hardest problems aren't technical, they're operational. You
+                can build the perfect e-prescribing integration, but if doctors don't understand which pharmacy
+                to use, prescriptions get missed. The best product managers understand both the technical and
+                the workflow.
               </p>
             </div>
 
