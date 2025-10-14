@@ -32,7 +32,7 @@ export default function LearnAcademyPage() {
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <div className="experience-prose prose-lg dark:prose-invert max-w-none">
             <h2>From Student to Lead Instructor</h2>
             <p>
               I completed LEARN Academy's bootcamp in August 2020, did a 6-month internship at Victorise, then 

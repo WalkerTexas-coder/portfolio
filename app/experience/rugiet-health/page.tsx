@@ -31,7 +31,7 @@ export default function RugietHealthPage() {
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <div className="experience-prose prose-lg dark:prose-invert max-w-none">
             <h2>My First Real Engineering Job</h2>
             <p>
               Rugiet Health was my first professional software engineering role after completing LEARN Academy's 

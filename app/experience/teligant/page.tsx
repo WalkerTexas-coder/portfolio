@@ -32,7 +32,7 @@ export default function TeligantPage() {
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <div className="experience-prose prose-lg dark:prose-invert max-w-none">
             <h2>Building Multi-Tenant Healthcare SaaS from Concept to Production</h2>
             <p>
               The Teligant platform represents everything I learned from building telehealth at CompoundLive and 

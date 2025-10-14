@@ -31,7 +31,7 @@ export default function CompoundLivePage() {
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <div className="experience-prose prose-lg dark:prose-invert max-w-none">
             <h2>The Problem: 5-Month Implementation Cycles</h2>
             <p>
               When I joined CompoundLive as a Solutions Engineer, enterprise healthcare clients were experiencing 

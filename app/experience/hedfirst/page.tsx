@@ -32,7 +32,7 @@ export default function HedfirstPage() {
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <div className="experience-prose prose-lg dark:prose-invert max-w-none">
             <h2>The Challenge</h2>
             <p>
               Hedfirst was the first brand implementation on the Teligant platform—the proving ground for everything we built. 
