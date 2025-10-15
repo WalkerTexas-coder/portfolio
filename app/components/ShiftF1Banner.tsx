@@ -8,11 +8,19 @@ export default function ShiftF1Banner() {
   if (!isVisible) return null;
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-r from-red-600 to-orange-500 py-3">
+    <a
+      href="https://www.f1.cool/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block relative overflow-hidden bg-gradient-to-r from-red-600 to-orange-500 py-3 cursor-pointer hover:from-red-700 hover:to-orange-600 transition-colors"
+    >
       <div className="banner-scroll">
         <div className="banner-content whitespace-nowrap text-white font-semibold">
           <span className="inline-block px-8">
             🏁 Thank you to the Shift+F1 podcast (Drew Scanlon, Danny O'Dwyer & Rob Zacny) for the mention!
+          </span>
+          <span className="inline-block px-8">
+            🎧 A podcast about speedy race cars since 2014
           </span>
           <span className="inline-block px-8">
             🏎️ Proudly sponsored by HireThisWalker.com
@@ -31,7 +39,10 @@ export default function ShiftF1Banner() {
 
       {/* Close button */}
       <button
-        onClick={() => setIsVisible(false)}
+        onClick={(e) => {
+          e.preventDefault();
+          setIsVisible(false);
+        }}
         className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-white/80 transition-colors z-10"
         aria-label="Close banner"
       >
@@ -50,6 +61,6 @@ export default function ShiftF1Banner() {
           />
         </svg>
       </button>
-    </div>
+    </a>
   );
 }
