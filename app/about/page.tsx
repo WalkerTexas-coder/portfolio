@@ -72,29 +72,12 @@ export default function About() {
               />
             </div>
 
-            {/* COTA night photo - smaller and positioned nicely */}
-            <div className="flex flex-col justify-center">
-              <Image
-                src={cota2Image}
-                alt="COTA at night"
-                width={300}
-                height={200}
-                className="rounded-lg shadow-lg w-full object-cover mb-4"
-              />
-              <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                COTA nights - a bit blurry but captures the vibe
-              </p>
-            </div>
-
-            {/* Placeholder for one more photo if you want to add it */}
-            <div className="bg-gray-200 dark:bg-gray-800 rounded-lg aspect-square flex items-center justify-center lg:col-span-1">
-              <p className="text-gray-500 text-center">Ready for another<br />Austin photo</p>
-            </div>
+            
           </div>
         </div>
       </section>
       {/* Track Record Section */}
-            <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
+            {/* <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
               <div className="container mx-auto max-w-5xl">
                 <h2 className="text-3xl font-bold mb-6 text-center">Track Record</h2>
                 <div className="mt-4 text-center">
@@ -139,7 +122,7 @@ export default function About() {
       
                
               </div>
-            </section>
+            </section> */}
 
       {/* Origin Story Section */}
       <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
