@@ -32,7 +32,7 @@ export default function ShiftF1() {
           </p>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-white">
             <h2 className="text-2xl font-bold mb-4">📅 December 6th, 2025</h2>
-            <p className="text-lg mb-2">11:00 AM - 4:00 PM</p>
+            <p className="text-lg mb-2">12:30 pm - 2:30 pm </p>
             <p className="text-sm opacity-80">*Placeholder schedule - actual race times pending</p>
           </div>
         </div>
@@ -85,12 +85,13 @@ export default function ShiftF1() {
               <div>
                 <h4 className="font-semibold mb-3 text-lg">⏰ Schedule (Tentative)</h4>
                 <div className="space-y-2 mb-4">
-                  <p><strong>11:00 AM</strong> - Check-in & Safety Briefing</p>
-                  <p><strong>11:30 AM</strong> - Race 1</p>
-                  <p><strong>1:00 PM</strong> - Break</p>
-                  <p><strong>2:00 PM</strong> - Race 2</p>
-                  <p><strong>3:00 PM</strong> - Race 3</p>
-                  <p><strong>3:45 PM</strong> - Photos, "Awards," & Wrap-up</p>
+                  <p><strong>12:30 PM</strong> - Check-in & Safety Briefing</p>
+                  <p><strong>1:00 PM</strong> - Race 1</p>
+                  <p><strong>1:15 PM</strong> - Break</p>
+                  <p><strong>1:30 PM</strong> - Race 2</p>
+                  <p><strong>1:45 PM</strong> - Break</p>
+                  <p><strong>2:00 PM</strong> - Race 3</p>
+                  <p><strong>2:15 PM</strong> Photos, "Awards," & Wrap-up</p>
                 </div>
                 <p className="text-sm text-orange-600 dark:text-orange-400 font-medium">
                   ⚠️ Schedule is preliminary - actual race times will be confirmed closer to the event

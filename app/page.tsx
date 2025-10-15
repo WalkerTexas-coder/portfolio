@@ -5,6 +5,7 @@ import ProjectCard from "./components/ProjectCard";
 import ExperienceItem from "./components/ExperienceItem";
 import Contact from "./components/Contact";
 import FadeInOnScroll from "./components/FadeInOnScroll";
+import ShiftF1Banner from "./components/ShiftF1Banner";
 import atxImage from "./images/atx.png";
 import rugietImage from "./images/rugiet-health.png";
 import cplImage from "./images/cpl2.png";
@@ -15,6 +16,14 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Navbar */}
       <Navbar />
+
+      {/* Shift+F1 Thank You Banner - positioned below fixed navbar */}
+      <div className="pt-16">
+        <ShiftF1Banner />
+      </div>
+
+      
+      
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">

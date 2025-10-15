@@ -101,3 +101,23 @@ body {
 .experience-prose .list-none li {
   @apply mb-2;
 }
+
+/* Scrolling Banner Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.banner-scroll {
+  display: flex;
+  width: fit-content;
+}
+
+.banner-content {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
