@@ -128,7 +128,7 @@ export default function ShiftF1() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <Link
-                href="mailto:walkertexasaustin@gmail.com?subject=Shift+F1 Early Bird - Count Me In!"
+                href="mailto:walkertexasaustin+shiftf1@gmail.com?subject=Shift+F1 Early Bird - Count Me In!"
                 className="inline-block px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
               >
                 🏁 Claim My Spot!

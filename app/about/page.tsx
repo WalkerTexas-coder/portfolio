@@ -279,7 +279,7 @@ export default function About() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link
-              href="mailto:walkertexasaustin@gmail.com"
+              href="mailto:walkertexasaustin+hire@gmail.com"
               className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               Email Me
