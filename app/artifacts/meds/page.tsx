@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 export default function MedsComCaseStudy() {
   const [activePrototype, setActivePrototype] = useState<'selection' | 'dashboard'>('selection');
+  const [strategyView, setStrategyView] = useState<'single-brand' | 'multi-brand'>('multi-brand');
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -32,25 +33,89 @@ export default function MedsComCaseStudy() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Executive Summary</h2>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              This case study demonstrates how BlueChew could expand from a single-disease platform (Sexual Health / ED)
-              to a multi-disease platform supporting <strong>Weight Management</strong> and <strong>Hair Loss</strong> treatments.
-              The analysis includes competitive research, financial modeling (LTV/CAC), interactive prototypes, and detailed
-              implementation tickets.
+              This case study explores <strong>two strategic approaches</strong> for Meds.com to expand beyond BlueChew's
+              single-disease model (Sexual Health / ED) to capture Weight Management and Hair Loss markets. The analysis
+              includes competitive research, financial modeling (LTV/CAC), interactive prototypes, and detailed implementation tickets.
             </p>
-            <div className="grid grid-cols-3 gap-6 mt-6">
-              <div className="text-center p-4 bg-blue-50 rounded-lg">
-                <div className="text-3xl font-bold text-blue-600 mb-1">3</div>
-                <div className="text-sm text-gray-700">Disease States</div>
-              </div>
-              <div className="text-center p-4 bg-green-50 rounded-lg">
-                <div className="text-3xl font-bold text-green-600 mb-1">$750-950</div>
-                <div className="text-sm text-gray-700">Projected Annual LTV</div>
-              </div>
-              <div className="text-center p-4 bg-purple-50 rounded-lg">
-                <div className="text-3xl font-bold text-purple-600 mb-1">3.5:1</div>
-                <div className="text-sm text-gray-700">Target LTV:CAC Ratio</div>
+
+            {/* Strategy Toggle */}
+            <div className="mb-6">
+              <div className="flex items-center gap-4 bg-gray-50 p-2 rounded-lg inline-flex">
+                <button
+                  onClick={() => setStrategyView('single-brand')}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all ${
+                    strategyView === 'single-brand'
+                      ? 'bg-white text-gray-900 shadow-md'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  Option A: BlueChew Expands
+                </button>
+                <button
+                  onClick={() => setStrategyView('multi-brand')}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all ${
+                    strategyView === 'multi-brand'
+                      ? 'bg-white text-gray-900 shadow-md'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  Option B: Meds.com Multi-Brand Platform
+                </button>
               </div>
             </div>
+
+            {strategyView === 'single-brand' && (
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                <h3 className="font-bold text-blue-900 mb-3">Strategy: Single-Brand Expansion</h3>
+                <p className="text-sm text-blue-800 mb-3">
+                  Add Weight Management and Hair Loss categories directly to BlueChew, similar to how Hims expanded
+                  from ED to multi-category offerings.
+                </p>
+                <div className="grid grid-cols-3 gap-4 mt-4">
+                  <div className="bg-white rounded p-3 text-center">
+                    <div className="text-2xl font-bold text-blue-600">3</div>
+                    <div className="text-xs text-gray-700">Disease States</div>
+                  </div>
+                  <div className="bg-white rounded p-3 text-center">
+                    <div className="text-2xl font-bold text-green-600">$750-950</div>
+                    <div className="text-xs text-gray-700">Annual LTV</div>
+                  </div>
+                  <div className="bg-white rounded p-3 text-center">
+                    <div className="text-2xl font-bold text-purple-600">3.5:1</div>
+                    <div className="text-xs text-gray-700">LTV:CAC Ratio</div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {strategyView === 'multi-brand' && (
+              <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-6">
+                <h3 className="font-bold text-purple-900 mb-3">Strategy: Multi-Brand Platform (30 Madison Model)</h3>
+                <p className="text-sm text-purple-800 mb-3">
+                  Launch separate brands for Weight Management and Hair Loss on shared multi-tenant infrastructure,
+                  similar to 30 Madison's portfolio (Nurx, Keeps). Cross-sell existing BlueChew patients with
+                  "seamless onboarding" (data porting), dramatically reducing CAC for new brands.
+                </p>
+                <div className="grid grid-cols-4 gap-4 mt-4">
+                  <div className="bg-white rounded p-3 text-center">
+                    <div className="text-2xl font-bold text-purple-600">3</div>
+                    <div className="text-xs text-gray-700">Separate Brands</div>
+                  </div>
+                  <div className="bg-white rounded p-3 text-center">
+                    <div className="text-2xl font-bold text-green-600">$1,890</div>
+                    <div className="text-xs text-gray-700">Multi-Brand LTV</div>
+                  </div>
+                  <div className="bg-white rounded p-3 text-center">
+                    <div className="text-2xl font-bold text-orange-600">-65%</div>
+                    <div className="text-xs text-gray-700">CAC Reduction</div>
+                  </div>
+                  <div className="bg-white rounded p-3 text-center">
+                    <div className="text-2xl font-bold text-blue-600">8.1:1</div>
+                    <div className="text-xs text-gray-700">Blended LTV:CAC</div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -113,6 +178,20 @@ export default function MedsComCaseStudy() {
                     <td className="px-6 py-4 text-sm text-gray-700">$100-150/customer</td>
                     <td className="px-6 py-4 text-sm text-gray-700">Men's health positioning, clinical credibility</td>
                   </tr>
+                  <tr className="bg-purple-50 hover:bg-purple-100">
+                    <td className="px-6 py-4">
+                      <div className="font-medium text-purple-900">30 Madison</div>
+                      <div className="text-xs text-purple-700">Multi-Brand Portfolio Model</div>
+                    </td>
+                    <td className="px-6 py-4 text-sm text-purple-900">
+                      Multiple brands: Nurx (women's health), Keeps (hair loss), Cove (migraine)
+                    </td>
+                    <td className="px-6 py-4 text-sm text-purple-900">Brand-specific pricing</td>
+                    <td className="px-6 py-4 text-sm text-purple-900 font-medium">$150-200/customer (cross-brand)</td>
+                    <td className="px-6 py-4 text-sm text-purple-900">
+                      Multi-tenant platform, shared infrastructure, patient porting reduces CAC
+                    </td>
+                  </tr>
                   <tr className="bg-blue-50">
                     <td className="px-6 py-4">
                       <div className="font-medium text-blue-900">BlueChew (Proposed)</div>
@@ -138,11 +217,15 @@ export default function MedsComCaseStudy() {
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 font-bold">•</span>
-                  <span><strong>Hims dominates multi-disease:</strong> 5+ categories, $120-180 monthly revenue per customer</span>
+                  <span><strong>Hims dominates single-brand multi-disease:</strong> 5+ categories, $120-180 monthly revenue per customer</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600 font-bold">•</span>
+                  <span><strong>30 Madison proves multi-brand model:</strong> Portfolio of separate brands (Nurx, Keeps, Cove) on shared infrastructure, $150-200 cross-brand revenue</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 font-bold">•</span>
-                  <span><strong>Hair loss is proven:</strong> Keeps sustains business on single category at $45-60/mo</span>
+                  <span><strong>Hair loss is proven:</strong> Keeps (30 Madison subsidiary) sustains business on single category at $45-60/mo</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 font-bold">•</span>
@@ -150,7 +233,7 @@ export default function MedsComCaseStudy() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 font-bold">•</span>
-                  <span><strong>BlueChew's opportunity:</strong> Leverage brand trust + affordability positioning to capture multi-disease market</span>
+                  <span><strong>Meds.com's advantage:</strong> Already owns proven brand (BlueChew) + multi-tenant infrastructure (Teligant). Can replicate 30 Madison model.</span>
                 </li>
               </ul>
             </div>
@@ -349,32 +432,207 @@ export default function MedsComCaseStudy() {
             </div>
           </div>
 
-          {/* Combined Impact */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8">
-            <h3 className="text-2xl font-bold mb-6 text-center">Combined Platform Impact</h3>
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">$80-120</div>
-                <div className="text-sm opacity-90">Avg Monthly Revenue per Customer</div>
-                <div className="text-xs opacity-75 mt-1">(vs. $40-50 current)</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">$750-950</div>
-                <div className="text-sm opacity-90">Projected Annual LTV</div>
-                <div className="text-xs opacity-75 mt-1">(multi-disease customers)</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">3.5:1</div>
-                <div className="text-sm opacity-90">Target LTV:CAC Ratio</div>
-                <div className="text-xs opacity-75 mt-1">(blended across categories)</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">2.5x</div>
-                <div className="text-sm opacity-90">Revenue Multiplier</div>
-                <div className="text-xs opacity-75 mt-1">(vs. single-disease model)</div>
+          {/* Strategy-Specific Financial Summary */}
+          {strategyView === 'single-brand' && (
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8">
+              <h3 className="text-2xl font-bold mb-6 text-center">Single-Brand Expansion Impact</h3>
+              <div className="grid md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold mb-2">$80-120</div>
+                  <div className="text-sm opacity-90">Avg Monthly Revenue per Customer</div>
+                  <div className="text-xs opacity-75 mt-1">(vs. $40-50 current)</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold mb-2">$750-950</div>
+                  <div className="text-sm opacity-90">Projected Annual LTV</div>
+                  <div className="text-xs opacity-75 mt-1">(multi-disease customers)</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold mb-2">3.5:1</div>
+                  <div className="text-sm opacity-90">Target LTV:CAC Ratio</div>
+                  <div className="text-xs opacity-75 mt-1">(blended across categories)</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold mb-2">2.5x</div>
+                  <div className="text-sm opacity-90">Revenue Multiplier</div>
+                  <div className="text-xs opacity-75 mt-1">(vs. single-disease model)</div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
+
+          {strategyView === 'multi-brand' && (
+            <div className="space-y-6">
+              {/* Multi-Brand Financial Model */}
+              <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg p-8">
+                <h3 className="text-2xl font-bold mb-4">Multi-Brand Platform Economics (30 Madison Model)</h3>
+                <p className="text-sm opacity-90 mb-6">
+                  Three separate brands on shared infrastructure. Existing BlueChew patients cross-sold to new brands with "seamless onboarding" (data porting) - dramatically reducing CAC.
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <div className="text-sm font-medium opacity-75 mb-2">Brand 1: BlueChew</div>
+                    <div className="text-xl font-bold">Sexual Health</div>
+                    <div className="text-sm mt-2">$45/mo avg × 12 months</div>
+                    <div className="text-2xl font-bold mt-2">$540 LTV</div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <div className="text-sm font-medium opacity-75 mb-2">Brand 2: WeightRx</div>
+                    <div className="text-xl font-bold">Weight Management</div>
+                    <div className="text-sm mt-2">$349/mo avg × 8 months</div>
+                    <div className="text-2xl font-bold mt-2">$978 LTV</div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <div className="text-sm font-medium opacity-75 mb-2">Brand 3: GrowthRx</div>
+                    <div className="text-xl font-bold">Hair Loss</div>
+                    <div className="text-sm mt-2">$35/mo avg × 18 months</div>
+                    <div className="text-2xl font-bold mt-2">$378 LTV</div>
+                  </div>
+                </div>
+
+                <div className="border-t border-white/20 pt-6 grid md:grid-cols-4 gap-6">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold mb-2">$1,890</div>
+                    <div className="text-sm opacity-90">Combined Multi-Brand LTV</div>
+                    <div className="text-xs opacity-75 mt-1">(patient uses all 3 brands)</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold mb-2">$233</div>
+                    <div className="text-sm opacity-90">Blended CAC</div>
+                    <div className="text-xs opacity-75 mt-1">(65% reduction via patient porting)</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold mb-2">8.1:1</div>
+                    <div className="text-sm opacity-90">Blended LTV:CAC Ratio</div>
+                    <div className="text-xs opacity-75 mt-1">(vs. 3.5:1 single-brand)</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold mb-2">3.5x</div>
+                    <div className="text-sm opacity-90">Revenue Multiplier</div>
+                    <div className="text-xs opacity-75 mt-1">(vs. single-brand model)</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CAC Reduction Breakdown */}
+              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">How Multi-Brand Reduces CAC by 65%</h3>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">Brand 1 Acquisition (BlueChew)</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Paid advertising</span>
+                        <span className="font-medium">$150</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Provider consultation</span>
+                        <span className="font-medium">$40</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Onboarding</span>
+                        <span className="font-medium">$30</span>
+                      </div>
+                      <div className="flex justify-between border-t border-gray-200 pt-2 font-bold">
+                        <span>Full CAC (First Brand)</span>
+                        <span>$220</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">Brand 2 & 3 Cross-Sell (WeightRx/GrowthRx)</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">In-app messaging + email</span>
+                        <span className="font-medium">$15</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Provider consultation (discounted)</span>
+                        <span className="font-medium">$30</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Data porting (automated)</span>
+                        <span className="font-medium">$5</span>
+                      </div>
+                      <div className="flex justify-between border-t border-gray-200 pt-2 font-bold text-green-900">
+                        <span>Reduced CAC (Cross-Sell)</span>
+                        <span>$50</span>
+                      </div>
+                      <div className="text-xs text-green-700 mt-2">
+                        <strong>77% cheaper</strong> than acquiring cold traffic
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 p-4 bg-purple-50 border border-purple-200 rounded-lg">
+                  <h4 className="font-semibold text-purple-900 mb-2">Blended CAC Calculation</h4>
+                  <p className="text-sm text-purple-800 mb-3">
+                    Patient acquired through BlueChew ($220) then cross-sold to WeightRx ($50) and GrowthRx ($50):
+                  </p>
+                  <div className="text-sm font-mono bg-white rounded p-3 text-gray-900">
+                    <div>Total CAC across 3 brands: $220 + $50 + $50 = <strong>$320</strong></div>
+                    <div className="mt-1">Blended CAC per brand: $320 / 3 = <strong>$107</strong></div>
+                    <div className="mt-2 text-purple-900">Compared to acquiring each brand separately: 3 × $220 = $660</div>
+                    <div className="mt-1 font-bold text-green-900">Savings: <strong>$340 (51% reduction)</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Patient Journey Visualization */}
+              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Patient Journey: Cross-Brand Migration</h3>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-900 flex-shrink-0">
+                      1
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-900">Month 1-12: BlueChew Subscriber</div>
+                      <div className="text-sm text-gray-600">Patient purchases ED medication through BlueChew. Platform collects medical history, preferences, payment info.</div>
+                      <div className="text-xs text-blue-700 mt-1"><strong>LTV: $540</strong> • CAC: $220 • LTV:CAC = 2.5:1</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center font-bold text-purple-900 flex-shrink-0">
+                      2
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-900">Month 6: Cross-Sell to WeightRx</div>
+                      <div className="text-sm text-gray-600">In-app banner: "Struggling with weight? Try WeightRx - your BlueChew profile transfers over." Patient clicks, medical history auto-populated, one-click approval.</div>
+                      <div className="text-xs text-purple-700 mt-1"><strong>LTV: $978</strong> • CAC: $50 (cross-sell) • LTV:CAC = 19.6:1</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center font-bold text-green-900 flex-shrink-0">
+                      3
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-900">Month 18: Cross-Sell to GrowthRx</div>
+                      <div className="text-sm text-gray-600">Email campaign: "Hair loss treatment starting at $30/mo - no new consultation needed." Patient data ported from BlueChew, instant prescription approval.</div>
+                      <div className="text-xs text-green-700 mt-1"><strong>LTV: $378</strong> • CAC: $50 (cross-sell) • LTV:CAC = 7.6:1</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 via-purple-50 to-green-50 border border-gray-200 rounded-lg">
+                    <div className="font-bold text-gray-900 mb-2">Total Patient Lifetime Value Across All Brands</div>
+                    <div className="text-3xl font-bold text-gray-900">$1,890</div>
+                    <div className="text-sm text-gray-700 mt-2">Blended CAC: $107 per brand × 3 brands = $320 total</div>
+                    <div className="text-sm font-bold text-green-900 mt-1">Overall LTV:CAC Ratio: <span className="text-2xl">5.9:1</span></div>
+                    <div className="text-xs text-gray-600 mt-2">
+                      *Assumes 25% of BlueChew patients adopt WeightRx, and 15% adopt GrowthRx within 24 months
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* Interactive Prototypes */}
