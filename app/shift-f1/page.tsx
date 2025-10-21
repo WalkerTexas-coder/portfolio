@@ -25,15 +25,18 @@ export default function ShiftF1() {
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Shift + F1</h1>
           <p className="text-xl md:text-2xl text-white/90 mb-4">
-            Austin Tech Go-Karting at Circuit of the Americas
+            Austin TX Go-Karting at Circuit of the Americas
           </p>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-lg text-white/80 mb-4">
             Celebrating HireThisWalker.com's sponsorship of the Shift+F1 podcast! 
           </p>
+          <p className="text-lg text-white/80 mb-4">
+            I'm hoping this small gathering of fans will help me find a job. The first two people to sign up will get 3 races on me. (Danny it's real) 
+          </p>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-white">
-            <h2 className="text-2xl font-bold mb-4">📅 December 6th, 2025</h2>
+            <h2 className="text-2xl font-bold mb-4">📅 Saturday, December 6th, 2025</h2>
             <p className="text-lg mb-2">12:30 pm - 2:30 pm </p>
-            <p className="text-sm opacity-80">*Placeholder schedule - actual race times pending</p>
+            <p className="text-sm opacity-80">Race times are confirmed</p>
           </div>
         </div>
       </section>
@@ -94,7 +97,7 @@ export default function ShiftF1() {
                   <p><strong>2:15 PM</strong> Photos, "Awards," & Wrap-up</p>
                 </div>
                 <p className="text-sm text-orange-600 dark:text-orange-400 font-medium">
-                  ⚠️ Schedule is preliminary - actual race times will be confirmed closer to the event
+                  🏁 Schedule is confirmed
                 </p>
 
                 <h4 className="font-semibold mb-3 text-lg mt-6">💰 Expected Costs</h4>
