@@ -281,16 +281,16 @@ export default function MedsComCaseStudy() {
                   <h4 className="text-sm font-semibold text-gray-700 mb-2">Pricing Structure</h4>
                   <div className="bg-gray-50 rounded p-3 space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Semaglutide (SEMA)</span>
-                      <span className="font-medium">$299/mo</span>
+                      <span className="text-gray-900">Semaglutide (SEMA)</span>
+                      <span className="font-medium text-gray-900">$299/mo</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Tirzepatide (TIRZ)</span>
-                      <span className="font-medium">$399/mo</span>
+                      <span className="text-gray-900">Tirzepatide (TIRZ)</span>
+                      <span className="font-medium text-gray-900">$399/mo</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Average</span>
-                      <span className="font-bold">$349/mo</span>
+                      <span className="text-gray-900">Average</span>
+                      <span className="font-bold text-gray-900">$349/mo</span>
                     </div>
                   </div>
                 </div>
@@ -299,16 +299,16 @@ export default function MedsComCaseStudy() {
                   <h4 className="text-sm font-semibold text-gray-700 mb-2">Customer Lifetime Value</h4>
                   <div className="bg-blue-50 rounded p-3 space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-700">Average subscription length</span>
-                      <span className="font-medium">8 months</span>
+                      <span className="text-gray-900">Average subscription length</span>
+                      <span className="font-medium text-gray-900">8 months</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-700">Monthly revenue</span>
-                      <span className="font-medium">$349</span>
+                      <span className="text-gray-900">Monthly revenue</span>
+                      <span className="font-medium text-gray-900">$349</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-700">Gross margin</span>
-                      <span className="font-medium">35%</span>
+                      <span className="text-gray-900">Gross margin</span>
+                      <span className="font-medium text-gray-900">35%</span>
                     </div>
                     <div className="flex justify-between border-t border-blue-200 pt-2">
                       <span className="text-gray-900 font-bold">Lifetime Value (LTV)</span>
@@ -321,20 +321,20 @@ export default function MedsComCaseStudy() {
                   <h4 className="text-sm font-semibold text-gray-700 mb-2">Customer Acquisition Cost</h4>
                   <div className="bg-gray-50 rounded p-3 space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Paid advertising</span>
-                      <span className="font-medium">$180</span>
+                      <span className="text-gray-900">Paid advertising</span>
+                      <span className="font-medium text-gray-900">$180</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Provider consultation</span>
-                      <span className="font-medium">$40</span>
+                      <span className="text-gray-900">Provider consultation</span>
+                      <span className="font-medium text-gray-900">$40</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Onboarding costs</span>
-                      <span className="font-medium">$30</span>
+                      <span className="text-gray-900">Onboarding costs</span>
+                      <span className="font-medium text-gray-900">$30</span>
                     </div>
                     <div className="flex justify-between border-t border-gray-300 pt-2">
                       <span className="text-gray-900 font-bold">Total CAC</span>
-                      <span className="font-bold">$250</span>
+                      <span className="font-bold text-gray-900">$250</span>
                     </div>
                   </div>
                 </div>
@@ -361,20 +361,20 @@ export default function MedsComCaseStudy() {
                   <h4 className="text-sm font-semibold text-gray-700 mb-2">Pricing Structure</h4>
                   <div className="bg-gray-50 rounded p-3 space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Finasteride</span>
-                      <span className="font-medium">$30/mo</span>
+                      <span className="text-gray-900">Finasteride</span>
+                      <span className="font-medium text-gray-900">$30/mo</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Minoxidil</span>
-                      <span className="font-medium">$25/mo</span>
+                      <span className="text-gray-900">Minoxidil</span>
+                      <span className="font-medium text-gray-900">$25/mo</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Combination Therapy</span>
-                      <span className="font-medium">$50/mo</span>
+                      <span className="text-gray-900">Combination Therapy</span>
+                      <span className="font-medium text-gray-900">$50/mo</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Average</span>
-                      <span className="font-bold">$35/mo</span>
+                      <span className="text-gray-900">Average</span>
+                      <span className="font-bold text-gray-900">$35/mo</span>
                     </div>
                   </div>
                 </div>
@@ -383,16 +383,16 @@ export default function MedsComCaseStudy() {
                   <h4 className="text-sm font-semibold text-gray-700 mb-2">Customer Lifetime Value</h4>
                   <div className="bg-blue-50 rounded p-3 space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-700">Average subscription length</span>
-                      <span className="font-medium">18 months</span>
+                      <span className="text-gray-900">Average subscription length</span>
+                      <span className="font-medium text-gray-900">18 months</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-700">Monthly revenue</span>
-                      <span className="font-medium">$35</span>
+                      <span className="text-gray-900">Monthly revenue</span>
+                      <span className="font-medium text-gray-900">$35</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-700">Gross margin</span>
-                      <span className="font-medium">60%</span>
+                      <span className="text-gray-900">Gross margin</span>
+                      <span className="font-medium text-gray-900">60%</span>
                     </div>
                     <div className="flex justify-between border-t border-blue-200 pt-2">
                       <span className="text-gray-900 font-bold">Lifetime Value (LTV)</span>
@@ -405,20 +405,20 @@ export default function MedsComCaseStudy() {
                   <h4 className="text-sm font-semibold text-gray-700 mb-2">Customer Acquisition Cost</h4>
                   <div className="bg-gray-50 rounded p-3 space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Paid advertising</span>
-                      <span className="font-medium">$80</span>
+                      <span className="text-gray-900">Paid advertising</span>
+                      <span className="font-medium text-gray-900">$80</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Provider consultation</span>
-                      <span className="font-medium">$30</span>
+                      <span className="text-gray-900">Provider consultation</span>
+                      <span className="font-medium text-gray-900">$30</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Onboarding costs</span>
-                      <span className="font-medium">$20</span>
+                      <span className="text-gray-900">Onboarding costs</span>
+                      <span className="font-medium text-gray-900">$20</span>
                     </div>
                     <div className="flex justify-between border-t border-gray-300 pt-2">
                       <span className="text-gray-900 font-bold">Total CAC</span>
-                      <span className="font-bold">$130</span>
+                      <span className="font-bold text-gray-900">$130</span>
                     </div>
                   </div>
                 </div>
@@ -524,20 +524,20 @@ export default function MedsComCaseStudy() {
                     <h4 className="font-semibold text-gray-900 mb-3">Brand 1 Acquisition (BlueChew)</h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Paid advertising</span>
-                        <span className="font-medium">$150</span>
+                        <span className="text-gray-900">Paid advertising</span>
+                        <span className="font-medium text-gray-900">$150</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Provider consultation</span>
-                        <span className="font-medium">$40</span>
+                        <span className="text-gray-900">Provider consultation</span>
+                        <span className="font-medium text-gray-900">$40</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Onboarding</span>
-                        <span className="font-medium">$30</span>
+                        <span className="text-gray-900">Onboarding</span>
+                        <span className="font-medium text-gray-900">$30</span>
                       </div>
                       <div className="flex justify-between border-t border-gray-200 pt-2 font-bold">
-                        <span>Full CAC (First Brand)</span>
-                        <span>$220</span>
+                        <span className="text-gray-900">Full CAC (First Brand)</span>
+                        <span className="text-gray-900">$220</span>
                       </div>
                     </div>
                   </div>
@@ -546,16 +546,16 @@ export default function MedsComCaseStudy() {
                     <h4 className="font-semibold text-gray-900 mb-3">Brand 2 & 3 Cross-Sell (WeightRx/GrowthRx)</h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">In-app messaging + email</span>
-                        <span className="font-medium">$15</span>
+                        <span className="text-gray-900">In-app messaging + email</span>
+                        <span className="font-medium text-gray-900">$15</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Provider consultation (discounted)</span>
-                        <span className="font-medium">$30</span>
+                        <span className="text-gray-900">Provider consultation (discounted)</span>
+                        <span className="font-medium text-gray-900">$30</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Data porting (automated)</span>
-                        <span className="font-medium">$5</span>
+                        <span className="text-gray-900">Data porting (automated)</span>
+                        <span className="font-medium text-gray-900">$5</span>
                       </div>
                       <div className="flex justify-between border-t border-gray-200 pt-2 font-bold text-green-900">
                         <span>Reduced CAC (Cross-Sell)</span>
