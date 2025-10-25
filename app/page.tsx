@@ -77,52 +77,20 @@ export default function Home() {
       {/* About Section */}
       <section className="py-20 px-6 md:px-12 gradient-bg">
         <div className="container mx-auto max-w-6xl">
-          {/* Statement Cards Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <FadeInOnScroll delay={0}>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/15 transition-all duration-300 hover:translate-y-[-4px] h-full flex items-center">
-                <p className="text-xl md:text-2xl leading-relaxed text-white font-semibold">
-                  I draw ERDs during stakeholder calls. 
-                  <br/>
-                  I code enough to challenge estimates. 
-                  <br/>
-                  I ship fast enough to catch overengineering.
-                </p>
-              </div>
-            </FadeInOnScroll>
+          {/* Single Statement Card */}
+          <FadeInOnScroll delay={0}>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 mb-12 hover:bg-white/15 transition-all duration-300">
+              <p className="text-2xl md:text-3xl leading-relaxed text-white font-semibold text-center">
+                I identify the problems worth solving, collaborate with cross-functional teams to align around outcomes, and use data to measure whether we're creating real value—not just shipping features.
+              </p>
+            </div>
+          </FadeInOnScroll>
 
-            <FadeInOnScroll delay={100}>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/15 transition-all duration-300 hover:translate-y-[-4px] h-full flex items-center">
-                <p className="text-xl md:text-2xl leading-relaxed text-white font-semibold">
-                  I don't just build what stakeholders ask for—I ask what they actually need.
-                </p>
-              </div>
-            </FadeInOnScroll>
-
-            <FadeInOnScroll delay={200}>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/15 transition-all duration-300 hover:translate-y-[-4px] h-full flex items-center">
-                <p className="text-xl md:text-2xl leading-relaxed text-white/90 font-semibold">
-                  Patient outcomes over feature counts. Working software over perfect specs. The best product decisions aren't about what to build—they're about what not to build.
-                </p>
-              </div>
-            </FadeInOnScroll>
-
-            <FadeInOnScroll delay={300}>
-              <Link href="#connect" className="block h-full">
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/15 transition-all duration-300 hover:translate-y-[-4px] h-full flex items-center cursor-pointer">
-                  <p className="text-xl md:text-2xl leading-relaxed text-white/90 font-semibold">
-                    Looking for a senior PM? Need someone to gut-check your roadmap? Either way, let's connect.
-                  </p>
-                </div>
-              </Link>
-            </FadeInOnScroll>
-          </div>
-
-          {/* Expertise Badges */}
-          <FadeInOnScroll delay={400}>
+          {/* Expanded Expertise Badges */}
+          <FadeInOnScroll delay={100}>
             <div className="flex flex-wrap gap-3 justify-center">
               <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
-                Healthcare Domain
+                Healthcare Domain (3 years)
               </span>
               <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
                 Technical PM
@@ -131,10 +99,28 @@ export default function Home() {
                 0-1 Builds
               </span>
               <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
-                Compliance (HIPAA/SOC 2)
+                HIPAA/SOC 2 Compliance
               </span>
               <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
                 Data Architecture
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                Multi-Tenant SaaS
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                Pharmacy Integrations
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                E-Prescribing (DoseSpot)
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                Lab Integration (Choose Health)
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                Payment Systems (PayTheory)
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
+                Escalating Dose Protocols
               </span>
               <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-medium border border-white/30">
                 AI Integration
