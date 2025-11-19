@@ -37,29 +37,17 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link 
-            href="/about" 
+          <Link
+            href="/journey"
             className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
           >
-            About
+            My Story
           </Link>
           <Link
             href="/resume"
             className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
           >
             Resume
-          </Link>
-          <Link 
-            href="/projects" 
-            className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
-          >
-            Projects
-          </Link>
-          <Link 
-            href="/shift-f1" 
-            className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
-          >
-            Shift + F1
           </Link>
           <Link
             href="/#connect"
@@ -121,12 +109,12 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-black py-4 px-6">
           <div className="flex flex-col space-y-4">
-            <Link 
-              href="/about" 
+            <Link
+              href="/journey"
               className="text-foreground hover:opacity-70 transition-opacity"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About
+              My Story
             </Link>
             <Link
               href="/resume"
@@ -134,20 +122,6 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Resume
-            </Link>
-            <Link 
-              href="/projects" 
-              className="text-foreground hover:opacity-70 transition-opacity"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Projects
-            </Link>
-            <Link 
-              href="/shift-f1" 
-              className="text-foreground hover:opacity-70 transition-opacity"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Shift + F1
             </Link>
             <Link
               href="/#connect"

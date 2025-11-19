@@ -49,6 +49,12 @@ export default function Home() {
            
             <div className="flex flex-col md:flex-row gap-4 mt-8">
               <Link
+                href="/journey"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
+              >
+                Start My Story →
+              </Link>
+              <Link
                 href="#work"
                 className="inline-block px-6 py-3 border-b-2 border-white text-white hover:bg-white/10 transition-colors"
               >
