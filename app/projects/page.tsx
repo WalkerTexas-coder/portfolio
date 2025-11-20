@@ -1,55 +1,141 @@
-import ExperienceItem from "../components/ExperienceItem";
+import Link from "next/link";
+import Navbar from "../components/Navbar";
+import FadeInOnScroll from "../components/FadeInOnScroll";
+import indexData from "./content/index.json";
 
-export default function Projects() {
+interface ProjectCardProps {
+  slug: string;
+  title: string;
+  subtitle: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  readTime: string;
+  tags: string[];
+}
+
+function ProjectCard({ slug, title, subtitle, problem, solution, impact, readTime, tags }: ProjectCardProps) {
+  return (
+    <Link href={`/projects/${slug}`} className="block group">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 h-full border-t-4 border-purple-500 hover:border-blue-500">
+        <div className="flex items-center justify-between mb-4">
+          <span className="text-sm text-gray-500 dark:text-gray-400">{readTime}</span>
+          <div className="flex flex-wrap gap-2">
+            {tags.slice(0, 2).map((tag, index) => (
+              <span
+                key={index}
+                className="text-xs px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-900 dark:text-purple-200 rounded-full font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+          {title}
+        </h3>
+
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-medium">
+          {subtitle}
+        </p>
+
+        <div className="space-y-3 mb-4">
+          <div>
+            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Problem</span>
+            <p className="text-sm text-gray-700 dark:text-gray-300">{problem}</p>
+          </div>
+          <div>
+            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Solution</span>
+            <p className="text-sm text-gray-700 dark:text-gray-300">{solution}</p>
+          </div>
+          <div>
+            <span className="text-xs font-semibold text-green-600 dark:text-green-400 uppercase">Impact</span>
+            <p className="text-sm font-semibold text-gray-900 dark:text-white">{impact}</p>
+          </div>
+        </div>
+
+        <div className="flex items-center text-purple-600 dark:text-purple-400 font-semibold group-hover:translate-x-2 transition-transform pt-4 border-t border-gray-200 dark:border-gray-700">
+          Read case study →
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+export default function ProjectsPage() {
   return (
     <div className="min-h-screen">
+      <Navbar />
+
       {/* Hero Section */}
-      <section className="py-20 px-6 md:px-12">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-8">Major Projects</h1>
-          <p className="text-xl md:text-2xl leading-relaxed mb-12">
-            Product management in healthcare is 50% strategy, 50% operational obsession. Here are four projects
-            that demonstrate how I identify problems, design solutions, and measure impact—not just ship features.
-          </p>
+      <section className="pt-32 pb-16 px-6 md:px-12 gradient-bg">
+        <div className="container mx-auto max-w-5xl">
+          <FadeInOnScroll>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              {indexData.title}
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
+              {indexData.description}
+            </p>
+          </FadeInOnScroll>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto">
-          <div className="mb-20">
-            <ExperienceItem
-              title="Pharmacy Fulfillment Workflow"
-              company="Problem: Prescription Routing Chaos"
-              description="Doctors were manually routing prescriptions across 4 pharmacy partners (Crafted RX, Greenwich/Texas Performance Meds, Outreach RX, patient local pharmacy) with no systematic guidance, risking missed and duplicate prescriptions. Strategic thinking: Spent two days shadowing doctors to understand workflow—discovered the real issue wasn't just unclear routing logic, they had no audit trail to track what they'd sent. Product judgment: Built manual workflow bridge above DoseSpot iframe rather than complex automation, balancing speed with reliability. Holistic implementation: Wrote 12 detailed Jira tickets across 2 sprint cycles with acceptance criteria and edge cases. Impact: Eliminated 100% of prescription routing errors within 3 weeks. System now processes 200+ prescriptions monthly with zero failures and complete audit trail."
-              projectName="User Research → Workflow Design → Zero Errors"
-              imageBgColor="from-emerald-500 to-teal-500"
-            />
+      <section className="py-20 px-6 md:px-12">
+        <div className="container mx-auto max-w-6xl">
+          <FadeInOnScroll delay={100}>
+            <div className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Case Studies</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400">
+                Four projects showcasing the full product lifecycle: ideation, validation, implementation,
+                testing, deployment, and scale.
+              </p>
+            </div>
+          </FadeInOnScroll>
 
-            <ExperienceItem
-              title="Choose Health Lab Integration"
-              company="Problem: Limited Patient Lifetime Value"
-              description="Hedfirst was migraine-only, limiting patient LTV to $499/year with no expansion revenue. Strategic thinking: Hypothesis was that migraine patients would value comprehensive health monitoring, especially if lab results revealed underlying conditions (vitamin deficiencies, hormone imbalances) contributing to migraines. Value clarification: This wasn't just feature expansion—it positioned Hedfirst as comprehensive health partner vs. single-condition treatment, increasing LTV and patient engagement. Design & prototyping: Analyzed 7-endpoint Choose Health API plus webhook system, designed patient-facing lab ordering flow, created provider dashboard for results review. Holistic implementation: Wrote 13 implementation tickets across frontend, backend, admin interfaces, and HIPAA-compliant data storage with 7-year retention. Impact: 40% of beta patients ordered lab tests within first month. Lab insights revealed vitamin deficiencies in 60% of patients, improving clinical outcomes while creating new revenue stream at $99-$145 per panel."
-              projectName="Strategic Integration → Revenue Expansion"
-              imageBgColor="from-blue-500 to-cyan-500"
-            />
-
-            <ExperienceItem
-              title="Platform Launch"
-              company="Challenge: Ship in 12 Months"
-              description="Co-led product strategy for multi-tenant telehealth platform build from concept to production. Strategic thinking: Coordinated 4 engineers + CTO through 12 two-week sprints with 95% on-time delivery. User research: Conducted stakeholder research and user interviews with chronic migraine patients to validate $499/year membership model. Product judgment: Prioritized pharmacy integration and e-prescribing (must-have for launch) while cutting admin analytics and reporting features (nice-to-have, could add post-launch). Made critical tradeoff: chose Choose Health over competitors for lab integration due to better API documentation, even though it was more expensive—this decision saved 2+ weeks of integration time. Business outcomes: Launched August 4, 2025 with 25 beta patients, $12,475 first-month revenue, 499 medications across 39 disease states, 48-state prescription fulfillment. Shipped with real paying patients rather than perfect features."
-              projectName="Strategy → Prioritization → Launch"
-              imageBgColor="from-purple-500 to-pink-500"
-            />
-
-            <ExperienceItem
-              title="PayTheory Billing Integration"
-              company="Problem: Inflexible Business Model"
-              description="Initial platform design only supported monthly subscriptions, but user research revealed different patient preferences: some wanted annual plans for savings, others needed quarterly for cash flow. Business requirement: Support multiple subscription models from day one to enable diverse go-to-market strategies. Solution: Designed flexible subscription architecture supporting 30-365 day billing cycles. Wrote detailed integration specs for PayTheory implementation, including subscription creation, modification, cancellation, and payment retry logic. Created membership benefits configuration system enabling per-plan customization. Impact: Enabled $499/year AI Care Membership model that became Hedfirst's primary revenue driver. Architecture now supports multiple brands with different billing strategies on same platform."
-              projectName="Requirements Analysis → Technical Architecture"
-              imageBgColor="from-orange-500 to-red-500"
-            />
+          <div className="grid md:grid-cols-2 gap-6">
+            {indexData.projects.map((project, index) => (
+              <FadeInOnScroll key={project.slug} delay={200 + index * 100}>
+                <ProjectCard
+                  slug={project.slug}
+                  title={project.title}
+                  subtitle={project.subtitle}
+                  problem={project.problem}
+                  solution={project.solution}
+                  impact={project.impact}
+                  readTime={project.readTime}
+                  tags={project.tags}
+                />
+              </FadeInOnScroll>
+            ))}
           </div>
+
+          {/* CTA Section */}
+          <FadeInOnScroll delay={600}>
+            <div className="mt-16 bg-gradient-to-r from-purple-900 to-blue-900 text-white rounded-lg p-8">
+              <h3 className="text-2xl font-bold mb-4">Want to See More?</h3>
+              <p className="text-lg mb-6 text-gray-200">
+                Each case study walks through the complete product lifecycle, showing how I approach
+                complex healthcare problems from discovery to scale.
+              </p>
+              <div className="flex flex-col md:flex-row gap-4">
+                <Link
+                  href="/journey"
+                  className="inline-block px-6 py-3 bg-white text-purple-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors text-center"
+                >
+                  Read My Journey
+                </Link>
+                <Link
+                  href="/#connect"
+                  className="inline-block px-6 py-3 border border-white text-white rounded-lg hover:bg-white/10 transition-colors text-center"
+                >
+                  Let's Connect
+                </Link>
+              </div>
+            </div>
+          </FadeInOnScroll>
         </div>
       </section>
     </div>

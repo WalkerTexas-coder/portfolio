@@ -1,0 +1,75 @@
+{
+  "slug": "rugiet",
+  "title": "Rugiet Health: Where I Found Product Management",
+  "subtitle": "Full Stack Developer • May 2023 - January 2024",
+  "step": 6,
+  "totalSteps": 7,
+  "nextSlug": "learn-academy",
+  "nextLabel": "Next: LEARN Academy",
+  "prevSlug": "compoundlive",
+  "prevLabel": "Back: CompoundLive",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Product Manager Moment"
+    },
+    {
+      "type": "paragraph",
+      "content": "I joined Rugiet Health as a full-stack engineer, but I found product management. This was the moment I realized my highest leverage wasn't writing code—it was asking the right questions before anyone wrote code."
+    },
+    {
+      "type": "callout",
+      "variant": "blue",
+      "title": "The Retention Problem",
+      "content": "Retention metrics were dropping. The engineering ticket said \"build flexible subscription management.\" But I didn't just build the feature—I dug into why patients were canceling."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Root Cause Analysis"
+    },
+    {
+      "type": "paragraph",
+      "content": "I analyzed user data and talked to customer support. The real problem: patients couldn't pause subscriptions during travel or life changes. Our rigid billing forced them to fully cancel when they just needed flexibility."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "The Solution"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Built subscription pause/resume functionality",
+        "Added skip shipment options for one-time breaks",
+        "Created flexible billing cycle adjustments",
+        "Enabled self-service subscription management"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Results"
+    },
+    {
+      "type": "metrics",
+      "content": [
+        "📈 <strong>Retention Increase:</strong> 35% improvement in 90-day retention",
+        "💡 <strong>Product Insight:</strong> Realized I was better at deciding what to build than building it",
+        "🎯 <strong>Customer Impact:</strong> Patients could maintain care during life changes instead of churning",
+        "🚀 <strong>Career Pivot:</strong> This project showed me my path to product management"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Lesson"
+    },
+    {
+      "type": "callout",
+      "variant": "green",
+      "content": "Great product management isn't about building what's on the ticket. It's about understanding the problem deeply enough to build the right solution. That 35% retention increase taught me more about product thinking than any course could."
+    }
+  ]
+}

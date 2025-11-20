@@ -1,0 +1,86 @@
+{
+  "slug": "learn-academy",
+  "title": "LEARN Academy: Teaching the Next Generation",
+  "subtitle": "Lead Instructor • July 2020 - April 2023",
+  "step": 7,
+  "totalSteps": 7,
+  "prevSlug": "rugiet",
+  "prevLabel": "Back: Rugiet Health",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Where It All Started"
+    },
+    {
+      "type": "paragraph",
+      "content": "Before healthcare, before product management, I was a coding bootcamp instructor. Teaching 170+ students over three years taught me skills that became my competitive advantage: breaking down complexity, communicating technical concepts clearly, and understanding how people learn."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "What I Learned from Teaching"
+    },
+    {
+      "type": "list",
+      "content": [
+        "<strong>Translating Complexity:</strong> Teaching forced me to understand concepts deeply enough to explain them simply. This skill now helps me bridge engineers, clinicians, and business stakeholders.",
+        "<strong>Pattern Recognition:</strong> Seeing 170+ students learn to code taught me to identify common misconceptions and design solutions that prevent confusion.",
+        "<strong>Documentation Matters:</strong> Students couldn't succeed without clear documentation. Now I write specs that engineers can implement without constant clarification.",
+        "<strong>Mentorship & Leadership:</strong> Managing cohorts, coordinating with instructors, and supporting students built leadership skills that translate directly to cross-functional product teams."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Technical Foundation"
+    },
+    {
+      "type": "paragraph",
+      "content": "Teaching full-stack development meant staying current with modern web technologies. I taught:"
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "content": [
+        "React, JavaScript, Ruby on Rails",
+        "Database design and SQL",
+        "API integration and RESTful architecture",
+        "Git, GitHub, deployment workflows",
+        "Testing, debugging, and problem-solving methodologies"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "This technical foundation became essential when I moved into healthcare engineering and product management. I can read code, understand data models, and write implementable specs because I taught these concepts for three years."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Impact"
+    },
+    {
+      "type": "metrics",
+      "content": [
+        "👨‍🎓 <strong>Students Trained:</strong> 170+ developers across 12 cohorts",
+        "🎯 <strong>Success Rate:</strong> 85%+ graduation rate",
+        "💼 <strong>Career Outcomes:</strong> Students placed at Microsoft, Amazon, startups",
+        "🌟 <strong>Personal Growth:</strong> Discovered passion for technical leadership and mentorship"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Why This Matters"
+    },
+    {
+      "type": "callout",
+      "variant": "green",
+      "content": "Teaching gave me superpowers for product management: I can explain technical complexity to non-technical stakeholders, write clear documentation, mentor engineers, and design solutions that account for how people actually think and work."
+    },
+    {
+      "type": "paragraph",
+      "content": "Everything I do in product management traces back to lessons learned in the classroom. Technical depth + communication skills + empathy for learners = effective product leadership."
+    }
+  ]
+}

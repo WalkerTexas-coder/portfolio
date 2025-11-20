@@ -1,0 +1,191 @@
+{
+  "slug": "paytheory-billing",
+  "title": "PayTheory Billing Integration",
+  "subtitle": "Product Case Study • Teligant Platform",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Problem: Inflexible Business Model"
+    },
+    {
+      "type": "paragraph",
+      "content": "Initial platform design only supported monthly subscriptions, but user research revealed different patient preferences: some wanted annual plans for savings, others needed quarterly for cash flow. We needed billing flexibility to support diverse go-to-market strategies."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Product Lifecycle"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 1: Business Requirements Discovery (Ideation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Through stakeholder interviews and patient research, identified key requirements:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Annual memberships for price-conscious patients ($499/year vs. $49/month)",
+        "Quarterly options for mid-range commitment",
+        "Multi-brand support with different billing strategies per brand",
+        "Flexible membership benefits tied to subscription type",
+        "Easy subscription modification for patients"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "blue",
+      "title": "Business Requirement",
+      "content": "Support multiple subscription models from day one to enable diverse go-to-market strategies across multi-tenant platform. Each brand should be able to configure its own billing options."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 2: Vendor Evaluation & Architecture (Validation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Evaluated payment processors based on:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Flexible subscription cycle support (30-365 days)",
+        "HIPAA compliance and BAA availability",
+        "API quality and webhook reliability",
+        "Healthcare-specific features",
+        "Pricing structure for healthcare SaaS"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Selected PayTheory for superior subscription flexibility and healthcare focus."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 3: Technical Design & Specifications (Implementation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Designed flexible subscription architecture supporting 30-365 day billing cycles:"
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "title": "Architecture Components",
+      "content": [
+        "<strong>Subscription Plans:</strong> Configurable billing cycles at brand level",
+        "<strong>Membership Benefits:</strong> Per-plan benefit configuration (e.g., annual members get extra consultation credits)",
+        "<strong>Payment Methods:</strong> Credit card storage with PCI compliance",
+        "<strong>Billing Engine:</strong> Automated charging, retry logic, dunning management",
+        "<strong>Webhooks:</strong> Real-time payment status updates",
+        "<strong>Admin Tools:</strong> Subscription management, refunds, adjustments"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Wrote detailed integration specs for PayTheory implementation:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Subscription creation with custom billing cycles",
+        "Subscription modification (upgrade/downgrade/pause)",
+        "Cancellation with prorated refunds",
+        "Payment retry logic for failed charges",
+        "Webhook handling for payment events",
+        "Admin interface for subscription management"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 4: Development & Integration"
+    },
+    {
+      "type": "paragraph",
+      "content": "Implementation across full stack:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Backend: PayTheory API integration with 8 endpoints",
+        "Database: Subscription models with flexible cycle support",
+        "Frontend: Subscription selection UI with clear pricing",
+        "Admin: Brand-level billing configuration",
+        "Webhooks: Real-time payment status processing",
+        "Error handling: Payment failures, retry logic, customer notifications"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 5: Testing & Validation"
+    },
+    {
+      "type": "paragraph",
+      "content": "Comprehensive testing across billing scenarios:"
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "content": [
+        "Subscription creation for monthly, quarterly, annual plans",
+        "Payment success and failure scenarios",
+        "Retry logic and dunning workflows",
+        "Subscription modifications and cancellations",
+        "Prorated refunds and adjustments",
+        "Multi-brand configuration testing"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 6: Launch & Business Model Enablement"
+    },
+    {
+      "type": "paragraph",
+      "content": "Launched with multiple subscription options from day one:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Hedfirst: $499/year AI Care Membership as primary model",
+        "Alternative: $49/month for lower commitment",
+        "Future brands: Flexibility to test different pricing strategies",
+        "A/B testing capability for pricing optimization"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Results & Impact"
+    },
+    {
+      "type": "metrics",
+      "content": [
+        "💰 <strong>Primary Revenue Driver:</strong> $499/year membership became Hedfirst's core offering",
+        "🏗️ <strong>Multi-Brand Support:</strong> Architecture enables different billing strategies per brand",
+        "🔄 <strong>Flexibility:</strong> 30-365 day billing cycles supported from day one",
+        "⚙️ <strong>Configuration:</strong> Brand-level subscription and benefits management",
+        "📈 <strong>Business Enablement:</strong> Diverse pricing strategies without code changes",
+        "✅ <strong>Reliability:</strong> Zero billing errors across launch period"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Key Lessons"
+    },
+    {
+      "type": "callout",
+      "variant": "green",
+      "content": "Building flexibility from the start enables business model experimentation. By designing for 30-365 day billing cycles upfront, we avoided costly refactoring later. The membership benefits configuration system became critical for differentiating subscription tiers beyond just price. Technical architecture decisions have direct business impact—this integration enabled Hedfirst's entire revenue model."
+    }
+  ]
+}

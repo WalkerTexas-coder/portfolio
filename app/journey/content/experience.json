@@ -1,0 +1,53 @@
+{
+  "slug": "experience",
+  "title": "How I Became a Healthcare PM",
+  "subtitle": "The path from teaching code to leading product strategy",
+  "step": 3,
+  "totalSteps": 7,
+  "nextSlug": "teligant-hedfirst",
+  "nextLabel": "Next: Teligant & Hedfirst",
+  "prevSlug": "philosophy",
+  "prevLabel": "Back: Philosophy",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Evolution"
+    },
+    {
+      "type": "paragraph",
+      "content": "I didn't plan to become a product manager. I started as a coding bootcamp instructor, became a full-stack engineer, and gradually realized my highest impact wasn't writing code—it was asking better questions before anyone wrote code."
+    },
+    {
+      "type": "paragraph",
+      "content": "At LEARN Academy, I learned to break down complex technical concepts into digestible pieces. Teaching 170+ students forced me to understand things deeply enough to explain them simply. That skill—translating technical complexity for different audiences—became my competitive advantage."
+    },
+    {
+      "type": "paragraph",
+      "content": "At Rugiet Health, I had my \"product manager moment.\" When retention metrics dropped, I didn't just implement the ticket on the board. I analyzed user data, talked to support, and discovered the real problem: inflexible subscription management forcing patients to cancel when they wanted to pause. The solution increased retention 35%. I realized I was better at deciding what to build than building it."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Why Healthcare?"
+    },
+    {
+      "type": "callout",
+      "variant": "blue",
+      "content": "Healthcare technology isn't just another SaaS domain. It requires deep operational understanding, technical rigor, and stakeholder translation. Three years in telehealth has taught me that healthcare PM isn't about shipping fast—it's about shipping right."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "What Defines My Approach"
+    },
+    {
+      "type": "metrics",
+      "content": [
+        "🎯 <strong>Outcomes-Driven</strong> — I measure success by problems solved and value created. A 35% retention increase matters more than 10 new features.",
+        "🔧 <strong>Technical Depth</strong> — I read code, understand data models, and write specs developers can implement without 10 rounds of clarification.",
+        "⚙️ <strong>Operational Obsession</strong> — I design for the operational reality, not the ideal state. Clinical workflows matter more than beautiful UI."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "pharmacy-fulfillment",
+  "title": "Pharmacy Fulfillment Workflow",
+  "subtitle": "Product Case Study • Teligant Platform",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Problem: Prescription Routing Chaos"
+    },
+    {
+      "type": "paragraph",
+      "content": "Doctors were manually routing prescriptions across 4 pharmacy partners (Crafted RX, Greenwich/Texas Performance Meds, Outreach RX, patient local pharmacy) with no systematic guidance, risking missed and duplicate prescriptions."
+    },
+    {
+      "type": "callout",
+      "variant": "blue",
+      "title": "The Core Issue",
+      "content": "The real issue wasn't just unclear routing logic—doctors had no audit trail to track what they'd sent. Without visibility into previous routing decisions, they couldn't prevent errors or learn from patterns."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Product Lifecycle"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 1: Problem Discovery (Ideation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "I spent two days shadowing doctors to understand their workflow. Through observation and interviews, I discovered:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Doctors switching between multiple pharmacy partner systems",
+        "No clear rules for which pharmacy handles which medication",
+        "Duplicate prescriptions sent to multiple pharmacies",
+        "No audit trail of routing decisions",
+        "Manual workarounds creating operational risk"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 2: User Research & Requirements (Validation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "After identifying the problem, I validated the requirements with stakeholders:"
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "content": [
+        "Doctors needed clear routing guidance at prescription time",
+        "System must prevent duplicate routing",
+        "Complete audit trail for compliance and troubleshooting",
+        "Solution must integrate with existing DoseSpot e-prescribing iframe",
+        "Fast implementation—couldn't wait months for complex automation"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 3: Solution Design (Implementation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Product judgment: Built manual workflow bridge above DoseSpot iframe rather than complex automation, balancing speed with reliability."
+    },
+    {
+      "type": "paragraph",
+      "content": "This decision prioritized:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Fast delivery (3 weeks vs. 3 months for full automation)",
+        "Reliability (simple UI with clear guidance)",
+        "Audit trail (every routing decision tracked)",
+        "Flexibility (easy to adjust rules as pharmacy partnerships evolve)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 4: Development & Delivery"
+    },
+    {
+      "type": "paragraph",
+      "content": "Holistic implementation: Wrote 12 detailed Jira tickets across 2 sprint cycles with acceptance criteria and edge cases."
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "title": "Implementation Scope",
+      "content": [
+        "UI component above DoseSpot iframe with routing logic",
+        "Database schema for audit trail",
+        "Pharmacy partner selection rules engine",
+        "Admin interface for managing routing rules",
+        "Error handling and validation",
+        "Analytics and reporting dashboard"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 5: Testing & Validation"
+    },
+    {
+      "type": "paragraph",
+      "content": "Worked directly with doctors during pilot rollout:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Beta tested with 2 doctors for 1 week",
+        "Gathered feedback on UI clarity and routing logic",
+        "Adjusted pharmacy selection rules based on real usage",
+        "Verified audit trail captured all necessary data"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 6: Deployment & Scale"
+    },
+    {
+      "type": "paragraph",
+      "content": "Full rollout to all doctors within 3 weeks of initial deployment."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Results & Impact"
+    },
+    {
+      "type": "metrics",
+      "content": [
+        "✅ <strong>Error Elimination:</strong> 100% reduction in prescription routing errors within 3 weeks",
+        "📊 <strong>Scale:</strong> System now processes 200+ prescriptions monthly with zero failures",
+        "🔍 <strong>Visibility:</strong> Complete audit trail for compliance and troubleshooting",
+        "⏱️ <strong>Speed:</strong> Delivered in 3 weeks vs. 3+ months for complex automation",
+        "🎯 <strong>Operational Excellence:</strong> Zero routing failures maintained over 6+ months"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Key Lessons"
+    },
+    {
+      "type": "callout",
+      "variant": "green",
+      "content": "Sometimes the best technical solution isn't the most automated one. By building a simple, reliable workflow instead of complex automation, we delivered faster and achieved better outcomes. User research (shadowing doctors) was critical to understanding the real problem—no audit trail—rather than the surface problem of routing logic."
+    }
+  ]
+}

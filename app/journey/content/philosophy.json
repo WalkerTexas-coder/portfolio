@@ -1,0 +1,145 @@
+{
+  "slug": "philosophy",
+  "title": "How I Think About Healthcare Product Management",
+  "subtitle": "Lessons from 3 years building telehealth platforms",
+  "step": 2,
+  "totalSteps": 7,
+  "prevSlug": "introduction",
+  "prevLabel": "Back: Introduction",
+  "heroImage": {
+    "alt": "Healthcare product management philosophy",
+    "className": "w-full h-[400px] object-cover"
+  },
+  "sections": [
+    {
+      "type": "callout",
+      "variant": "blue",
+      "content": "Healthcare product management isn't like managing a social media app or a SaaS productivity tool. Real patients depend on your product. Regulatory bodies scrutinize your decisions. Clinical workflows determine whether features actually ship value or just ship code."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Core Difference: Compliance, Operations, and Lives"
+    },
+    {
+      "type": "paragraph",
+      "content": "Three years building telehealth platforms taught me that healthcare PM requires a fundamentally different mindset than consumer tech. Here's why:"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "1. Compliance Isn't a Checkbox—It's a Design Constraint"
+    },
+    {
+      "type": "paragraph",
+      "content": "Most product managers treat compliance as something you bolt on after building features. In healthcare, that approach fails spectacularly."
+    },
+    {
+      "type": "list",
+      "content": [
+        "<strong>HIPAA isn't optional:</strong> Every feature touching patient data needs encryption, audit logging, and access controls from day one. You can't retrofit security.",
+        "<strong>State pharmacy boards have real authority:</strong> When you're processing prescriptions across 48 states, each state's pharmacy board can shut you down if you violate their rules.",
+        "<strong>SOC 2 compliance takes 6+ months:</strong> Enterprise healthcare clients won't sign contracts until you're certified. This isn't a feature—it's a business requirement."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "At Teligant, we built HIPAA compliance into our architecture from the beginning. Cross-tenant data isolation, explicit consent workflows for data transfer, and comprehensive audit logging weren't features we added—they were foundational design decisions that enabled everything else."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "2. Operational Workflows Matter More Than Features"
+    },
+    {
+      "type": "paragraph",
+      "content": "The prescription routing workflow I built at Teligant was more valuable than any fancy AI feature. Here's why:"
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "title": "Real Example: The Pharmacy Routing Problem",
+      "content": [
+        "Patient orders prescription for weight management medication",
+        "System checks: Is medication available? What pharmacy fulfills? Does state allow shipment?",
+        "Doctor prescribes via DoseSpot e-prescribing system",
+        "Prescription routes to correct pharmacy based on medication type, state restrictions, inventory",
+        "Pharmacy fulfills, ships to patient via ShipStation integration"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "If any step fails, the patient doesn't get their medication. No amount of beautiful UI compensates for broken operational workflows. We achieved zero prescription routing errors across 200+ monthly prescriptions because we obsessed over the operational reality, not just the feature list."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "3. Technical Depth Enables Better Product Decisions"
+    },
+    {
+      "type": "paragraph",
+      "content": "My engineering background isn't a nice-to-have—it's the reason I can make good product decisions in healthcare. Here's what technical depth enables:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "<strong>Reading API documentation:</strong> When integrating DoseSpot, Choose Health, PayTheory, I can analyze endpoints, understand rate limits, and design integration architecture myself.",
+        "<strong>Writing implementable specs:</strong> Engineers don't come back with 10 clarifying questions because I understand data models, edge cases, and technical constraints.",
+        "<strong>Debugging production issues:</strong> When lab results aren't syncing via webhooks, I can read logs, trace API calls, and identify root causes.",
+        "<strong>Realistic timelines:</strong> I know the difference between \"change a config\" (1 day) and \"rebuild data architecture\" (2 weeks)."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "My Core Principles"
+    },
+    {
+      "type": "paragraph",
+      "content": "After teaching 170+ students, engineering at Rugiet, building frameworks at CompoundLive, and co-leading product at Teligant, these are the principles that guide my approach:"
+    },
+    {
+      "type": "metrics",
+      "content": [
+        "📊 <strong>Outcomes Over Outputs</strong> — A 35% retention increase beats shipping 50 features. I measure success by problems solved and value created, not velocity metrics.",
+        "🔍 <strong>Root Cause Analysis First</strong> — When retention drops, I don't ship the feature on the ticket. I analyze data, talk to users, and identify the actual problem before building anything.",
+        "⚙️ <strong>Process Over Speed</strong> — Reusable frameworks beat custom solutions. Cutting deployment from 5 months to 5 weeks wasn't about coding faster—it was about better processes.",
+        "🏥 <strong>Operational Reality Wins</strong> — I shadow doctors, coordinate with pharmacies, and understand fulfillment logistics. The best product strategy accounts for how things actually work.",
+        "🗣️ <strong>Stakeholder Translation</strong> — I bridge clinical stakeholders, engineers, and business leaders. Teaching background makes me fluent in translating complex concepts.",
+        "📝 <strong>Prototype-Driven Development</strong> — Interactive React prototypes eliminate weeks of back-and-forth. Showing is faster than explaining."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "What I'm Looking For"
+    },
+    {
+      "type": "paragraph",
+      "content": "Three years in telehealth taught me that healthcare technology is one of the few domains where product decisions have measurable real-world impact. When you ship a prescription routing workflow that enables 48-state fulfillment with zero errors, that's not just a metric—it's real patients receiving care."
+    },
+    {
+      "type": "paragraph",
+      "content": "I'm seeking senior product roles where I can:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Apply healthcare domain expertise and technical depth to complex product challenges",
+        "Build 0-1 products or scale existing platforms in B2B healthcare SaaS",
+        "Work with cross-functional teams where compliance, operations, and engineering intersect",
+        "Contribute to organizations where product excellence directly improves patient outcomes"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Ideal fit: Series A-C health tech startups, B2B healthcare SaaS companies, telehealth platforms, or digital health infrastructure where technical PMs drive strategy."
+    },
+    {
+      "type": "link",
+      "title": "Ready to Work Together?",
+      "content": "Book a meeting to discuss opportunities",
+      "href": "/#connect"
+    }
+  ]
+}
