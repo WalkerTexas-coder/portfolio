@@ -6,6 +6,8 @@
   "totalSteps": 7,
   "prevSlug": "introduction",
   "prevLabel": "Back: Introduction",
+  "nextSlug": "experience",
+  "nextLabel": "Next: My Experience",
   "heroImage": {
     "alt": "Healthcare product management philosophy",
     "className": "w-full h-[400px] object-cover"

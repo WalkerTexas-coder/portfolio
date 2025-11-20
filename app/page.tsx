@@ -22,8 +22,8 @@ export default function Home() {
         <ShiftF1Banner />
       </div>
 
-      
-      
+
+
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
@@ -40,37 +40,22 @@ export default function Home() {
         ></div>
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl bg-black/30 backdrop-blur-sm p-6 rounded-lg">
-            <h1 className="hero-text text-white mb-4">
-              I'm Austin Walker, a
-              {" "}
-              <span className="text-[#f0abfc] font-bold">technical product manager</span>
-              {" "}for hire.{" "}
+            <h1 className="hero-text text-white mb-6 text-4xl md:text-6xl leading-tight">
+              My name is Austin Walker. I'm a <span className="text-[#f0abfc] font-bold">Technical Product Manager</span> who <span className="text-blue-300 font-bold">bridges the gap</span> between clinical complexity and shipping code.
             </h1>
-           
+
             <div className="flex flex-col md:flex-row gap-4 mt-8">
               <Link
-                href="/journey"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
+                href="/journey/introduction"
+                className="px-8 py-4 bg-white text-purple-900 font-bold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-center"
               >
-                Start My Story →
+                My Journey
               </Link>
               <Link
                 href="#work"
-                className="inline-block px-6 py-3 border-b-2 border-white text-white hover:bg-white/10 transition-colors"
+                className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all text-center"
               >
-                Recent Work
-              </Link>
-              <Link
-                href="/projects"
-                className="inline-block px-6 py-3 border-b-2 border-white text-white hover:bg-white/10 transition-colors"
-              >
-                Major Projects
-              </Link>
-              <Link
-                href="#connect"
-                className="inline-block px-6 py-3 border-b-2 border-white text-white hover:bg-white/10 transition-colors"
-              >
-                Book a Meeting
+                View Work
               </Link>
             </div>
           </div>
@@ -82,12 +67,13 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-20 px-6 md:px-12 gradient-bg">
-        <div className="container mx-auto max-w-6xl">
-          {/* Single Statement Card */}
+        <div className="container mx-auto max-w-4xl">
           <FadeInOnScroll delay={0}>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 mb-12 hover:bg-white/15 transition-all duration-300">
               <p className="text-2xl md:text-3xl leading-relaxed text-white font-semibold text-center">
-                I identify the problems worth solving, collaborate with cross-functional teams to align around outcomes, and use data to measure whether we're creating real value—not just shipping features.
+                Great products aren't just about features; they're about <span className="text-white font-bold">reducing anxiety</span>.
+                I build systems that make doctors feel safe and patients feel cared for.
+                By mastering the "what, why, and how," I turn compliance from a blocker into a competitive advantage.
               </p>
             </div>
           </FadeInOnScroll>
@@ -136,7 +122,7 @@ export default function Home() {
         </div>
       </section>
 
-      
+
 
 
 
@@ -147,27 +133,25 @@ export default function Home() {
 
           <div className="max-w-4xl mb-12">
             <p className="text-xl md:text-2xl text-white mb-6 leading-relaxed">
-              In 12 months at Hedfirst/Teligant, I co-led product strategy for a multi-tenant telehealth platform
-              from concept to production—with real patients, live prescriptions, and operational pharmacy fulfillment.
+              The market needed a telehealth platform that didn't just "work" technically, but worked <em>legally</em> across 48 distinct jurisdictions.
             </p>
             <p className="text-lg text-white/90 leading-relaxed">
-              Launched August 4, 2025 with 25 beta patients generating $12,475 in first-month revenue •
-              499 medications across 39 disease states •
-              48-state prescription fulfillment •
-              Zero routing errors across 200+ monthly prescriptions
+              Instead of building a generic e-commerce flow, I designed a "compliance-first" architecture.
+              We treated state regulations not as edge cases, but as the core data model.
+              <strong>The Outcome:</strong> Launched Aug 4, 2025. 499 medications. Zero routing errors. $12k+ first-month revenue.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ProjectCard
               title="Teligant Platform"
-              description="Multi-tenant SaaS architecture with patient portals, doctor workflows, admin dashboards, and pharmacy integrations. Led product strategy, coordinated 4 engineers + CTO, and prioritized features that enabled 48-state fulfillment."
+              description="Designed a 3-tier Order Hierarchy system to handle the complexity of recurring prescriptions, one-off lab kits, and membership benefits in a single checkout. Built a 'Pharmacy Bridge' workflow to stop doctors from misrouting prescriptions."
               slug="teligant"
               imageSrc="https://cdn.prod.website-files.com/67ad2c6bdcb40e4e1f8634c9/67af2f828dde99af89ddfdfa_2image.avif"
             />
             <ProjectCard
               title="Hedfirst Launch"
-              description="First brand implementation on Teligant platform. Launched August 4th, 2025 with beta patients, validating $499/year membership model. Integrated Choose Health lab testing and DoseSpot e-prescribing based on user research insights."
+              description="Launched August 4th, 2025. Proof that compliance can be a competitive advantage. We launched in 48 states on Day 1 because we treated regulations as a core data model, not an afterthought."
               slug="hedfirst"
               imageSrc="https://cdn.prod.website-files.com/67a509f5940083778a2478d0/67d16eb0733bbcccda908f61_hedfirst-home-screen.avif"
             />
@@ -190,8 +174,8 @@ export default function Home() {
             <ExperienceItem
               title="Solutions Engineer → Technical Product Lead"
               company="CompoundLive"
-              description="Started as Solutions Engineer helping enterprise healthcare clients deploy CompoundLive's white-label telehealth platform. Through discovery sessions with 6+ C-suite teams, I identified that our 5-month deployment cycles were killing sales velocity—not because features were missing, but because implementation was too bespoke. Built reusable integration frameworks and streamlined compliance workflows that cut deployment to 5 weeks. Result: 4 successful client implementations, 30% satisfaction increase, 25% boost in deal closures. This taught me that the fastest way to ship isn't more features—it's better processes."
-              projectName="Discovery → Process Redesign → Revenue Impact"
+              description="Enterprise clients loved the demo but feared the integration. The friction wasn't the software; it was the implementation anxiety. I productized the onboarding process, creating reusable integration frameworks that turned a bespoke engineering project into a repeatable configuration task. We didn't just ship faster; we changed the sales conversation from 'Can we afford this delay?' to 'When can we start?'"
+              projectName="5 Months → 5 Weeks Integration Time"
               imageUrl={cplImage}
               slug="compoundlive"
             />
@@ -199,8 +183,8 @@ export default function Home() {
             <ExperienceItem
               title="Full Stack Developer"
               company="Rugiet Health"
-              description="Started as IC2 Software Engineer building prescription and subscription features in Ruby on Rails. When retention metrics dropped, I didn't just implement the feature request on the ticket. Analyzed user data, talked to support, and discovered the real problem: inflexible subscription management was forcing patients to cancel when they wanted to pause. Proposed a solution, wrote detailed specs, and built it. Result: 35% retention increase. This was my 'product manager moment'—realizing my highest impact wasn't writing code faster, it was asking better questions first."
-              projectName="Data Analysis → Root Cause → Business Impact"
+              description="Churn wasn't happening because users disliked the product. It was happening because they felt trapped. The rigid subscription model created anxiety. I championed a 'Pause' feature—technically simple, but business-critical. Stakeholders feared it would lower revenue, but retention increased by 35%. By giving users control, we gained their trust. It proved that in healthcare, autonomy is a key feature."
+              projectName="35% Retention Increase via 'Pause' Feature"
               imageUrl={rugietImage}
               slug="rugiet-health"
             />

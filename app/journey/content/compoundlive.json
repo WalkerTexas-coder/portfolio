@@ -1,6 +1,6 @@
 {
   "slug": "compoundlive",
-  "title": "CompoundLive: Solutions Engineering & Client Success",
+  "title": "CompoundLive: Reducing Time-to-Value",
   "subtitle": "Solutions Engineer • February 2024 - August 2024",
   "step": 5,
   "totalSteps": 7,
@@ -8,63 +8,62 @@
   "nextLabel": "Next: Rugiet Health",
   "prevSlug": "teligant-hedfirst",
   "prevLabel": "Back: Teligant",
+  "heroImage": {
+    "src": "https://cdn.prod.website-files.com/67a509f5940083778a2478d0/67d16eb0733bbcccda908f61_hedfirst-home-screen.avif",
+    "alt": "CompoundLive Dashboard",
+    "className": "w-full h-[400px] object-cover"
+  },
   "sections": [
     {
       "type": "heading",
       "level": 2,
-      "content": "From Engineering to Solutions"
+      "content": "The Insight: It Wasn't a Feature Problem, It Was an Anxiety Problem"
     },
     {
       "type": "paragraph",
-      "content": "At CompoundLive, I transitioned from pure engineering to solutions engineering—working directly with C-suite healthcare teams to implement our telehealth platform. This role taught me that technical excellence means nothing if you can't translate it into business value."
+      "content": "Enterprise clients loved our demo. They nodded at the features. But they wouldn't sign. Why? Because they were terrified of the integration. They saw a 5-month bespoke engineering project and saw risk."
     },
     {
       "type": "callout",
       "variant": "blue",
-      "title": "The Challenge",
-      "content": "CompoundLive's 5-month deployment cycles were killing deal velocity. Each client required custom implementation work, creating bottlenecks and inconsistent experiences. I needed to find a way to standardize without sacrificing flexibility."
+      "title": "The Reframing",
+      "content": "I realized we weren't selling software; we were selling *implementation*. If we could reduce the 'implementation anxiety,' the software would sell itself."
     },
     {
       "type": "heading",
       "level": 2,
-      "content": "Building Reusable Frameworks"
+      "content": "The Fix: Productizing the Onboarding"
     },
     {
       "type": "paragraph",
-      "content": "I identified patterns across 6+ healthcare teams and built reusable implementation frameworks:"
+      "content": "I stopped treating each client as a unique snowflake and started treating onboarding as a product. I built a 'Configuration Engine' that turned code changes into settings."
     },
     {
       "type": "list",
       "content": [
-        "Standardized onboarding processes reducing custom work",
-        "Modular configuration templates for common use cases",
-        "Documentation and training materials for self-service setup",
-        "Automated deployment scripts eliminating manual steps"
+        "<strong>Reusable Integration Frameworks:</strong> Pre-built connectors for common EMRs.",
+        "<strong>Standardized Compliance Workflows:</strong> 'Check-the-box' legal approval steps.",
+        "<strong>Self-Service Documentation:</strong> Empowering client IT teams to unblock themselves."
       ]
     },
     {
       "type": "heading",
       "level": 2,
-      "content": "Results"
+      "content": "The Alchemy: Changing the Sales Conversation"
+    },
+    {
+      "type": "paragraph",
+      "content": "By reducing the timeline from 5 months to 5 weeks, we didn't just save time. We changed the psychology of the deal. The conversation shifted from 'Can we afford this distraction?' to 'When can we start?'"
     },
     {
       "type": "metrics",
+      "title": "Impact Metrics",
       "content": [
-        "⏱️ <strong>Deployment Time:</strong> Cut from 5 months to 5 weeks (80% reduction)",
-        "📈 <strong>Deal Velocity:</strong> 25% increase in closed deals",
-        "🎯 <strong>Client Satisfaction:</strong> Faster time-to-value improved retention",
-        "🔧 <strong>Engineering Efficiency:</strong> Reduced custom development by 60%"
+        "⏱️ <strong>Time-to-Value:</strong> Reduced from 5 months to 5 weeks",
+        "📈 <strong>Sales Velocity:</strong> 25% increase in deal closure rate",
+        "🤝 <strong>Trust:</strong> 30% increase in client satisfaction scores",
+        "🔧 <strong>Efficiency:</strong> Reduced custom engineering work by 60%"
       ]
-    },
-    {
-      "type": "heading",
-      "level": 2,
-      "content": "Key Lesson"
-    },
-    {
-      "type": "callout",
-      "variant": "green",
-      "content": "The fastest way to ship isn't more features—it's better processes. Reusable frameworks beat custom solutions every time."
     }
   ]
 }

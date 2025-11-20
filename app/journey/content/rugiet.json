@@ -8,6 +8,11 @@
   "nextLabel": "Next: LEARN Academy",
   "prevSlug": "compoundlive",
   "prevLabel": "Back: CompoundLive",
+  "heroImage": {
+    "src": "https://cdn.prod.website-files.com/67a509f5940083778a2478d0/67d16eb0733bbcccda908f61_hedfirst-home-screen.avif",
+    "alt": "Rugiet Health Dashboard",
+    "className": "w-full h-[400px] object-cover"
+  },
   "sections": [
     {
       "type": "heading",
@@ -19,57 +24,44 @@
       "content": "I joined Rugiet Health as a full-stack engineer, but I found product management. This was the moment I realized my highest leverage wasn't writing code—it was asking the right questions before anyone wrote code."
     },
     {
-      "type": "callout",
-      "variant": "blue",
-      "title": "The Retention Problem",
-      "content": "Retention metrics were dropping. The engineering ticket said \"build flexible subscription management.\" But I didn't just build the feature—I dug into why patients were canceling."
-    },
-    {
       "type": "heading",
       "level": 2,
-      "content": "Root Cause Analysis"
+      "content": "The Paradox of Control: Saving Retention by Letting Users Go"
     },
     {
       "type": "paragraph",
-      "content": "I analyzed user data and talked to customer support. The real problem: patients couldn't pause subscriptions during travel or life changes. Our rigid billing forced them to fully cancel when they just needed flexibility."
+      "content": "Churn wasn't happening because users disliked the product. It was happening because they felt *trapped*. The rigid subscription model created anxiety."
     },
     {
-      "type": "heading",
-      "level": 3,
-      "content": "The Solution"
-    },
-    {
-      "type": "list",
-      "content": [
-        "Built subscription pause/resume functionality",
-        "Added skip shipment options for one-time breaks",
-        "Created flexible billing cycle adjustments",
-        "Enabled self-service subscription management"
-      ]
+      "type": "callout",
+      "variant": "blue",
+      "title": "The Insight",
+      "content": "I analyzed user data and realized that patients were cancelling not because they wanted to leave, but because they needed a break (travel, surplus medication). Our system forced a binary choice: Stay or Quit. So they quit."
     },
     {
       "type": "heading",
       "level": 2,
-      "content": "Results"
+      "content": "The Fix: The 'Pause' Button"
+    },
+    {
+      "type": "paragraph",
+      "content": "I championed a 'Pause' feature—technically simple, but business-critical. Stakeholders feared it would lower revenue. I argued that by giving users control, we would gain their trust."
+    },
+    {
+      "type": "callout",
+      "variant": "green",
+      "title": "The Outcome",
+      "content": "Retention increased by 35%. By giving users the freedom to leave (temporarily), we gave them a reason to stay. It proved that in healthcare, *autonomy* is a key feature."
     },
     {
       "type": "metrics",
+      "title": "Impact Metrics",
       "content": [
         "📈 <strong>Retention Increase:</strong> 35% improvement in 90-day retention",
         "💡 <strong>Product Insight:</strong> Realized I was better at deciding what to build than building it",
         "🎯 <strong>Customer Impact:</strong> Patients could maintain care during life changes instead of churning",
         "🚀 <strong>Career Pivot:</strong> This project showed me my path to product management"
       ]
-    },
-    {
-      "type": "heading",
-      "level": 2,
-      "content": "The Lesson"
-    },
-    {
-      "type": "callout",
-      "variant": "green",
-      "content": "Great product management isn't about building what's on the ticket. It's about understanding the problem deeply enough to build the right solution. That 35% retention increase taught me more about product thinking than any course could."
     }
   ]
 }
