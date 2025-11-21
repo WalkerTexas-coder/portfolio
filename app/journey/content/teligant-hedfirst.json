@@ -1,0 +1,100 @@
+{
+  "slug": "teligant-hedfirst",
+  "title": "Teligant & Hedfirst: Multi-Tenant Healthcare SaaS",
+  "subtitle": "Technical Product Manager • August 2024 - September 2025",
+  "step": 4,
+  "totalSteps": 7,
+  "nextSlug": "compoundlive",
+  "nextLabel": "Next: CompoundLive",
+  "prevSlug": "experience",
+  "prevLabel": "Back",
+  "heroImage": {
+    "src": "https://cdn.prod.website-files.com/67ad2c6bdcb40e4e1f8634c9/67af2f828dde99af89ddfdfa_2image.avif",
+    "alt": "Teligant Platform Dashboard",
+    "className": "w-full h-[400px] object-cover"
+  },
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Building Multi-Tenant Healthcare SaaS from Concept to Production"
+    },
+    {
+      "type": "paragraph",
+      "content": "The Teligant platform represents everything I learned from building telehealth at CompoundLive and Rugiet Health. This was the opportunity to build it right from the ground up—a multi-tenant SaaS platform that could power multiple telehealth brands while maintaining strict HIPAA compliance, operational excellence, and native AI capabilities."
+    },
+    {
+      "type": "callout",
+      "variant": "blue",
+      "title": "The Vision",
+      "content": "After leaving CompoundLive/Rugiet (acquired by ListenCo), I proposed to Kelly Smith that I could help build a next-generation telehealth platform incorporating everything I'd learned about what worked and what didn't. The vision: sophisticated multi-tenant healthcare SaaS with native AI capabilities, better clinical workflows, and more flexible product configuration."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Platform Architecture"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Multi-Tenant Design"
+    },
+    {
+      "type": "paragraph",
+      "content": "Defined multi-tenant SaaS architecture enabling multiple healthcare brands on a single platform:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "<strong>Isolated Tenant Instances:</strong> Each brand receives isolated patient portal, doctor portal, admin dashboard, and API endpoints",
+        "<strong>AWS ECS Deployment:</strong> Separate Docker containers for each service layer ensuring scalability",
+        "<strong>Cross-Tenant Data Transfer:</strong> Built HIPAA-compliant patient data transfer with explicit consent workflow",
+        "<strong>Rapid White-Label Deployment:</strong> Architecture enables quick brand launches with isolated data"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Core Technical Integrations"
+    },
+    {
+      "type": "paragraph",
+      "content": "Coordinated 8+ third-party API integrations with complex compliance requirements:"
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "content": [
+        "<strong>DoseSpot E-Prescribing:</strong> HIPAA-compliant electronic prescriptions for non-controlled substances, 514+ medication protocols with dosage variants",
+        "<strong>SureScripts Network:</strong> Pharmacy transmission connectivity for multi-state prescription fulfillment",
+        "<strong>Choose Health Labs:</strong> 7 REST endpoints plus webhook system for at-home lab testing with real-time results",
+        "<strong>PayTheory Billing:</strong> Flexible subscription processor supporting 30-365 day billing cycles",
+        "<strong>ShipStation Fulfillment:</strong> Order management and shipping coordination via Custom Store integration",
+        "<strong>Claude AI (AWS Bedrock):</strong> Clinical documentation automation with HIPAA BAA and zero retention"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Results"
+    },
+    {
+      "type": "metrics",
+      "title": "Platform Launch Metrics",
+      "content": [
+        "🚀 <strong>Launch Date:</strong> August 4, 2025 (9-month build)",
+        "👥 <strong>Beta Patients:</strong> 25 patients in first month",
+        "💰 <strong>First-Month Revenue:</strong> $12,475",
+        "💊 <strong>Medication Coverage:</strong> 499 medications across 20+ disease states",
+        "📍 <strong>Geographic Reach:</strong> 48-state fulfillment capability",
+        "✅ <strong>Operational Excellence:</strong> Zero prescription routing errors across 200+ monthly prescriptions"
+      ]
+    },
+    {
+      "type": "link",
+      "title": "View Live Platform",
+      "content": "Visit Hedfirst.com",
+      "href": "https://hedfirst.com"
+    }
+  ]
+}

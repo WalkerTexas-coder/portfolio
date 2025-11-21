@@ -1,0 +1,70 @@
+{
+  "slug": "compoundlive",
+  "title": "CompoundLive: Solutions Engineering & Client Success",
+  "subtitle": "Solutions Engineer • February 2024 - August 2024",
+  "step": 5,
+  "totalSteps": 7,
+  "nextSlug": "rugiet",
+  "nextLabel": "Next: Rugiet Health",
+  "prevSlug": "teligant-hedfirst",
+  "prevLabel": "Back: Teligant",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "From Engineering to Solutions"
+    },
+    {
+      "type": "paragraph",
+      "content": "At CompoundLive, I transitioned from pure engineering to solutions engineering—working directly with C-suite healthcare teams to implement our telehealth platform. This role taught me that technical excellence means nothing if you can't translate it into business value."
+    },
+    {
+      "type": "callout",
+      "variant": "blue",
+      "title": "The Challenge",
+      "content": "CompoundLive's 5-month deployment cycles were killing deal velocity. Each client required custom implementation work, creating bottlenecks and inconsistent experiences. I needed to find a way to standardize without sacrificing flexibility."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Building Reusable Frameworks"
+    },
+    {
+      "type": "paragraph",
+      "content": "I identified patterns across 6+ healthcare teams and built reusable implementation frameworks:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Standardized onboarding processes reducing custom work",
+        "Modular configuration templates for common use cases",
+        "Documentation and training materials for self-service setup",
+        "Automated deployment scripts eliminating manual steps"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Results"
+    },
+    {
+      "type": "metrics",
+      "content": [
+        "⏱️ <strong>Deployment Time:</strong> Cut from 5 months to 5 weeks (80% reduction)",
+        "📈 <strong>Deal Velocity:</strong> 25% increase in closed deals",
+        "🎯 <strong>Client Satisfaction:</strong> Faster time-to-value improved retention",
+        "🔧 <strong>Engineering Efficiency:</strong> Reduced custom development by 60%"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Key Lesson"
+    },
+    {
+      "type": "callout",
+      "variant": "green",
+      "content": "The fastest way to ship isn't more features—it's better processes. Reusable frameworks beat custom solutions every time."
+    }
+  ]
+}

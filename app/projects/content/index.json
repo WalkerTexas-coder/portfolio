@@ -1,0 +1,46 @@
+{
+  "title": "Project Case Studies",
+  "description": "Deep dives into the product lifecycle: from ideation to scale.",
+  "projects": [
+    {
+      "slug": "pharmacy-fulfillment",
+      "title": "Pharmacy Fulfillment Workflow",
+      "subtitle": "Product Case Study • Teligant Platform",
+      "problem": "Prescription routing chaos causing errors",
+      "solution": "Systematic queue-based workflow",
+      "impact": "Zero routing errors across 200+ monthly prescriptions",
+      "readTime": "6 min",
+      "tags": ["Operations", "Workflow Design", "Healthcare"]
+    },
+    {
+      "slug": "choose-health-labs",
+      "title": "Choose Health Lab Integration",
+      "subtitle": "Product Case Study • Teligant Platform",
+      "problem": "Limited patient lifetime value and engagement",
+      "solution": "At-home lab testing integration with 7-endpoint API",
+      "impact": "40% order rate, 60% discovered deficiencies, new revenue stream",
+      "readTime": "7 min",
+      "tags": ["Integration", "Revenue Growth", "API Design"]
+    },
+    {
+      "slug": "platform-launch",
+      "title": "Platform Launch: 9 Months to Production",
+      "subtitle": "Product Case Study • Hedfirst",
+      "problem": "Build and launch multi-tenant telehealth platform in 9 months",
+      "solution": "Coordinated product strategy across 4 engineers + CTO",
+      "impact": "$12,475 first-month revenue, 499 medications, 48-state fulfillment",
+      "readTime": "8 min",
+      "tags": ["0-1 Product", "Strategy", "Multi-tenant SaaS"]
+    },
+    {
+      "slug": "paytheory-billing",
+      "title": "PayTheory Billing Integration",
+      "subtitle": "Product Case Study • Teligant Platform",
+      "problem": "Inflexible billing model limiting business options",
+      "solution": "Flexible subscription architecture supporting 30-365 day cycles",
+      "impact": "Enabled $499/year model, multi-brand payment support",
+      "readTime": "5 min",
+      "tags": ["Billing", "Integration", "Flexibility"]
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "slug": "platform-launch",
+  "title": "Platform Launch: 9 Months to Production",
+  "subtitle": "Product Case Study • Hedfirst",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Challenge: Ship Multi-Tenant Platform in 9 Months"
+    },
+    {
+      "type": "paragraph",
+      "content": "Co-led product strategy for multi-tenant telehealth platform build from concept to production. The goal: launch with real paying patients, live prescriptions, and operational pharmacy fulfillment—not a prototype."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Product Lifecycle"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 1: Vision & Strategy (Ideation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "After leaving CompoundLive/Rugiet (acquired by ListenCo), I proposed building a next-generation telehealth platform incorporating everything I'd learned. The vision:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Multi-tenant SaaS architecture supporting multiple healthcare brands",
+        "Native AI capabilities for clinical documentation",
+        "Better clinical workflows learned from previous platforms",
+        "Flexible product configuration and billing models",
+        "HIPAA compliance and operational excellence from day one"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 2: User Research & Validation"
+    },
+    {
+      "type": "paragraph",
+      "content": "Conducted stakeholder research and user interviews with chronic migraine patients to validate business model:"
+    },
+    {
+      "type": "callout",
+      "variant": "blue",
+      "content": [
+        "Validated $499/year membership model with target patients",
+        "Interviewed doctors about clinical workflow needs",
+        "Researched competitor platforms to identify gaps",
+        "Analyzed pharmacy partner capabilities and state coverage",
+        "Evaluated regulatory requirements across 48 states"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 3: Prioritization & Roadmap (Implementation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Product judgment: Prioritized pharmacy integration and e-prescribing (must-have for launch) while cutting admin analytics and reporting features (nice-to-have, could add post-launch)."
+    },
+    {
+      "type": "paragraph",
+      "content": "Critical tradeoff decisions:"
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "title": "Must-Have for Launch",
+      "content": [
+        "Patient portal with account management",
+        "Doctor portal with consultation workflows",
+        "E-prescribing via DoseSpot integration",
+        "Pharmacy fulfillment with routing logic",
+        "Payment processing via PayTheory",
+        "Multi-tenant architecture with data isolation",
+        "HIPAA-compliant infrastructure"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "title": "Post-Launch Features",
+      "content": [
+        "Advanced analytics and reporting dashboards",
+        "Marketing automation and email campaigns",
+        "Detailed financial reporting",
+        "A/B testing infrastructure",
+        "Mobile applications"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 4: Execution & Delivery"
+    },
+    {
+      "type": "paragraph",
+      "content": "Strategic thinking: Coordinated 4 engineers + CTO through 12 two-week sprints with 95% on-time delivery."
+    },
+    {
+      "type": "list",
+      "content": [
+        "Sprint planning with clear priorities and acceptance criteria",
+        "Daily standups to unblock engineering",
+        "Bi-weekly demos to stakeholders for feedback",
+        "Continuous prioritization adjustments based on learnings",
+        "Technical spec writing for complex integrations"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Made critical vendor decision: chose Choose Health over competitors for lab integration due to better API documentation, even though it was more expensive—this decision saved 2+ weeks of integration time."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 5: Beta Testing & Iteration"
+    },
+    {
+      "type": "paragraph",
+      "content": "Soft launch with beta patients before full marketing push:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "Recruited 25 beta patients for initial cohort",
+        "Monitored every prescription, consultation, and payment",
+        "Gathered feedback on user experience and clinical workflows",
+        "Fixed bugs and refined features based on real usage",
+        "Validated operational processes with pharmacy partners"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 6: Launch & Scale"
+    },
+    {
+      "type": "paragraph",
+      "content": "Official launch: August 4, 2025, with real paying patients rather than perfect features."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Results & Impact"
+    },
+    {
+      "type": "metrics",
+      "title": "Launch Metrics",
+      "content": [
+        "🚀 <strong>Launch Date:</strong> August 4, 2025 (9-month build from concept)",
+        "👥 <strong>Beta Cohort:</strong> 25 patients in first month",
+        "💰 <strong>First-Month Revenue:</strong> $12,475 from paying patients",
+        "💊 <strong>Medication Coverage:</strong> 499 medications across 39 disease states",
+        "📍 <strong>Geographic Reach:</strong> 48-state prescription fulfillment capability",
+        "✅ <strong>Operational Excellence:</strong> Zero prescription routing errors",
+        "🎯 <strong>Delivery Performance:</strong> 95% on-time sprint delivery across 12 sprints",
+        "🏥 <strong>Real Patients:</strong> Launched with production system, not prototype"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Key Lessons"
+    },
+    {
+      "type": "callout",
+      "variant": "green",
+      "content": "Ruthless prioritization enabled aggressive timeline. By cutting nice-to-have features (analytics, marketing automation) and focusing on core patient/doctor workflows, we launched 3 months earlier. Shipping with real paying patients validated product-market fit and operational readiness better than any internal testing could. The 95% on-time delivery rate came from clear priorities, detailed specs, and daily communication."
+    },
+    {
+      "type": "link",
+      "title": "View Live Platform",
+      "content": "Visit Hedfirst.com",
+      "href": "https://hedfirst.com"
+    }
+  ]
+}

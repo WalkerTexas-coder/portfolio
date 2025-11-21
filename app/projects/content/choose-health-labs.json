@@ -1,0 +1,174 @@
+{
+  "slug": "choose-health-labs",
+  "title": "Choose Health Lab Integration",
+  "subtitle": "Product Case Study • Teligant Platform",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Problem: Limited Patient Lifetime Value"
+    },
+    {
+      "type": "paragraph",
+      "content": "Hedfirst was migraine-only, limiting patient lifetime value to $499/year with no expansion revenue. We needed a way to increase engagement and create additional value for patients beyond single-condition treatment."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Product Lifecycle"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 1: Strategic Hypothesis (Ideation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Hypothesis: Migraine patients would value comprehensive health monitoring, especially if lab results revealed underlying conditions (vitamin deficiencies, hormone imbalances) contributing to migraines."
+    },
+    {
+      "type": "callout",
+      "variant": "blue",
+      "title": "Value Clarification",
+      "content": "This wasn't just feature expansion—it positioned Hedfirst as comprehensive health partner vs. single-condition treatment, increasing LTV and patient engagement while improving clinical outcomes."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 2: Vendor Evaluation & Requirements (Validation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Evaluated multiple at-home lab testing providers based on:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "API quality and documentation",
+        "HIPAA compliance and BAA availability",
+        "Test panel options relevant to migraine care",
+        "Pricing structure for wholesale partnerships",
+        "Technical integration complexity"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Selected Choose Health despite higher cost due to superior API documentation and webhook system—estimated this decision would save 2+ weeks of integration time."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 3: API Design & Prototyping (Implementation)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Analyzed 7-endpoint Choose Health API plus webhook system:"
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "content": [
+        "<strong>Order Creation:</strong> POST endpoint for creating lab kit orders",
+        "<strong>Order Status:</strong> GET endpoint for tracking fulfillment",
+        "<strong>Test Catalog:</strong> Available lab panels and pricing",
+        "<strong>Results Webhook:</strong> Real-time results delivery when labs complete",
+        "<strong>PDF Generation:</strong> Formatted results for provider review",
+        "<strong>Patient Portal:</strong> Iframe integration for requisition forms",
+        "<strong>Billing Integration:</strong> Webhook for payment confirmation"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Designed patient-facing lab ordering flow and provider dashboard for results review with interactive React prototypes."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 4: Development & Delivery"
+    },
+    {
+      "type": "paragraph",
+      "content": "Holistic implementation: Wrote 13 implementation tickets across frontend, backend, admin interfaces, and HIPAA-compliant data storage with 7-year retention."
+    },
+    {
+      "type": "list",
+      "content": [
+        "Patient portal: Lab ordering, requisition forms, results viewing",
+        "Provider dashboard: Results review, clinical notes, lab history",
+        "Admin interface: Order management, fulfillment tracking",
+        "Backend: 7 API endpoints, webhook handlers, data models",
+        "Compliance: HIPAA-compliant storage, audit logging, 7-year retention",
+        "Billing: Integration with PayTheory for lab kit charges"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 5: Beta Testing & Iteration"
+    },
+    {
+      "type": "paragraph",
+      "content": "Launched to beta patients with close monitoring:"
+    },
+    {
+      "type": "list",
+      "content": [
+        "25 beta patients offered lab testing in month 1",
+        "Gathered feedback on ordering flow and results presentation",
+        "Refined provider dashboard based on doctor usage patterns",
+        "Adjusted lab panel recommendations based on clinical findings"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Phase 6: Scale & Clinical Integration"
+    },
+    {
+      "type": "paragraph",
+      "content": "Full rollout with clinical workflow integration:"
+    },
+    {
+      "type": "callout",
+      "variant": "gray",
+      "content": [
+        "Lab recommendations built into consultation flow",
+        "15-minute provider review sessions included with lab purchases",
+        "Follow-up protocols for abnormal results",
+        "Treatment adjustments based on lab insights"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Results & Impact"
+    },
+    {
+      "type": "metrics",
+      "content": [
+        "📊 <strong>Adoption Rate:</strong> 40% of beta patients ordered lab tests within first month",
+        "🔬 <strong>Clinical Insights:</strong> 60% of patients showed vitamin deficiencies contributing to migraines",
+        "💰 <strong>Revenue Stream:</strong> New revenue at $99-$145 per lab panel",
+        "🎯 <strong>LTV Increase:</strong> Expanded patient value beyond $499/year membership",
+        "🏥 <strong>Clinical Outcomes:</strong> Improved treatment targeting based on objective lab data",
+        "🔄 <strong>Engagement:</strong> Lab results created ongoing touchpoints beyond medication management"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Key Lessons"
+    },
+    {
+      "type": "callout",
+      "variant": "green",
+      "content": "Strategic integrations should solve business problems, not just add features. By positioning Hedfirst as a comprehensive health partner through lab testing, we increased LTV, improved clinical outcomes, and created new revenue streams. Choosing the right vendor (Choose Health) based on API quality saved weeks of integration time despite higher cost."
+    },
+    {
+      "type": "link",
+      "title": "View Live Platform",
+      "content": "Visit Hedfirst.com",
+      "href": "https://hedfirst.com"
+    }
+  ]
+}
