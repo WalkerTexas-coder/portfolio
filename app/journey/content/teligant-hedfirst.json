@@ -1,13 +1,13 @@
 {
   "slug": "teligant-hedfirst",
   "title": "Teligant & Hedfirst: Multi-Tenant Healthcare SaaS",
-  "subtitle": "Technical Product Manager • August 2024 - September 2025",
-  "step": 4,
+  "subtitle": "Technical Product Manager • September 2024 - September 15, 2025",
+  "step": 5,
   "totalSteps": 7,
-  "nextSlug": "compoundlive",
-  "nextLabel": "Next: CompoundLive",
-  "prevSlug": "experience",
-  "prevLabel": "Back",
+  "nextSlug": "philosophy",
+  "nextLabel": "Next: Product Philosophy",
+  "prevSlug": "compoundlive",
+  "prevLabel": "Back: CompoundLive",
   "heroImage": {
     "src": "https://cdn.prod.website-files.com/67ad2c6bdcb40e4e1f8634c9/67af2f828dde99af89ddfdfa_2image.avif",
     "alt": "Teligant Platform Dashboard",
@@ -41,16 +41,16 @@
       "type": "callout",
       "variant": "blue",
       "title": "The Solution: 3-Tier Order Architecture",
-      "content": "Instead of patching a standard e-commerce model, I designed a 3-tier hierarchy: 'Master Order' (the patient's intent), 'Sub-Orders' (fulfillment units), and 'Line Items' (SKUs). This allowed us to split a single checkout into multiple downstream workflows—sending the lab kit to the lab, the prescription to the pharmacy, and the membership to the billing engine—all asynchronously."
+      "content": "I designed a 3-tier Order Hierarchy system (`Order` -> `Shipment` -> `LineItem`) to handle the complexity of recurring prescriptions, one-off lab kits, and membership benefits in a single checkout. This wasn't just a logical concept—I defined the JSON schema that allowed our backend to split a single user transaction into multiple fulfillment events."
     },
     {
       "type": "heading",
       "level": 3,
-      "content": "2. The 'Pharmacy Bridge' & Operational Empathy"
+      "content": "2. The Pharmacy Bridge (Operational Empathy)"
     },
     {
       "type": "paragraph",
-      "content": "Doctors were frequently misrouting prescriptions because the UI didn't match their mental model. This wasn't a 'training issue'; it was a design failure. I observed their workflow and realized they needed guardrails, not just dropdowns."
+      "content": "Doctors were misrouting prescriptions because the UI didn't match their mental model. I built a 'Pharmacy Bridge' workflow that intercepted the DoseSpot API payload and validated it against our internal routing rules before submission. This middleware layer prevented 100% of routing errors by enforcing logic at the code level."
     },
     {
       "type": "callout",

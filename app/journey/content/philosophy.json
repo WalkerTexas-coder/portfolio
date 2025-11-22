@@ -2,12 +2,12 @@
   "slug": "philosophy",
   "title": "How I Think About Healthcare Product Management",
   "subtitle": "Lessons from 3 years building telehealth platforms",
-  "step": 2,
+  "step": 6,
   "totalSteps": 7,
-  "prevSlug": "introduction",
-  "prevLabel": "Back: Introduction",
+  "prevSlug": "teligant-hedfirst",
+  "prevLabel": "Back: Teligant & Hedfirst",
   "nextSlug": "experience",
-  "nextLabel": "Next: My Experience",
+  "nextLabel": "Next: Three Years in Healthcare",
   "heroImage": {
     "alt": "Healthcare product management philosophy",
     "className": "w-full h-[400px] object-cover"
@@ -85,10 +85,10 @@
     {
       "type": "list",
       "content": [
-        "<strong>Reading API documentation:</strong> When integrating DoseSpot, Choose Health, PayTheory, I can analyze endpoints, understand rate limits, and design integration architecture myself.",
-        "<strong>Writing implementable specs:</strong> Engineers don't come back with 10 clarifying questions because I understand data models, edge cases, and technical constraints.",
-        "<strong>Debugging production issues:</strong> When lab results aren't syncing via webhooks, I can read logs, trace API calls, and identify root causes.",
-        "<strong>Realistic timelines:</strong> I know the difference between \"change a config\" (1 day) and \"rebuild data architecture\" (2 weeks)."
+        "<strong>Reading API documentation:</strong> When integrating DoseSpot or PayTheory, I don't wait for engineers to tell me what's possible. I read the docs, test the endpoints in Postman, and map the data model myself.",
+        "<strong>Writing implementable specs:</strong> Engineers don't come back with 10 clarifying questions because I understand data models, edge cases, and technical constraints. I write the JSON schema before I write the user story.",
+        "<strong>Debugging production issues:</strong> When lab results aren't syncing, I can read the server logs, trace the webhook failure, and identify the root cause (e.g., a missing patient_id in the payload).",
+        "<strong>Realistic timelines:</strong> I know the difference between 'change a config' (1 hour) and 'rebuild data architecture' (2 weeks) because I understand the underlying code."
       ]
     },
     {

@@ -1,14 +1,24 @@
+"use client";
+
 import React from 'react';
 import CalloutBox from './CalloutBox';
+import dynamic from 'next/dynamic';
+
+// Dynamic imports for demos to avoid SSR issues and reduce bundle size
+const PharmacyFulfillmentDemo = dynamic(() => import('./demos/PharmacyFulfillmentDemo'), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />,
+  ssr: false
+});
 
 export interface ArticleSectionData {
-  type: 'heading' | 'paragraph' | 'list' | 'callout' | 'metrics' | 'link';
+  type: 'heading' | 'paragraph' | 'list' | 'callout' | 'metrics' | 'link' | 'prototype';
   level?: 2 | 3; // for heading type
   content: string | string[];
   variant?: 'blue' | 'gray' | 'green'; // for callout type
   title?: string; // for callout and metrics types
   href?: string; // for link type
   ordered?: boolean; // for list type
+  componentName?: string; // for prototype type
 }
 
 interface ArticleSectionProps {
@@ -99,6 +109,18 @@ export default function ArticleSection({ section }: ArticleSectionProps) {
           >
             {section.content as string}
           </a>
+        </div>
+      );
+
+
+
+    case 'prototype':
+      if (section.componentName === 'PharmacyFulfillmentDemo') {
+        return <PharmacyFulfillmentDemo />;
+      }
+      return (
+        <div className="p-4 bg-yellow-50 border border-yellow-200 rounded text-yellow-800">
+          Prototype component "{section.componentName}" not found.
         </div>
       );
 

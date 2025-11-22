@@ -72,7 +72,7 @@
     },
     {
       "type": "paragraph",
-      "content": "Designed flexible subscription architecture supporting 30-365 day billing cycles:"
+      "content": "I designed a flexible subscription architecture that supports n-day billing cycles, not just monthly/annual. I wrote the specific retry logic specification for failed payments (dunning management), defining exactly how many times to retry and at what intervals before cancelling the subscription."
     },
     {
       "type": "callout",

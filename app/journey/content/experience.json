@@ -1,13 +1,11 @@
 {
   "slug": "experience",
-  "title": "How I Became a Healthcare PM",
-  "subtitle": "The path from teaching code to leading product strategy",
-  "step": 3,
+  "title": "Three Years in Healthcare: Looking Back",
+  "subtitle": "The journey from teaching code to leading product strategy",
+  "step": 7,
   "totalSteps": 7,
-  "nextSlug": "teligant-hedfirst",
-  "nextLabel": "Next: Teligant & Hedfirst",
   "prevSlug": "philosophy",
-  "prevLabel": "Back: Philosophy",
+  "prevLabel": "Back: Product Philosophy",
   "sections": [
     {
       "type": "heading",
@@ -20,11 +18,11 @@
     },
     {
       "type": "paragraph",
-      "content": "At LEARN Academy, I learned to break down complex technical concepts into digestible pieces. Teaching 170+ students forced me to understand things deeply enough to explain them simply. That skill—translating technical complexity for different audiences—became my competitive advantage."
+      "content": "At LEARN Academy, I learned that **documentation is a product**. Teaching 170+ students forced me to explain complex technical concepts simply. Now, I write documentation that engineers actually read—because I know how to structure information for technical consumption."
     },
     {
       "type": "paragraph",
-      "content": "At Rugiet Health, I had my \"product manager moment.\" When retention metrics dropped, I didn't just implement the ticket on the board. I analyzed user data, talked to support, and discovered the real problem: inflexible subscription management forcing patients to cancel when they wanted to pause. The solution increased retention 35%. I realized I was better at deciding what to build than building it."
+      "content": "At Rugiet Health, I had my 'Technical PM moment.' When retention dropped, I didn't just ask for a feature. I analyzed the database schema and realized our subscription model was too rigid. I mapped out the data model changes required to support a 'Pause' state, proving that a small engineering lift could solve a massive business problem (35% retention increase)."
     },
     {
       "type": "heading",

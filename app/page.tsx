@@ -69,11 +69,17 @@ export default function Home() {
       <section className="py-20 px-6 md:px-12 gradient-bg">
         <div className="container mx-auto max-w-4xl">
           <FadeInOnScroll delay={0}>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 mb-6 hover:bg-white/15 transition-all duration-300">
+              <p className="text-2xl md:text-3xl leading-relaxed text-white font-semibold text-center">
+                Great telehealth products aren't just about features—they're about <span className="text-white font-bold">reducing anxiety</span>.
+              </p>
+            </div>
+          </FadeInOnScroll>
+
+          <FadeInOnScroll delay={100}>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 mb-12 hover:bg-white/15 transition-all duration-300">
               <p className="text-2xl md:text-3xl leading-relaxed text-white font-semibold text-center">
-                Great products aren't just about features; they're about <span className="text-white font-bold">reducing anxiety</span>.
-                I build systems that make doctors feel safe and patients feel cared for.
-                By mastering the "what, why, and how," I turn compliance from a blocker into a competitive advantage.
+                I build systems that empower doctors to <span className="text-blue-300 font-bold">provide care</span>, admins to <span className="text-purple-300 font-bold">understand operations</span>, and patients to <span className="text-pink-300 font-bold">feel cared for</span>—by turning compliance from a blocker into a competitive advantage.
               </p>
             </div>
           </FadeInOnScroll>

@@ -1,20 +1,26 @@
 {
   "slug": "learn-academy",
-  "title": "LEARN Academy: Teaching the Next Generation",
-  "subtitle": "Lead Instructor • July 2020 - April 2023",
-  "step": 7,
+  "title": "LEARN Academy: Where It All Started",
+  "subtitle": "Student (May-Aug 2020) • Instructor (2021-2023) • Lead Instructor (Jan 2022)",
+  "step": 2,
   "totalSteps": 7,
-  "prevSlug": "rugiet",
-  "prevLabel": "Back: Rugiet Health",
+  "prevSlug": "introduction",
+  "prevLabel": "Back: Introduction",
+  "nextSlug": "rugiet",
+  "nextLabel": "Next: Rugiet Health",
   "sections": [
     {
       "type": "heading",
       "level": 2,
-      "content": "Where It All Started"
+      "content": "The Career Transition"
     },
     {
       "type": "paragraph",
-      "content": "Before healthcare, before product management, I was a coding bootcamp instructor. Teaching 170+ students over three years taught me skills that became my competitive advantage: breaking down complexity, communicating technical concepts clearly, and understanding how people learn."
+      "content": "In May 2020, during the COVID lockdown, I made a decision: I was going to leave Philz Coffee and transition into tech. I enrolled at LEARN Academy as a student, and four months later I graduated with full-stack development skills."
+    },
+    {
+      "type": "paragraph",
+      "content": "By 2021, I was back—this time as an instructor. On January 1, 2022, I became a Lead Instructor. Over three years, I taught 170+ students to code, but more importantly, I taught them how to think like engineers and communicate technical concepts clearly."
     },
     {
       "type": "heading",
@@ -29,6 +35,26 @@
         "<strong>Documentation Matters:</strong> Students couldn't succeed without clear documentation. Now I write specs that engineers can implement without constant clarification.",
         "<strong>Mentorship & Leadership:</strong> Managing cohorts, coordinating with instructors, and supporting students built leadership skills that translate directly to cross-functional product teams."
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The AI Prediction (2022)"
+    },
+    {
+      "type": "callout",
+      "variant": "blue",
+      "title": "A Prediction That Aged Well",
+      "content": "As Lead Instructor starting January 2022, I made a controversial choice: I emphasized pseudocode, problem-solving, and technical communication over syntax memorization. My reasoning? I believed AI would make hand-coding obsolete within five years."
+    },
+    {
+      "type": "paragraph",
+      "content": "In 2022, this was a bold claim. GitHub Copilot had just launched, but most developers dismissed AI as a novelty. I disagreed. I saw the trajectory and bet that the most valuable skill wouldn't be writing code—it would be knowing what code to write and how to communicate technical requirements."
+    },
+    {
+      "type": "callout",
+      "variant": "green",
+      "content": "Three years later, in 2025, Claude Code, Cursor, and AI-powered development tools are proving that prediction right. The students who learned to think algorithmically and explain problems clearly have a massive advantage over those who just memorized syntax."
     },
     {
       "type": "heading",

@@ -11,52 +11,52 @@
       "readTime": "3 min"
     },
     {
+      "slug": "learn-academy",
+      "title": "LEARN Academy",
+      "subtitle": "Where it all started",
+      "step": 2,
+      "excerpt": "From career-transition student during COVID to lead instructor teaching 170+ developers—and predicting AI would change everything.",
+      "readTime": "4 min"
+    },
+    {
+      "slug": "rugiet",
+      "title": "Rugiet Health",
+      "subtitle": "Where I found product management",
+      "step": 3,
+      "excerpt": "35% retention increase by fixing a critical user experience gap—the moment I fell in love with product.",
+      "readTime": "6 min"
+    },
+    {
+      "slug": "compoundlive",
+      "title": "CompoundLive",
+      "subtitle": "Solutions engineering and client success",
+      "step": 4,
+      "excerpt": "Learned to translate technical complexity into client value and business outcomes.",
+      "readTime": "5 min"
+    },
+    {
+      "slug": "teligant-hedfirst",
+      "title": "Teligant & Hedfirst",
+      "subtitle": "Building a multi-tenant healthcare platform",
+      "step": 5,
+      "excerpt": "9-month sprint to launch: 150+ features, $12K first-month revenue, 499 medications across 48 states.",
+      "readTime": "8 min"
+    },
+    {
       "slug": "philosophy",
       "title": "Product Philosophy",
       "subtitle": "How I think about building products",
-      "step": 2,
+      "step": 6,
       "excerpt": "The best product decisions aren't about what to build—they're about what not to build.",
       "readTime": "4 min"
     },
     {
       "slug": "experience",
       "title": "Three Years in Healthcare",
-      "subtitle": "Context for the journey",
-      "step": 3,
+      "subtitle": "Looking back on the journey",
+      "step": 7,
       "excerpt": "Building platforms across prescription management, lab integration, and multi-tenant SaaS.",
       "readTime": "3 min"
-    },
-    {
-      "slug": "teligant-hedfirst",
-      "title": "Teligant & Hedfirst",
-      "subtitle": "Building a multi-tenant healthcare platform",
-      "step": 4,
-      "excerpt": "9-month sprint to launch: 150+ features, $12K first-month revenue, 499 medications across 48 states.",
-      "readTime": "8 min"
-    },
-    {
-      "slug": "compoundlive",
-      "title": "CompoundLive",
-      "subtitle": "Solutions engineering and client success",
-      "step": 5,
-      "excerpt": "Learned to translate technical complexity into client value and business outcomes.",
-      "readTime": "5 min"
-    },
-    {
-      "slug": "rugiet",
-      "title": "Rugiet Health",
-      "subtitle": "Where I found product management",
-      "step": 6,
-      "excerpt": "35% retention increase by fixing a critical user experience gap—the moment I fell in love with product.",
-      "readTime": "6 min"
-    },
-    {
-      "slug": "learn-academy",
-      "title": "LEARN Academy",
-      "subtitle": "Teaching the next generation",
-      "step": 7,
-      "excerpt": "Trained 170+ developers and discovered my passion for mentorship and technical leadership.",
-      "readTime": "4 min"
     }
   ]
 }

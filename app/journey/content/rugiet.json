@@ -1,13 +1,13 @@
 {
   "slug": "rugiet",
   "title": "Rugiet Health: Where I Found Product Management",
-  "subtitle": "Full Stack Developer • May 2023 - January 2024",
-  "step": 6,
+  "subtitle": "Full Stack Developer (25% time) • February 2023 - September 2024",
+  "step": 3,
   "totalSteps": 7,
-  "nextSlug": "learn-academy",
-  "nextLabel": "Next: LEARN Academy",
-  "prevSlug": "compoundlive",
-  "prevLabel": "Back: CompoundLive",
+  "nextSlug": "compoundlive",
+  "nextLabel": "Next: CompoundLive",
+  "prevSlug": "learn-academy",
+  "prevLabel": "Back: LEARN Academy",
   "heroImage": {
     "src": "https://cdn.prod.website-files.com/67a509f5940083778a2478d0/67d16eb0733bbcccda908f61_hedfirst-home-screen.avif",
     "alt": "Rugiet Health Dashboard",
@@ -45,7 +45,7 @@
     },
     {
       "type": "paragraph",
-      "content": "I championed a 'Pause' feature—technically simple, but business-critical. Stakeholders feared it would lower revenue. I argued that by giving users control, we would gain their trust."
+      "content": "I championed a 'Pause' feature. Technically, this required refactoring our subscription state machine to support a 'suspended' status that preserved patient data without triggering billing events. It was a complex backend change, but it solved the psychological problem of 'subscription anxiety.'"
     },
     {
       "type": "callout",
