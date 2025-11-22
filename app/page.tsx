@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import ProjectCard from "./components/ProjectCard";
 import ExperienceItem from "./components/ExperienceItem";
 import Contact from "./components/Contact";
+import Connect from "./components/Connect";
 import FadeInOnScroll from "./components/FadeInOnScroll";
 import ShiftF1Banner from "./components/ShiftF1Banner";
 import atxImage from "./images/atx.png";
@@ -220,25 +221,19 @@ export default function Home() {
 
 
       {/* Let's Build Section */}
-      <section className="py-20 border-t border-gray-200 dark:border-gray-800">
+      <section id="connect" className="py-20 border-t border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-6 md:px-12">
           <h2 className="text-center text-[5rem] md:text-[8rem] font-bold outline-text mb-6">LET'S BUILD</h2>
           <p className="text-center text-xl md:text-2xl max-w-3xl mx-auto mb-8">
             Looking for a technical product manager who can translate complex healthcare requirements into
             working software? Someone who writes specifications developers can actually implement?
           </p>
-          <div className="text-center">
+          <div className="text-center mb-12">
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
               I'm seeking senior product roles in healthcare technology where I can leverage my domain expertise
               and technical depth. Ideal fit: Series A-C health tech startups, B2B healthcare SaaS, telehealth platforms.
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <Link
-                href="#connect"
-                className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Book a Meeting
-              </Link>
               <Link
                 href="/resume"
                 className="inline-block px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
@@ -247,11 +242,14 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
+          {/* Connect Component with Calendly and Form */}
+          <Connect />
         </div>
       </section>
 
       {/* Footer */}
-      <footer id="connect" className="py-12 px-6 md:px-12 border-t border-gray-200 dark:border-gray-800">
+      <footer className="py-12 px-6 md:px-12 border-t border-gray-200 dark:border-gray-800">
         <div className="container mx-auto">
           <Contact
             name="Austin Walker"
@@ -269,7 +267,7 @@ export default function Home() {
               { name: "Github", url: "https://github.com/WalkerTexas-coder" },
               { name: "LinkedIn", url: "https://www.linkedin.com/in/walkeratx/" },
               { name: "X", url: "https://x.com/WalkerTXdriver" },
-              { name: "Email", url: "mailto:walkertexasaustin@gmail.com" }
+              { name: "Email", url: "mailto:walkertexasaustin+hire@gmail.com" }
             ]}
           />
         </div>
