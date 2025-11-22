@@ -1,0 +1,100 @@
+flowchart TD
+    %% User Interface Layer
+    subgraph "Client Applications"
+        direction LR
+        UI1["Patient Portal<br/><b>shop.hedfirst.com</b>"]
+        UI2["Provider Dashboard<br/><b>doctors.teligant.com</b>"]
+        UI3["Admin Portal<br/><b>admins.teligant.com</b>"]
+    end
+
+    %% Traffic Management
+    subgraph "Traffic & Security Layer"
+        direction LR
+        LB[Load Balancer]
+        API[API Gateway]
+        AUTH[Authentication Service]
+    end
+
+    %% Core Platform
+    subgraph "Core Platform Services"
+        direction TB
+        subgraph "Healthcare Core"
+            PATIENT[Patient Data Engine]
+            PROVIDER[Provider Management] 
+            QUEST[Questionnaire Engine]
+        end
+        subgraph "Business Logic"
+            ORDER[Order Management]
+            PAYMENT[Payment Processing]
+        end
+    end
+
+    %% AI Intelligence Layer
+    subgraph "AI Intelligence Platform"
+        direction LR
+        AI[Claude 4<br/>AI Service]
+        ANALYSIS[Pattern Recognition<br/>Engine]
+        ASSESS[Assessment Generator]
+        VECTOR[Vector Database<br/>Embeddings]
+    end
+
+    %% External Ecosystem
+    subgraph "Healthcare Integration Ecosystem"
+        direction TB
+        subgraph "Clinical Systems"
+            DOSE[Dosespot EHR<br/>Integration]
+            SURE[SureScripts<br/>Network]
+        end
+        subgraph "Service Partners"
+            CHOOSE[Choose Health<br/>Lab Services]
+            SHIP[ShipStation<br/>Fulfillment]
+            PAY[PayTheory<br/>Payment Gateway]
+        end
+    end
+
+    %% Data Infrastructure
+    subgraph "Data Infrastructure Layer"
+        direction LR
+        RDS[RDS PostgreSQL<br/>Primary Database]
+        CACHE[Redis Cache<br/>Session Store]
+        S3[S3 Object Storage<br/>Documents & Media]
+        LOGS[CloudWatch<br/>Monitoring & Logs]
+    end
+
+    %% Simplified Data Flow
+    UI1 & UI2 & UI3 --> LB
+    LB --> API
+    API --> AUTH
+    AUTH --> PATIENT & PROVIDER & ORDER
+    
+    PATIENT --> AI
+    QUEST --> AI
+    AI --> ANALYSIS
+    ANALYSIS --> ASSESS
+    AI --> VECTOR
+    
+    ORDER --> PAYMENT
+    PAYMENT --> PAY
+    ORDER --> DOSE
+    DOSE --> SURE
+    ORDER --> CHOOSE
+    ORDER --> SHIP
+    
+    PATIENT & PROVIDER & ORDER --> RDS
+    ASSESS --> S3
+    API --> CACHE
+    
+    %% Professional Healthcare Styling
+    classDef clientLayer fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000,font-weight:bold
+    classDef securityLayer fill:#fce4ec,stroke:#ad1457,stroke-width:3px,color:#000,font-weight:bold
+    classDef coreLayer fill:#fff8e1,stroke:#ef6c00,stroke-width:3px,color:#000,font-weight:bold
+    classDef aiLayer fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000,font-weight:bold
+    classDef integrationLayer fill:#f3e5f5,stroke:#6a1b9a,stroke-width:3px,color:#000,font-weight:bold
+    classDef dataLayer fill:#e0f2f1,stroke:#00695c,stroke-width:3px,color:#000,font-weight:bold
+    
+    class UI1,UI2,UI3 clientLayer
+    class LB,API,AUTH securityLayer
+    class PATIENT,PROVIDER,QUEST,ORDER,PAYMENT coreLayer
+    class AI,ANALYSIS,ASSESS,VECTOR aiLayer
+    class DOSE,SURE,CHOOSE,SHIP,PAY integrationLayer
+    class RDS,CACHE,S3,LOGS dataLayer

@@ -59,11 +59,11 @@
     {
       "type": "heading",
       "level": 3,
-      "content": "Phase 3: Prioritization & Roadmap (Implementation)"
+      "content": "Phase 3: Ruthless Prioritization (Implementation)"
     },
     {
       "type": "paragraph",
-      "content": "Product judgment: Prioritized pharmacy integration and e-prescribing (must-have for launch) while cutting admin analytics and reporting features (nice-to-have, could add post-launch)."
+      "content": "Product judgment isn't about what you build; it's about what you *don't* build. I cut admin analytics and reporting features to zero to ensure we nailed the core patient/doctor workflows."
     },
     {
       "type": "paragraph",
@@ -86,7 +86,7 @@
     {
       "type": "callout",
       "variant": "gray",
-      "title": "Post-Launch Features",
+      "title": "Cut Scope (The 'No' List)",
       "content": [
         "Advanced analytics and reporting dashboards",
         "Marketing automation and email campaigns",
@@ -98,7 +98,7 @@
     {
       "type": "heading",
       "level": 3,
-      "content": "Phase 4: Execution & Delivery"
+      "content": "Phase 4: Orchestrating Velocity"
     },
     {
       "type": "paragraph",
@@ -155,7 +155,7 @@
       "type": "metrics",
       "title": "Launch Metrics",
       "content": [
-        "🚀 <strong>Launch Date:</strong> August 4, 2025 (9-month build from concept)",
+        "🚀 <strong>Velocity:</strong> Concept to Launch in 9 months",
         "👥 <strong>Beta Cohort:</strong> 25 patients in first month",
         "💰 <strong>First-Month Revenue:</strong> $12,475 from paying patients",
         "💊 <strong>Medication Coverage:</strong> 499 medications across 39 disease states",

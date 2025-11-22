@@ -62,7 +62,7 @@
     },
     {
       "type": "paragraph",
-      "content": "Analyzed 7-endpoint Choose Health API plus webhook system:"
+      "content": "I didn't just hand this to engineers. I analyzed the 7-endpoint Choose Health API, mapped the JSON response fields to our internal data model, and designed the webhook handler for asynchronous results delivery. I wrote the Swagger documentation for our internal developers to consume the external API wrapper."
     },
     {
       "type": "callout",

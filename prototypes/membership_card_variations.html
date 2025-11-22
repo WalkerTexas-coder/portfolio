@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Care Membership Card Variations</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Enhanced Savings Styles */
+        .enhanced-savings {
+            background: white;
+            border: 2px solid #16a34a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .savings-banner {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .enhanced-savings .main-content {
+            padding: 20px;
+        }
+
+        .enhanced-savings .title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #111827;
+            margin: 0 0 8px 0;
+        }
+
+        .enhanced-savings .value-prop {
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .comparison-box {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .comparison-item {
+            padding: 8px 0;
+        }
+
+        .comparison-item .label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .comparison-item .details {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .comparison-item.traditional .label {
+            color: #dc2626;
+        }
+
+        .comparison-item.member .label {
+            color: #16a34a;
+        }
+
+        .vs {
+            text-align: center;
+            font-weight: 700;
+            color: #9ca3af;
+            margin: 8px 0;
+        }
+
+        .total-savings {
+            background: #dcfce7;
+            color: #166534;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .enhanced-savings .pricing-display {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .monthly-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+            display: block;
+        }
+
+        .annual-deal {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .cta-enhanced {
+            width: 100%;
+            background: #16a34a;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Efficiency Card Styles */
+        .efficiency-card {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .top-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        .efficiency-card .header-section {
+            padding: 20px 20px 0 20px;
+            text-align: center;
+        }
+
+        .efficiency-card .title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+
+        .efficiency-card .subtitle {
+            opacity: 0.9;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .efficiency-benefits {
+            padding: 0 20px;
+        }
+
+        .efficiency-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .efficiency-item .icon {
+            font-size: 18px;
+        }
+
+        .efficiency-item .text {
+            font-weight: 500;
+        }
+
+        .savings-highlight {
+            background: rgba(255,255,255,0.15);
+            margin: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .big-number {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+
+        .savings-text {
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .efficiency-card .price-section {
+            padding: 0 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .efficiency-card .monthly {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .efficiency-card .annual {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .cta-efficiency {
+            width: calc(100% - 40px);
+            margin: 0 20px 20px 20px;
+            background: white;
+            color: #1e40af;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Bold Savings Styles */
+        .bold-savings {
+            background: white;
+            border: 3px solid #f59e0b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .impact-header {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .mega-savings {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .efficiency-tag {
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        .bold-savings .content-section {
+            padding: 24px;
+        }
+
+        .bold-savings .title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+
+        .pathway-comparison {
+            margin-bottom: 20px;
+        }
+
+        .old-way, .new-way {
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+        }
+
+        .old-way {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+        }
+
+        .new-way {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+        }
+
+        .pathway-title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .pathway-details {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+
+        .price-breakdown {
+            background: #f9fafb;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .strike-price {
+            font-size: 16px;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+
+        .member-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+            margin: 4px 0;
+        }
+
+        .you-save {
+            font-size: 18px;
+            font-weight: 700;
+            color: #16a34a;
+        }
+
+        .cta-bold {
+            width: 100%;
+            background: #f59e0b;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .variations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .variation {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .variation h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* Original Design (Reference) */
+        .original {
+            background: #e8f4fd;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .original .badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #22c55e;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .original .header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .original .logo {
+            width: 40px;
+            height: 40px;
+            background: #4c1d95;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .original .title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+
+        .original .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin: 5px 0 0 0;
+        }
+
+        .original .benefits {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            gap: 15px;
+        }
+
+        .original .benefit {
+            text-align: center;
+            flex: 1;
+        }
+
+        .original .benefit-icon {
+            width: 32px;
+            height: 32px;
+            background: #f3f4f6;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .original .benefit-text {
+            font-size: 12px;
+            color: #374151;
+            line-height: 1.3;
+        }
+
+        .original .pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .original .price {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .original .price-period {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .original .annual-price {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .original .annual-price .strike {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .original .cta-button {
+            width: 100%;
+            background: #4c1d95;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .original .learn-more {
+            text-align: center;
+            color: #666;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+
+        /* Variation 1: Compact Horizontal */
+        .v1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .v1::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .v1 .badge {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .v1 .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .v1 .left-content {
+            flex: 1;
+        }
+
+        .v1 .title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+
+        .v1 .benefits-list {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .v1 .right-content {
+            text-align: center;
+        }
+
+        .v1 .price {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .v1 .price-period {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .v1 .cta-button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: transform 0.2s;
+        }
+
+        .v1 .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Variation 2: Minimal Card */
+        .v2 {
+            border: 2px solid #f59e0b;
+            background: #fffbeb;
+            border-radius: 8px;
+            padding: 24px;
+            position: relative;
+        }
+
+        .v2 .badge {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #f59e0b;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .v2 .title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #92400e;
+            margin: 0 0 8px 0;
+        }
+
+        .v2 .subtitle {
+            color: #b45309;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .v2 .highlight-benefit {
+            background: white;
+            border: 1px solid #fbbf24;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .v2 .highlight-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #92400e;
+            margin: 0;
+        }
+
+        .v2 .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .v2 .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #92400e;
+        }
+
+        .v2 .savings {
+            background: #dcfce7;
+            color: #166534;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .v2 .cta-button {
+            width: 100%;
+            background: #f59e0b;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Variation 3: Feature-Rich */
+        .v3 {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .v3 .header {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        .v3 .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #10b981;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .v3 .title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+
+        .v3 .subtitle {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .v3 .body {
+            padding: 24px;
+        }
+
+        .v3 .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .v3 .benefit {
+            text-align: center;
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .v3 .benefit-icon {
+            width: 32px;
+            height: 32px;
+            background: #3b82f6;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .v3 .benefit-text {
+            font-size: 12px;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .v3 .pricing-section {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .v3 .price-display {
+            text-align: left;
+        }
+
+        .v3 .price {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0;
+        }
+
+        .v3 .price-period {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .v3 .value-prop {
+            text-align: right;
+            font-size: 14px;
+            color: #059669;
+            font-weight: 600;
+        }
+
+        .v3 .cta-button {
+            width: 100%;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Variation 4: Bold & Direct */
+        .v4 {
+            background: #dc2626;
+            color: white;
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .v4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b, #dc2626);
+        }
+
+        .v4 .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .v4 .title {
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .v4 .value-prop {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .v4 .price-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .v4 .price {
+            font-size: 32px;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .v4 .savings-text {
+            font-size: 14px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .v4 .cta-button {
+            width: 100%;
+            background: white;
+            color: #dc2626;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Variation 5: Clean Professional */
+        .v5 {
+            background: white;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .v5 .header-bar {
+            background: #059669;
+            height: 6px;
+        }
+
+        .v5 .content {
+            padding: 24px;
+        }
+
+        .v5 .badge {
+            background: #d1fae5;
+            color: #059669;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .v5 .title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            margin: 0 0 8px 0;
+        }
+
+        .v5 .subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .v5 .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+        }
+
+        .v5 .benefits-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 14px;
+            color: #374151;
+            display: flex;
+            align-items: center;
+        }
+
+        .v5 .benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .v5 .benefits-list li::before {
+            content: '✓';
+            color: #059669;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .v5 .pricing-footer {
+            background: #f9fafb;
+            padding: 20px 24px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .v5 .price-display {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .v5 .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .v5 .price-period {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .v5 .cta-button {
+            background: #059669;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .description {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Care Membership Card Variations</h1>
+        
+        <div class="variations-grid">
+            <!-- Original Design for Reference -->
+            <div class="variation">
+                <h3>Current Design (Reference)</h3>
+                <div class="original">
+                    <div class="badge">AI Assessment</div>
+                    <div class="header">
+                        <div class="logo">H</div>
+                        <div>
+                            <div class="title">AI Care Membership</div>
+                            <div class="subtitle">Early members save on discounted pricing.</div>
+                        </div>
+                    </div>
+                    <div class="benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">📋</div>
+                            <div class="benefit-text">2 comprehensive appointments</div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">🏥</div>
+                            <div class="benefit-text">Additional provider visits</div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">🤖</div>
+                            <div class="benefit-text">Personalized AI health analysis</div>
+                        </div>
+                    </div>
+                    <div class="pricing">
+                        <div>
+                            <span class="price">$41.58</span><span class="price-period">/month</span>
+                        </div>
+                        <div class="annual-price">
+                            Annual membership $499.00 <span class="strike">$699.00</span>
+                        </div>
+                    </div>
+                    <button class="cta-button">Add To Cart</button>
+                    <div class="learn-more">Learn More</div>
+                </div>
+                <div class="description">Current design with light blue background and traditional layout</div>
+            </div>
+
+            <!-- Enhanced Variation 1: Savings-Focused Card -->
+            <div class="variation">
+                <h3>Enhanced: Major Savings Focus</h3>
+                <div class="enhanced-savings">
+                    <div class="savings-banner">💰 SAVE $200+ ANNUALLY + SKIP MONTHS OF WAITING</div>
+                    <div class="main-content">
+                        <div class="title">AI Care Membership</div>
+                        <div class="value-prop">Bypass the traditional GP → specialist → wait cycle</div>
+                        
+                        <div class="comparison-box">
+                            <div class="comparison-item traditional">
+                                <div class="label">Traditional Healthcare</div>
+                                <div class="details">$699+ • 2-3 months waiting • Multiple appointments</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="comparison-item member">
+                                <div class="label">AI Care Member</div>
+                                <div class="details">$499/year • Start in days • Streamlined care</div>
+                            </div>
+                        </div>
+
+                        <div class="total-savings">
+                            <strong>Total Savings: $300-500+ per year</strong>
+                        </div>
+                        
+                        <div class="pricing-display">
+                            <span class="monthly-price">$41.58/month</span>
+                            <span class="annual-deal">or $499 annually (reg. $699)</span>
+                        </div>
+                        
+                        <button class="cta-enhanced">Join & Save Now</button>
+                    </div>
+                </div>
+                <div class="description">Heavy focus on savings and time benefits with comparison layout</div>
+            </div>
+
+            <!-- Enhanced Variation 2: Efficiency-Focused -->
+            <div class="variation">
+                <h3>Enhanced: Time & Money Efficiency</h3>
+                <div class="efficiency-card">
+                    <div class="top-badge">⚡ SKIP THE WAIT • SAVE $200+ YEARLY</div>
+                    
+                    <div class="header-section">
+                        <div class="title">AI Care Membership</div>
+                        <div class="subtitle">Get care in days, not months</div>
+                    </div>
+
+                    <div class="efficiency-benefits">
+                        <div class="efficiency-item">
+                            <div class="icon">🚫</div>
+                            <div class="text">Skip 2-3 month wait times</div>
+                        </div>
+                        <div class="efficiency-item">
+                            <div class="icon">💸</div>
+                            <div class="text">Avoid $300-500 in traditional care costs</div>
+                        </div>
+                        <div class="efficiency-item">
+                            <div class="icon">🎯</div>
+                            <div class="text">Direct access to AI-powered insights</div>
+                        </div>
+                    </div>
+
+                    <div class="savings-highlight">
+                        <div class="big-number">$200</div>
+                        <div class="savings-text">ANNUAL SAVINGS<br><small>Plus avoid referral delays</small></div>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="monthly">$41.58/month</div>
+                        <div class="annual">$499/year (reg. $699)</div>
+                    </div>
+
+                    <button class="cta-efficiency">Start Saving Today</button>
+                </div>
+                <div class="description">Emphasizes efficiency and time savings with clear benefit icons</div>
+            </div>
+
+            <!-- Enhanced Variation 3: Bold Savings Statement -->
+            <div class="variation">
+                <h3>Enhanced: Bold Savings Statement</h3>
+                <div class="bold-savings">
+                    <div class="impact-header">
+                        <div class="mega-savings">SAVE $200+/YEAR</div>
+                        <div class="efficiency-tag">+ Skip months of healthcare delays</div>
+                    </div>
+                    
+                    <div class="content-section">
+                        <div class="title">AI Care Membership</div>
+                        
+                        <div class="pathway-comparison">
+                            <div class="old-way">
+                                <div class="pathway-title">❌ Traditional Path</div>
+                                <div class="pathway-details">GP visit → Referral wait → Specialist → More waiting<br>
+                                <strong>Cost: $699+ • Time: 2-3 months</strong></div>
+                            </div>
+                            
+                            <div class="new-way">
+                                <div class="pathway-title">✅ AI Care Path</div>
+                                <div class="pathway-details">Complete assessment → AI analysis → Provider care<br>
+                                <strong>Cost: $499 • Time: Days</strong></div>
+                            </div>
+                        </div>
+
+                        <div class="price-breakdown">
+                            <div class="strike-price">Regular: $699</div>
+                            <div class="member-price">Member: $499/year</div>
+                            <div class="you-save">YOU SAVE: $200</div>
+                        </div>
+
+                        <button class="cta-bold">Claim Your Savings</button>
+                    </div>
+                </div>
+                <div class="description">Bold messaging with clear before/after pathway comparison</div>
+            </div>
+
+            <!-- Variation 1: Compact Horizontal -->
+            <div class="variation">
+                <h3>Variation 1: Premium Gradient</h3>
+                <div class="v1">
+                    <div class="badge">🚀 MOST POPULAR</div>
+                    <div class="content">
+                        <div class="left-content">
+                            <div class="title">AI Care Membership</div>
+                            <div class="benefits-list">
+                                • 2 comprehensive appointments<br>
+                                • Additional provider visits<br>
+                                • Personalized AI health analysis
+                            </div>
+                        </div>
+                        <div class="right-content">
+                            <div class="price">$41.58</div>
+                            <div class="price-period">per month</div>
+                            <button class="cta-button">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">Horizontal layout with premium gradient background and modern styling</div>
+            </div>
+
+            <!-- Variation 2: Minimal Card -->
+            <div class="variation">
+                <h3>Variation 2: Warm Minimal</h3>
+                <div class="v2">
+                    <div class="badge">RECOMMENDED</div>
+                    <div class="title">AI Care Membership</div>
+                    <div class="subtitle">Save with early member pricing</div>
+                    
+                    <div class="highlight-benefit">
+                        <div class="highlight-text">Complete AI-powered health analysis included</div>
+                    </div>
+                    
+                    <div class="pricing-row">
+                        <div>
+                            <span class="price">$41.58</span> /month
+                        </div>
+                        <div class="savings">Save $200</div>
+                    </div>
+                    
+                    <button class="cta-button">Join Now</button>
+                </div>
+                <div class="description">Clean minimal design with warm orange accent and focus on savings</div>
+            </div>
+
+            <!-- Variation 3: Feature-Rich -->
+            <div class="variation">
+                <h3>Variation 3: Professional Card</h3>
+                <div class="v3">
+                    <div class="header">
+                        <div class="badge">AI ASSESSMENT</div>
+                        <div class="title">AI Care Membership</div>
+                        <div class="subtitle">Comprehensive healthcare powered by AI</div>
+                    </div>
+                    <div class="body">
+                        <div class="benefits-grid">
+                            <div class="benefit">
+                                <div class="benefit-icon">2</div>
+                                <div class="benefit-text">Appointments</div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit-icon">+</div>
+                                <div class="benefit-text">Extra Visits</div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit-icon">AI</div>
+                                <div class="benefit-text">AI Analysis</div>
+                            </div>
+                        </div>
+                        
+                        <div class="pricing-section">
+                            <div class="price-display">
+                                <div class="price">$41.58</div>
+                                <div class="price-period">per month</div>
+                            </div>
+                            <div class="value-prop">
+                                Annual: $499<br>
+                                <small>Save $200</small>
+                            </div>
+                        </div>
+                        
+                        <button class="cta-button">Start Membership</button>
+                    </div>
+                </div>
+                <div class="description">Professional card-style design with clear section separation and structured layout</div>
+            </div>
+
+            <!-- Variation 4: Bold & Direct -->
+            <div class="variation">
+                <h3>Variation 4: Bold Impact</h3>
+                <div class="v4">
+                    <div class="badge">LIMITED TIME</div>
+                    <div class="title">AI Care Membership</div>
+                    <div class="value-prop">Save $200 with Early Member Pricing</div>
+                    
+                    <div class="price-section">
+                        <div class="price">$41.58/mo</div>
+                        <div class="savings-text">or $499 annually (reg. $699)</div>
+                    </div>
+                    
+                    <button class="cta-button">Claim Discount</button>
+                </div>
+                <div class="description">Bold red design with urgency and clear value proposition focus</div>
+            </div>
+
+            <!-- Variation 5: Clean Professional -->
+            <div class="variation">
+                <h3>Variation 5: Clean Professional</h3>
+                <div class="v5">
+                    <div class="header-bar"></div>
+                    <div class="content">
+                        <div class="badge">AI ASSESSMENT INCLUDED</div>
+                        <div class="title">AI Care Membership</div>
+                        <div class="subtitle">Comprehensive healthcare with AI-powered insights</div>
+                        
+                        <ul class="benefits-list">
+                            <li>2 comprehensive provider appointments</li>
+                            <li>Additional provider visits as needed</li>
+                            <li>Personalized AI health analysis</li>
+                            <li>Priority scheduling and support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-footer">
+                        <div class="price-display">
+                            <span class="price">$41.58</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <button class="cta-button">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="description">Clean, professional design with clear benefit list and structured footer</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
