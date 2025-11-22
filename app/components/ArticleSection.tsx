@@ -4,6 +4,51 @@ import React from 'react';
 import CalloutBox from './CalloutBox';
 import { demoRegistry, isValidDemoComponent } from './demos/registry';
 
+// Helper function to safely parse metric text with HTML-like tags
+type ParsedPart = { type: 'emoji' | 'bold' | 'text'; text: string };
+
+function parseMetricText(metricString: string): ParsedPart[] {
+  const parts: ParsedPart[] = [];
+
+  // Match emoji at the start (common pattern: "🎯 <strong>...")
+  const emojiMatch = metricString.match(/^([\p{Emoji}\u{1F300}-\u{1F9FF}]+)\s*/u);
+  let remainingText = metricString;
+
+  if (emojiMatch) {
+    parts.push({ type: 'emoji', text: emojiMatch[1] });
+    remainingText = metricString.slice(emojiMatch[0].length);
+  }
+
+  // Parse <strong> tags safely by extracting text content only
+  const strongRegex = /<strong>(.*?)<\/strong>/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = strongRegex.exec(remainingText)) !== null) {
+    // Add text before the <strong> tag
+    if (match.index > lastIndex) {
+      const textBefore = remainingText.slice(lastIndex, match.index);
+      if (textBefore) {
+        parts.push({ type: 'text', text: textBefore });
+      }
+    }
+
+    // Add the bold text (without the HTML tags)
+    parts.push({ type: 'bold', text: match[1] });
+    lastIndex = strongRegex.lastIndex;
+  }
+
+  // Add any remaining text after the last <strong> tag
+  if (lastIndex < remainingText.length) {
+    const textAfter = remainingText.slice(lastIndex);
+    if (textAfter) {
+      parts.push({ type: 'text', text: textAfter });
+    }
+  }
+
+  return parts;
+}
+
 export interface ArticleSectionData {
   type: 'heading' | 'paragraph' | 'list' | 'callout' | 'metrics' | 'link' | 'prototype';
   level?: 2 | 3; // for heading type
@@ -78,13 +123,23 @@ export default function ArticleSection({ section }: ArticleSectionProps) {
             <h3 className="text-2xl font-semibold mb-4">{section.title}</h3>
           )}
           <ul className="space-y-3">
-            {(section.content as string[]).map((metric, index) => (
-              <li
-                key={index}
-                className="text-lg text-gray-700 dark:text-gray-300"
-                dangerouslySetInnerHTML={{ __html: metric }}
-              />
-            ))}
+            {(section.content as string[]).map((metric, index) => {
+              // Parse metric text to extract emoji, bold text, and regular text safely
+              const parts = parseMetricText(metric);
+              return (
+                <li key={index} className="text-lg text-gray-700 dark:text-gray-300">
+                  {parts.map((part, partIndex) => {
+                    if (part.type === 'emoji') {
+                      return <span key={partIndex}>{part.text} </span>;
+                    } else if (part.type === 'bold') {
+                      return <strong key={partIndex}>{part.text}</strong>;
+                    } else {
+                      return <span key={partIndex}>{part.text}</span>;
+                    }
+                  })}
+                </li>
+              );
+            })}
           </ul>
         </div>
       );
