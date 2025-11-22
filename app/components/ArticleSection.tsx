@@ -2,13 +2,7 @@
 
 import React from 'react';
 import CalloutBox from './CalloutBox';
-import dynamic from 'next/dynamic';
-
-// Dynamic imports for demos to avoid SSR issues and reduce bundle size
-const PharmacyFulfillmentDemo = dynamic(() => import('./demos/PharmacyFulfillmentDemo'), {
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />,
-  ssr: false
-});
+import { demoRegistry, isValidDemoComponent } from './demos/registry';
 
 export interface ArticleSectionData {
   type: 'heading' | 'paragraph' | 'list' | 'callout' | 'metrics' | 'link' | 'prototype';
@@ -115,12 +109,15 @@ export default function ArticleSection({ section }: ArticleSectionProps) {
 
 
     case 'prototype':
-      if (section.componentName === 'PharmacyFulfillmentDemo') {
-        return <PharmacyFulfillmentDemo />;
+      // Look up component from registry
+      const componentName = section.componentName || '';
+      if (isValidDemoComponent(componentName)) {
+        const DemoComponent = demoRegistry[componentName];
+        return <DemoComponent />;
       }
       return (
         <div className="p-4 bg-yellow-50 border border-yellow-200 rounded text-yellow-800">
-          Prototype component "{section.componentName}" not found.
+          Prototype component "{section.componentName}" not found in registry.
         </div>
       );
 
