@@ -2,10 +2,8 @@
   "slug": "learn-academy",
   "title": "LEARN Academy: Where It All Started",
   "subtitle": "Student (May-Aug 2020) • Instructor (2021-2023) • Lead Instructor (Jan 2022)",
-  "step": 2,
-  "totalSteps": 7,
-  "prevSlug": "introduction",
-  "prevLabel": "Back: Introduction",
+  "step": 1,
+  "totalSteps": 6,
   "nextSlug": "rugiet",
   "nextLabel": "Next: Rugiet Health",
   "sections": [
