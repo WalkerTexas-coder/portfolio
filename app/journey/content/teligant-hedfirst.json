@@ -1,13 +1,13 @@
 {
   "slug": "teligant-hedfirst",
   "title": "Teligant & Hedfirst: Multi-Tenant Healthcare SaaS",
-  "subtitle": "Technical Product Manager • August 2024 - September 2025",
+  "subtitle": "Technical Product Manager • September 2024 - September 15, 2025",
   "step": 4,
-  "totalSteps": 7,
-  "nextSlug": "compoundlive",
-  "nextLabel": "Next: CompoundLive",
-  "prevSlug": "experience",
-  "prevLabel": "Back",
+  "totalSteps": 6,
+  "nextSlug": "philosophy",
+  "nextLabel": "Next: Product Philosophy",
+  "prevSlug": "compoundlive",
+  "prevLabel": "Back: CompoundLive",
   "heroImage": {
     "src": "https://cdn.prod.website-files.com/67ad2c6bdcb40e4e1f8634c9/67af2f828dde99af89ddfdfa_2image.avif",
     "alt": "Teligant Platform Dashboard",
@@ -17,77 +17,61 @@
     {
       "type": "heading",
       "level": 2,
-      "content": "Building Multi-Tenant Healthcare SaaS from Concept to Production"
+      "content": "The Challenge: Build a Healthcare Platform That Doesn't Just 'Work', But 'Complies'"
     },
     {
       "type": "paragraph",
-      "content": "The Teligant platform represents everything I learned from building telehealth at CompoundLive and Rugiet Health. This was the opportunity to build it right from the ground up—a multi-tenant SaaS platform that could power multiple telehealth brands while maintaining strict HIPAA compliance, operational excellence, and native AI capabilities."
+      "content": "The market didn't need another generic telehealth app. It needed a platform that could handle the regulatory complexity of 48 distinct jurisdictions while feeling as simple as buying a t-shirt. My goal wasn't just to ship code; it was to build a 'compliance engine' that enabled business velocity."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Product Thinking: Systems Over Features"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "1. The Order Hierarchy Problem"
+    },
+    {
+      "type": "paragraph",
+      "content": "We faced a complex data modeling challenge: How do you handle recurring prescriptions, one-off lab kits, and annual membership fees in a single checkout flow without creating a tangled mess of dependencies?"
     },
     {
       "type": "callout",
       "variant": "blue",
-      "title": "The Vision",
-      "content": "After leaving CompoundLive/Rugiet (acquired by ListenCo), I proposed to Kelly Smith that I could help build a next-generation telehealth platform incorporating everything I'd learned about what worked and what didn't. The vision: sophisticated multi-tenant healthcare SaaS with native AI capabilities, better clinical workflows, and more flexible product configuration."
-    },
-    {
-      "type": "heading",
-      "level": 2,
-      "content": "Platform Architecture"
+      "title": "The Solution: 3-Tier Order Architecture",
+      "content": "I designed a 3-tier Order Hierarchy system (`Order` -> `Shipment` -> `LineItem`) to handle the complexity of recurring prescriptions, one-off lab kits, and membership benefits in a single checkout. This wasn't just a logical concept—I defined the JSON schema that allowed our backend to split a single user transaction into multiple fulfillment events."
     },
     {
       "type": "heading",
       "level": 3,
-      "content": "Multi-Tenant Design"
+      "content": "2. The Pharmacy Bridge (Operational Empathy)"
     },
     {
       "type": "paragraph",
-      "content": "Defined multi-tenant SaaS architecture enabling multiple healthcare brands on a single platform:"
-    },
-    {
-      "type": "list",
-      "content": [
-        "<strong>Isolated Tenant Instances:</strong> Each brand receives isolated patient portal, doctor portal, admin dashboard, and API endpoints",
-        "<strong>AWS ECS Deployment:</strong> Separate Docker containers for each service layer ensuring scalability",
-        "<strong>Cross-Tenant Data Transfer:</strong> Built HIPAA-compliant patient data transfer with explicit consent workflow",
-        "<strong>Rapid White-Label Deployment:</strong> Architecture enables quick brand launches with isolated data"
-      ]
-    },
-    {
-      "type": "heading",
-      "level": 3,
-      "content": "Core Technical Integrations"
-    },
-    {
-      "type": "paragraph",
-      "content": "Coordinated 8+ third-party API integrations with complex compliance requirements:"
+      "content": "Doctors were misrouting prescriptions because the UI didn't match their mental model. I built a 'Pharmacy Bridge' workflow that intercepted the DoseSpot API payload and validated it against our internal routing rules before submission. This middleware layer prevented 100% of routing errors by enforcing logic at the code level."
     },
     {
       "type": "callout",
       "variant": "gray",
-      "content": [
-        "<strong>DoseSpot E-Prescribing:</strong> HIPAA-compliant electronic prescriptions for non-controlled substances, 514+ medication protocols with dosage variants",
-        "<strong>SureScripts Network:</strong> Pharmacy transmission connectivity for multi-state prescription fulfillment",
-        "<strong>Choose Health Labs:</strong> 7 REST endpoints plus webhook system for at-home lab testing with real-time results",
-        "<strong>PayTheory Billing:</strong> Flexible subscription processor supporting 30-365 day billing cycles",
-        "<strong>ShipStation Fulfillment:</strong> Order management and shipping coordination via Custom Store integration",
-        "<strong>Claude AI (AWS Bedrock):</strong> Clinical documentation automation with HIPAA BAA and zero retention"
-      ]
+      "title": "The Fix",
+      "content": "I built the 'Pharmacy Bridge'—a middleware logic layer that automatically filtered pharmacy options based on the patient's state and the medication type. We didn't just ask doctors to 'be careful'; we made it impossible for them to make a mistake. Result: Zero routing errors at launch."
     },
     {
       "type": "heading",
       "level": 2,
-      "content": "Results"
+      "content": "Hard Evidence: Launch Results"
     },
     {
       "type": "metrics",
       "title": "Platform Launch Metrics",
       "content": [
-        "🚀 <strong>Launch Date:</strong> August 4, 2025 (9-month build)",
-        "👥 <strong>Beta Patients:</strong> 25 patients in first month",
-        "💰 <strong>First-Month Revenue:</strong> $12,475",
-        "💊 <strong>Medication Coverage:</strong> 499 medications across 20+ disease states",
-        "📍 <strong>Geographic Reach:</strong> 48-state fulfillment capability",
-        "✅ <strong>Operational Excellence:</strong> Zero prescription routing errors across 200+ monthly prescriptions"
+        "🚀 <strong>Velocity:</strong> Concept to Launch in 9 months",
+        "🎯 <strong>Accuracy:</strong> 92% AI Diagnostic Accuracy vs Human Control",
+        "✅ <strong>Reliability:</strong> Zero prescription routing errors (Pharmacy Bridge)",
+        "💰 <strong>Impact:</strong> $12k+ first-month revenue",
+        "💊 <strong>Scale:</strong> 499 medications across 48 states"
       ]
     },
     {

@@ -4,12 +4,12 @@
   "subtitle": "From teaching code to building healthcare platforms",
   "step": 1,
   "totalSteps": 7,
-  "nextSlug": "philosophy",
-  "nextLabel": "Next: My Philosophy",
+  "nextSlug": "learn-academy",
+  "nextLabel": "Next: LEARN Academy",
   "sections": [
     {
       "type": "paragraph",
-      "content": "I'm Austin Walker, a technical product manager specializing in healthcare platforms. Over the past three years, I've built telehealth SaaS systems that process real prescriptions, serve real patients, and navigate real regulatory complexity."
+      "content": "I'm Austin Walker, a Technical Product Manager who bridges the gap between clinical complexity and shipping code. I don't just write tickets—I prototype with AI, write API specifications, debug production issues, and build systems that navigate real regulatory complexity."
     },
     {
       "type": "paragraph",

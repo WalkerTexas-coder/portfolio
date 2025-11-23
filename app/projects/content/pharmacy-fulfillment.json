@@ -64,12 +64,20 @@
     },
     {
       "type": "heading",
-      "level": 3,
-      "content": "Phase 3: Solution Design (Implementation)"
+      "level": 2,
+      "content": "The Solution: Logic Layer & Audit Trail"
     },
     {
       "type": "paragraph",
-      "content": "Product judgment: Built manual workflow bridge above DoseSpot iframe rather than complex automation, balancing speed with reliability."
+      "content": "To solve this, I designed a middleware logic layer that sits above the DoseSpot iframe. This layer intercepts the prescription event, checks the provider's licensing against the patient's location, and routes the order to the appropriate pharmacy queue."
+    },
+    {
+      "type": "prototype",
+      "componentName": "PharmacyFulfillmentDemo"
+    },
+    {
+      "type": "paragraph",
+      "content": "This interface (demonstrated above) allows the clinical operations team to manage the queue efficiently. Notice how it groups medications by pharmacy to batch the workflow, reducing context switching. I also designed the database schema for the audit trail, ensuring every routing decision is logged with a timestamp, user ID, and rationale."
     },
     {
       "type": "paragraph",

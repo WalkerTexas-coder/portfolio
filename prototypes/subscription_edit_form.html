@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Subscription - HP-1101-S-1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            padding: 16px 24px;
+            border-bottom: 1px solid #e9ecef;
+            background: white;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .back-link {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .back-link:hover {
+            color: #495057;
+        }
+
+        .breadcrumb {
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .patient-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .content {
+            padding: 24px;
+        }
+
+        .subscription-header {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .subscription-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .subscription-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .subscription-id {
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .bottom-form-actions {
+            margin-top: 32px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+
+        .btn-outline {
+            background-color: white;
+            color: #6c757d;
+            border: 1px solid #dee2e6;
+        }
+
+        .btn-outline:hover {
+            background-color: #f8f9fa;
+            border-color: #adb5bd;
+        }
+
+        .form-section {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .form-section-header {
+            padding: 16px 20px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-section-content {
+            padding: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-row.single {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            padding: 10px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.15s;
+            background-color: white;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+        .form-select {
+            padding: 10px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 10px center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .view-mode {
+            display: block;
+        }
+
+        .edit-mode {
+            display: none;
+        }
+
+        .edit-mode.active {
+            display: block;
+        }
+
+        .view-mode.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="#" class="back-link">← Back to Subscriptions</a>
+            <span class="breadcrumb">Patients > Austin Walker</span>
+        </div>
+
+        <div class="content">
+            <!-- View Mode -->
+            <div id="viewMode" class="view-mode">
+                <div class="subscription-header">
+                    <div class="subscription-info">
+                        <h2 class="subscription-title">Subscription</h2>
+                        <span class="subscription-id">Subscription ID: HP-1101-S-1</span>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-header">Subscription Details</div>
+                    <div class="form-section-content">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Product</label>
+                                <div style="padding: 10px 0; color: #495057;">Bupropion SR</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Dosage</label>
+                                <div style="padding: 10px 0; color: #495057;">Bupropion HCL SR 100mg</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Quantity</label>
+                                <div style="padding: 10px 0; color: #495057;">180</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Refills</label>
+                                <div style="padding: 10px 0; color: #495057;">3</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Supply Frequency</label>
+                                <div style="padding: 10px 0; color: #495057;">Every 90 days</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Billing Cycle</label>
+                                <div style="padding: 10px 0; color: #495057;">Every 90 days</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Next Billed Date</label>
+                                <div style="padding: 10px 0; color: #495057;">12/01/2025</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Status</label>
+                                <div style="padding: 10px 0;">
+                                    <span class="status-badge">Awaiting Review</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Disease</label>
+                                <div style="padding: 10px 0; color: #495057;">Mental Health</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Patient Notes</label>
+                                <div style="padding: 10px 0; color: #495057;">Patient reports improved mood on current dosage. Continue monitoring for side effects.</div>
+                            </div>
+                        </div>
+                        <div class="form-row single">
+                            <div class="form-group">
+                                <label class="form-label">Patient Instructions</label>
+                                <div style="padding: 10px 0; color: #495057;">Take one tablet twice daily with food. Do not crush or chew. Contact provider if experiencing any unusual side effects.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-form-actions">
+                    <button class="btn btn-primary" onclick="toggleEditMode()">Edit Form</button>
+                    <button class="btn btn-secondary">Approve</button>
+                    <button class="btn btn-outline">Deny request</button>
+                </div>
+            </div>
+
+            <!-- Edit Mode -->
+            <div id="editMode" class="edit-mode">
+                <div class="subscription-header">
+                    <div class="subscription-info">
+                        <h2 class="subscription-title">Edit Subscription</h2>
+                        <span class="subscription-id">Subscription ID: HP-1101-S-1</span>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-header">Subscription Details</div>
+                    <div class="form-section-content">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Product</label>
+                                <select class="form-select">
+                                    <option value="bupropion-sr">Bupropion SR</option>
+                                    <option value="bupropion-xl">Bupropion XL</option>
+                                    <option value="bupropion-ir">Bupropion IR</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Dosage</label>
+                                <select class="form-select">
+                                    <option value="100mg">Bupropion HCL SR 100mg</option>
+                                    <option value="150mg">Bupropion HCL SR 150mg</option>
+                                    <option value="200mg">Bupropion HCL SR 200mg</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Quantity</label>
+                                <input type="number" class="form-control" value="180" min="1" max="1000">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Refills</label>
+                                <select class="form-select">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3" selected>3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Supply Frequency</label>
+                                <select class="form-select">
+                                    <option value="30">Every 30 days</option>
+                                    <option value="60">Every 60 days</option>
+                                    <option value="90" selected>Every 90 days</option>
+                                    <option value="120">Every 120 days</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Billing Cycle</label>
+                                <select class="form-select">
+                                    <option value="30">Every 30 days</option>
+                                    <option value="60">Every 60 days</option>
+                                    <option value="90" selected>Every 90 days</option>
+                                    <option value="120">Every 120 days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Next Billed Date</label>
+                                <input type="date" class="form-control" value="2025-12-01">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option value="awaiting" selected>Awaiting Review</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="denied">Denied</option>
+                                    <option value="on-hold">On Hold</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Disease</label>
+                                <select class="form-select">
+                                    <option value="mental-health" selected>Mental Health</option>
+                                    <option value="general-health">General Health</option>
+                                    <option value="weight-management">Weight Management</option>
+                                    <option value="hormonal-health">Hormonal Health</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Patient Notes</label>
+                                <textarea class="form-control" rows="3" placeholder="Add notes for patient or pharmacy...">Patient reports improved mood on current dosage. Continue monitoring for side effects.</textarea>
+                            </div>
+                        </div>
+                        <div class="form-row single">
+                            <div class="form-group">
+                                <label class="form-label">Patient Instructions</label>
+                                <textarea class="form-control" rows="3" placeholder="Add instructions for the patient...">Take one tablet twice daily with food. Do not crush or chew. Contact provider if experiencing any unusual side effects.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-form-actions">
+                    <button class="btn btn-outline" onclick="toggleEditMode()">Cancel</button>
+                    <button class="btn btn-secondary" onclick="saveAndContinue()">Save and Continue Editing</button>
+                    <button class="btn btn-primary" onclick="saveAndApprove()">Save and Approve</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleEditMode() {
+            const viewMode = document.getElementById('viewMode');
+            const editMode = document.getElementById('editMode');
+            
+            if (editMode.classList.contains('active')) {
+                editMode.classList.remove('active');
+                viewMode.classList.remove('hidden');
+            } else {
+                editMode.classList.add('active');
+                viewMode.classList.add('hidden');
+            }
+        }
+
+        function saveAndContinue() {
+            alert('Changes saved. Continuing to edit...');
+        }
+
+        function saveAndApprove() {
+            alert('Subscription updated and approved!');
+            toggleEditMode();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthPlatform EMR - Doctor Admin Integration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .header {
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #4f46e5;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .main-container {
+            display: flex;
+            height: calc(100vh - 65px);
+        }
+        
+        .sidebar {
+            width: 240px;
+            background: white;
+            border-right: 1px solid #e0e0e0;
+            overflow-y: auto;
+        }
+        
+        .sidebar-section {
+            padding: 12px;
+        }
+        
+        .sidebar-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            padding: 0 12px;
+        }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 2px;
+        }
+        
+        .nav-item:hover {
+            background: #f3f4f6;
+        }
+        
+        .nav-item.active {
+            background: #eff6ff;
+            color: #2563eb;
+            font-weight: 500;
+        }
+        
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            opacity: 0.6;
+        }
+        
+        .nav-item.active .nav-icon {
+            opacity: 1;
+        }
+        
+        .content-area {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .breadcrumb-separator {
+            color: #9ca3af;
+        }
+        
+        .breadcrumb-current {
+            color: #111827;
+            font-weight: 500;
+        }
+        
+        .patient-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 24px;
+            color: white;
+            margin-bottom: 24px;
+        }
+        
+        .patient-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+        
+        .patient-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .patient-details {
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .patient-status-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 16px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .status-label {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        
+        .status-value {
+            font-weight: 600;
+        }
+        
+        .alert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .alert-card {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+        
+        .alert-card.success {
+            background: #f0fdf4;
+            border-color: #86efac;
+        }
+        
+        .alert-card.warning {
+            background: #fefce8;
+            border-color: #fde047;
+        }
+        
+        .alert-card.info {
+            background: #eff6ff;
+            border-color: #93c5fd;
+        }
+        
+        .alert-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+        
+        .alert-content {
+            flex: 1;
+        }
+        
+        .alert-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .alert-description {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .section-action {
+            color: #2563eb;
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .section-action:hover {
+            color: #1d4ed8;
+        }
+        
+        .section-content {
+            padding: 16px;
+        }
+        
+        .medication-item, .encounter-item {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .medication-item.active {
+            background: #dcfce7;
+            border-color: #86efac;
+        }
+        
+        .medication-item.prn {
+            background: #dbeafe;
+            border-color: #93c5fd;
+        }
+        
+        .medication-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .medication-details {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+        
+        .medication-date {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge-active {
+            background: #dcfce7;
+            color: #15803d;
+        }
+        
+        .badge-prn {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .badge-new {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .badge-completed {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        
+        .badge-scheduled {
+            background: #ede9fe;
+            color: #5b21b6;
+        }
+        
+        .patient-list {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .list-header {
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .list-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .tab-button {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .tab-button.active {
+            background: #4f46e5;
+            color: white;
+            border-color: #4f46e5;
+        }
+        
+        .search-bar {
+            width: 100%;
+            padding: 10px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: #f9fafb;
+        }
+        
+        th {
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        tbody tr:hover {
+            background: #f9fafb;
+        }
+        
+        .patient-name-link {
+            color: #2563eb;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .patient-name-link:hover {
+            text-decoration: underline;
+        }
+        
+        .action-button {
+            padding: 6px 12px;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .action-button:hover {
+            background: #4338ca;
+        }
+        
+        .action-menu {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .menu-dots {
+            padding: 4px 8px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        
+        .menu-dots:hover {
+            background: #f3f4f6;
+        }
+        
+        .ai-assessment-section {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 24px;
+        }
+        
+        .assessment-item {
+            padding: 16px;
+            border-bottom: 1px solid #f3f4f6;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+        
+        .assessment-content {
+            flex: 1;
+        }
+        
+        .assessment-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .assessment-meta {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+        
+        .assessment-findings {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .assessment-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .icon-button {
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .icon-button:hover {
+            background: #f3f4f6;
+        }
+        
+        .lab-result-item {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 12px;
+        }
+        
+        .lab-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .lab-values {
+            display: flex;
+            gap: 24px;
+            font-size: 14px;
+        }
+        
+        .lab-value {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .value-label {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 2px;
+        }
+        
+        .value-number {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .value-number.abnormal {
+            color: #dc2626;
+        }
+        
+        .value-number.normal {
+            color: #16a34a;
+        }
+        
+        .floating-actions {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.2s;
+        }
+        
+        .fab:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .fab.secondary {
+            width: 48px;
+            height: 48px;
+            background: white;
+            color: #4f46e5;
+            border: 1px solid #e5e7eb;
+        }
+        
+        @media (max-width: 768px) {
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">HealthPlatform Doctor Admin</div>
+        <div class="user-menu">
+            <span>Dr. Austin Walker</span>
+            <div class="user-avatar">AW</div>
+        </div>
+    </div>
+    
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Main Navigation</div>
+                <div class="nav-item" onclick="showPatientList()">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <span>My Patients</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>Appointments</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                    </svg>
+                    <span>Messages</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section" id="emr-nav" style="display: none;">
+                <div class="sidebar-section-title">EMR Navigation</div>
+                <div class="nav-item active" onclick="showDashboard()">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                    </svg>
+                    <span>Clinical Dashboard</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <span>Encounters</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                    </svg>
+                    <span>Medications</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                    </svg>
+                    <span>Lab Results</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>AI Assessments</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>Documents</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    <span>Symptom Tracker</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                    </svg>
+                    <span>Messages</span>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>Billing</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-area">
+            <!-- Patient List View -->
+            <div id="patient-list-view">
+                <h1 style="font-size: 24px; font-weight: 600; margin-bottom: 24px;">My patients</h1>
+                
+                <div class="tab-buttons">
+                    <button class="tab-button">Need Attention</button>
+                    <button class="tab-button active">All patients</button>
+                </div>
+                
+                <div class="patient-list">
+                    <div style="padding: 16px;">
+                        <input type="text" class="search-bar" placeholder="Search by name">
+                    </div>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>PATIENT NAME</th>
+                                    <th>STATUS</th>
+                                    <th>LAST ORDER PLACED</th>
+                                    <th>LAST ACCOUNT UPDATE</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="patient-name-link" onclick="openEMR('Austin Walker'); return false;">Austin Walker</a></td>
+                                    <td>--</td>
+                                    <td>08/04/2025, 02:23 PM EDT</td>
+                                    <td>08/04/2025, 02:22 PM EDT</td>
+                                    <td>
+                                        <button class="action-button" onclick="openEMR('Austin Walker')">Open EMR</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="patient-name-link" onclick="openEMR('Austin4 Walker4'); return false;">Austin4 Walker4</a></td>
+                                    <td><span class="status-badge badge-new">Order Created</span></td>
+                                    <td>08/04/2025, 07:16 AM EDT</td>
+                                    <td>08/03/2025, 06:22 PM EDT</td>
+                                    <td>
+                                        <button class="action-button" onclick="openEMR('Austin4 Walker4')">Open EMR</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="patient-name-link" onclick="openEMR('Admin User'); return false;">Admin User</a></td>
+                                    <td>--</td>
+                                    <td>08/03/2025, 12:13 PM EDT</td>
+                                    <td>08/03/2025, 12:11 PM EDT</td>
+                                    <td>
+                                        <button class="action-button" onclick="openEMR('Admin User')">Open EMR</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="patient-name-link" onclick="openEMR('Dr. Jane Doe'); return false;">Dr. Jane Doe</a></td>
+                                    <td>--</td>
+                                    <td>04/10/2025, 05:15 PM EDT</td>
+                                    <td>04/10/2025, 05:13 PM EDT</td>
+                                    <td>
+                                        <button class="action-button" onclick="openEMR('Dr. Jane Doe')">Open EMR</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EMR Dashboard View -->
+            <div id="emr-dashboard" style="display: none;">
+                <div class="breadcrumb">
+                    <span onclick="showPatientList()" style="cursor: pointer; color: #2563eb;">My Patients</span>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current" id="patient-name-breadcrumb">Austin Walker</span>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Clinical Dashboard</span>
+                </div>
+                
+                <div class="patient-header">
+                    <div class="patient-info">
+                        <div>
+                            <div class="patient-name" id="patient-name-header">Austin Walker</div>
+                            <div class="patient-details">
+                                DOB: March 15, 1985 (Age 40) • MRN: HP-AW-10 • Male<br>
+                                Primary Dx: Chronic migraine without aura (G43.709)<br>
+                                AI Medical Assessment Member • Active Subscription
+                            </div>
+                        </div>
+                        <div class="patient-status-card">
+                            <div class="status-item">
+                                <span class="status-label">Last Visit</span>
+                                <span class="status-value">Aug 10, 2025</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Next Visit</span>
+                                <span class="status-value">Aug 24, 2025</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Provider</span>
+                                <span class="status-value">Dr. Walker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert-grid">
+                    <div class="alert-card success">
+                        <svg class="alert-icon" fill="#22c55e" viewBox="0 0 24 24">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                        <div class="alert-content">
+                            <div class="alert-title">Treatment Response</div>
+                            <div class="alert-description">60% reduction in migraine frequency on current regimen</div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert-card warning">
+                        <svg class="alert-icon" fill="#eab308" viewBox="0 0 24 24">
+                            <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                        </svg>
+                        <div class="alert-content">
+                            <div class="alert-title">Lab Follow-up Required</div>
+                            <div class="alert-description">B12 deficiency detected - supplement started, retest in 3 months</div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert-card info">
+                        <svg class="alert-icon" fill="#3b82f6" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                        <div class="alert-content">
+                            <div class="alert-title">AI Assessment Available</div>
+                            <div class="alert-description">New pattern analysis completed on Aug 10, 2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-grid">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                                </svg>
+                                Active Medications
+                            </div>
+                            <span class="section-action">View All →</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="medication-item active">
+                                <div class="medication-name">NeurEase (Sumatriptan/Duloxetine)</div>
+                                <div class="medication-details">50mg/10mg daily • Preventative</div>
+                                <div class="medication-date">Started: July 15, 2025</div>
+                                <span class="status-badge badge-active">Active</span>
+                            </div>
+                            
+                            <div class="medication-item prn">
+                                <div class="medication-name">SumaRelief (Sumatriptan/Naproxen)</div>
+                                <div class="medication-details">45mg/220mg PRN • Max 9/month</div>
+                                <div class="medication-date">Started: July 15, 2025</div>
+                                <span class="status-badge badge-prn">PRN</span>
+                            </div>
+                            
+                            <div class="medication-item active">
+                                <div class="medication-name">Vitamin B12</div>
+                                <div class="medication-details">1000 mcg daily</div>
+                                <div class="medication-date">Started: Aug 10, 2025</div>
+                                <span class="status-badge badge-new">New</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Recent Encounters
+                            </div>
+                            <span class="section-action">View All →</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="encounter-item">
+                                <div class="medication-name">Follow-up Visit</div>
+                                <div class="medication-details">Migraine management review</div>
+                                <div class="medication-date">Aug 10, 2025 2:30 PM • Dr. Walker</div>
+                                <span class="status-badge badge-completed">Completed</span>
+                            </div>
+                            
+                            <div class="encounter-item">
+                                <div class="medication-name">Initial Consultation</div>
+                                <div class="medication-details">Comprehensive assessment</div>
+                                <div class="medication-date">July 15, 2025 10:00 AM • Dr. Walker</div>
+                                <span class="status-badge badge-completed">Completed</span>
+                            </div>
+                            
+                            <div class="encounter-item">
+                                <div class="medication-name">Scheduled Follow-up</div>
+                                <div class="medication-details">Treatment response assessment</div>
+                                <div class="medication-date">Aug 24, 2025 3:00 PM • Dr. Walker</div>
+                                <span class="status-badge badge-scheduled">Scheduled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Assessment Section -->
+                <div class="ai-assessment-section">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Teligant AI Assessments
+                        </div>
+                        <span class="section-action">View All →</span>
+                    </div>
+                    
+                    <div class="assessment-item">
+                        <div class="assessment-content">
+                            <div class="assessment-title">Comprehensive AI Medical Assessment v4</div>
+                            <div class="assessment-meta">Generated: Aug 10, 2025 • Reviewed by: Dr. Walker • Status: Approved</div>
+                            <div class="assessment-findings">
+                                <strong>Key Patterns Identified:</strong> Chronic migraine with strong correlation to barometric pressure changes (r=0.78). 
+                                Sleep disruption preceding 85% of severe episodes. Vitamin B12 deficiency likely contributing to neurological symptoms. 
+                                Treatment response indicates neuroinflammatory component successfully addressed with current regimen.
+                            </div>
+                        </div>
+                        <div class="assessment-actions">
+                            <button class="icon-button" title="View Full Report">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                            </button>
+                            <button class="icon-button" title="Download PDF">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lab Results Section -->
+                <div class="section-grid">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                                </svg>
+                                Recent Lab Results
+                            </div>
+                            <span class="section-action">View All →</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="lab-result-item">
+                                <div class="lab-name">Comprehensive Metabolic Panel</div>
+                                <div class="lab-values">
+                                    <div class="lab-value">
+                                        <span class="value-label">Glucose</span>
+                                        <span class="value-number normal">92 mg/dL</span>
+                                    </div>
+                                    <div class="lab-value">
+                                        <span class="value-label">Creatinine</span>
+                                        <span class="value-number normal">0.9 mg/dL</span>
+                                    </div>
+                                    <div class="lab-value">
+                                        <span class="value-label">eGFR</span>
+                                        <span class="value-number normal">>60</span>
+                                    </div>
+                                </div>
+                                <div class="medication-date" style="margin-top: 8px;">Collected: Aug 5, 2025</div>
+                            </div>
+                            
+                            <div class="lab-result-item">
+                                <div class="lab-name">Vitamin Levels</div>
+                                <div class="lab-values">
+                                    <div class="lab-value">
+                                        <span class="value-label">Vitamin D</span>
+                                        <span class="value-number normal">42 ng/mL</span>
+                                    </div>
+                                    <div class="lab-value">
+                                        <span class="value-label">B12</span>
+                                        <span class="value-number abnormal">280 pg/mL</span>
+                                    </div>
+                                    <div class="lab-value">
+                                        <span class="value-label">Folate</span>
+                                        <span class="value-number normal">12 ng/mL</span>
+                                    </div>
+                                </div>
+                                <div class="medication-date" style="margin-top: 8px;">Collected: Aug 5, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                                Migraine Tracking
+                            </div>
+                            <span class="section-action">View Details →</span>
+                        </div>
+                        <div class="section-content">
+                            <div style="padding: 12px; background: #f9fafb; border-radius: 6px; margin-bottom: 12px;">
+                                <div style="font-weight: 600; margin-bottom: 8px;">Current Month Statistics</div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                    <div>
+                                        <div style="font-size: 24px; font-weight: 700; color: #16a34a;">5</div>
+                                        <div style="font-size: 12px; color: #6b7280;">Migraine Days</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 24px; font-weight: 700; color: #2563eb;">3</div>
+                                        <div style="font-size: 12px; color: #6b7280;">Rescue Doses Used</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="font-size: 14px; color: #6b7280; line-height: 1.6;">
+                                <strong>Identified Triggers:</strong> Barometric pressure changes, stress, processed foods, irregular sleep
+                            </div>
+                            
+                            <div style="margin-top: 12px; padding: 8px; background: #dcfce7; border-radius: 4px; font-size: 14px; color: #15803d;">
+                                ↓ 60% reduction from baseline
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating Action Buttons -->
+                <div class="floating-actions">
+                    <button class="fab secondary" title="Order Labs">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </button>
+                    <button class="fab secondary" title="Send Message">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
+                    <button class="fab" title="New Encounter">
+                        <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentPatient = '';
+        
+        function openEMR(patientName) {
+            currentPatient = patientName;
+            document.getElementById('patient-list-view').style.display = 'none';
+            document.getElementById('emr-dashboard').style.display = 'block';
+            document.getElementById('emr-nav').style.display = 'block';
+            
+            // Update patient name in various places
+            document.getElementById('patient-name-breadcrumb').textContent = patientName;
+            document.getElementById('patient-name-header').textContent = patientName;
+            
+            // Update sidebar to show EMR is active
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector('#emr-nav .nav-item').classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Simulate different data for different patients
+            if (patientName === 'Admin User') {
+                updatePatientData({
+                    diagnosis: 'Tension-type headache (G44.209)',
+                    age: '35',
+                    membershipStatus: 'AI Medical Assessment Member',
+                    lastVisit: 'Aug 3, 2025',
+                    nextVisit: 'Aug 17, 2025'
+                });
+            } else if (patientName === 'Dr. Jane Doe') {
+                updatePatientData({
+                    diagnosis: 'Migraine with aura (G43.109)',
+                    age: '42',
+                    membershipStatus: 'Standard Consultation',
+                    lastVisit: 'April 10, 2025',
+                    nextVisit: 'To be scheduled'
+                });
+            }
+        }
+        
+        function showPatientList() {
+            document.getElementById('patient-list-view').style.display = 'block';
+            document.getElementById('emr-dashboard').style.display = 'none';
+            document.getElementById('emr-nav').style.display = 'none';
+            
+            // Update sidebar
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector('.sidebar .nav-item').classList.add('active');
+        }
+        
+        function showDashboard() {
+            // This would show the dashboard if we're in EMR mode
+            if (document.getElementById('emr-dashboard').style.display === 'block') {
+                // Update active nav
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                event.currentTarget.classList.add('active');
+            }
+        }
+        
+        function updatePatientData(data) {
+            // This function would update the patient data based on who is selected
+            // For demo purposes, we're just updating a few key fields
+            if (data.diagnosis) {
+                const detailsEl = document.querySelector('.patient-details');
+                const dob = detailsEl.innerHTML.split('<br>')[0];
+                detailsEl.innerHTML = `${dob}<br>Primary Dx: ${data.diagnosis}<br>${data.membershipStatus} • Active`;
+            }
+        }
+    </script>
+</body>
+</html>
