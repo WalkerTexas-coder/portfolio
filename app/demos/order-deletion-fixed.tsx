@@ -1,17 +1,31 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, X, AlertTriangle, Check } from 'lucide-react';
 
+type Order = {
+  id: string;
+  status: string;
+  product: string;
+  canDelete: boolean;
+  type: string;
+  date: string;
+  price: string;
+  quantity: number;
+  disease: string;
+  requiresPrescription: string;
+  patient: string;
+};
+
 const OrderDeletionMockup = () => {
   const [currentView, setCurrentView] = useState('index');
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [selectedOrderId, setSelectedOrderId] = useState('');
-  const [selectedOrder, setSelectedOrder] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const modalRef = useRef(null);
+  const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   // Make orders dynamic state instead of static
-  const [orders, setOrders] = useState([
+  const [orders, setOrders] = useState<Order[]>([
     { id: 'HP-1085', status: 'DENIED', product: 'AOD-9604 5mL', canDelete: true, type: 'One-time purchase', date: '08/26/2025', price: '$3.00', quantity: 1, disease: 'Peptide Therapy', requiresPrescription: 'Yes', patient: 'Austin Walker' },
     { id: 'HP-1101', status: 'DENIED', product: 'Bupropion SR', canDelete: true, type: 'Subscription', date: '08/25/2025', price: '$45.00', quantity: 1, disease: 'Depression', requiresPrescription: 'Yes', patient: 'Austin Walker' },
     { id: 'HP-1100', status: 'FAILED', product: 'passthrough-4', canDelete: true, type: 'Subscription', date: '08/24/2025', price: '$120.00', quantity: 2, disease: 'Hormone Therapy', requiresPrescription: 'Yes', patient: 'Austin Walker' },
@@ -21,8 +35,8 @@ const OrderDeletionMockup = () => {
 
   // Add click outside handler for dropdown
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest('.dropdown-container')) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!(event.target as Element).closest('.dropdown-container')) {
         setOpenDropdown(null);
       }
     };
@@ -33,7 +47,7 @@ const OrderDeletionMockup = () => {
 
   // Add escape key handler for modal
   useEffect(() => {
-    const handleEscape = (event) => {
+    const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && showConfirmation) {
         setShowConfirmation(false);
       }
@@ -50,17 +64,17 @@ const OrderDeletionMockup = () => {
     }
   }, [showConfirmation]);
 
-  const handleRemoveClick = (orderId) => {
+  const handleRemoveClick = (orderId: string) => {
     const order = orders.find(o => o.id === orderId);
-    setSelectedOrder(order);
+    setSelectedOrder(order || null);
     setSelectedOrderId(orderId);
     setShowConfirmation(true);
     setOpenDropdown(null); // Close dropdown when opening modal
   };
 
-  const handleViewDetails = (orderId) => {
+  const handleViewDetails = (orderId: string) => {
     const order = orders.find(o => o.id === orderId);
-    setSelectedOrder(order);
+    setSelectedOrder(order || null);
     setCurrentView('details');
     setOpenDropdown(null); // Close dropdown when navigating
   };
@@ -82,7 +96,7 @@ const OrderDeletionMockup = () => {
     }, 2000);
   };
 
-  const ActionsDropdown = ({ order, isOpen, onToggle }) => (
+  const ActionsDropdown = ({ order, isOpen, onToggle }: { order: Order; isOpen: boolean; onToggle: () => void }) => (
     <div className="relative dropdown-container">
       <button 
         onClick={onToggle}
@@ -157,10 +171,10 @@ const OrderDeletionMockup = () => {
                     </td>
                     <td className="px-4 py-3 text-sm">{order.type}</td>
                     <td className="px-4 py-3">
-                      <ActionsDropdown 
+                      <ActionsDropdown
                         order={order}
-                        isOpen={openDropdown === index}
-                        onToggle={() => setOpenDropdown(openDropdown === index ? null : index)}
+                        isOpen={openDropdown === order.id}
+                        onToggle={() => setOpenDropdown(openDropdown === order.id ? null : order.id)}
                       />
                     </td>
                   </tr>

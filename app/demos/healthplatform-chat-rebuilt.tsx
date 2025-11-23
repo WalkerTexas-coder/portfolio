@@ -352,7 +352,7 @@ const HealthPlatformChatInterface: React.FC = () => {
       // Focus and position cursor after template
       setTimeout(() => {
         input.focus();
-        const newPosition = beforeCommand.length + suggestion.content.length;
+        const newPosition = beforeCommand.length + (suggestion.content?.length || 0);
         input.setSelectionRange(newPosition, newPosition);
       }, 0);
       
@@ -761,7 +761,7 @@ const HealthPlatformChatInterface: React.FC = () => {
                           <div className="flex-1">
                             <h4 className="font-medium text-gray-900">{item.name}</h4>
                             <p className="text-sm text-gray-500 mt-1">{item.date}</p>
-                            {item.preview && (
+                            {'preview' in item && item.preview && (
                               <p className="text-sm text-gray-600 mt-2">{item.preview}</p>
                             )}
                           </div>

@@ -122,7 +122,7 @@ const PatientHistoryTab = () => {
     return matchesCategory && matchesSearch;
   });
 
-  const formatTimestamp = (timestamp) => {
+  const formatTimestamp = (timestamp: string) => {
     const date = new Date(timestamp);
     return date.toLocaleString('en-US', {
       year: 'numeric',

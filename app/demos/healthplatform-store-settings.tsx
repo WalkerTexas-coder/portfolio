@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Plus, Edit3, Trash2, Save } from 'lucide-react';
 
+type Template = {
+  id: number;
+  name: string;
+  content: string;
+  lastModified: string;
+};
+
 const StoreSettings = () => {
   const [activeTab, setActiveTab] = useState('ai');
   const [systemRole, setSystemRole] = useState(true);
@@ -8,7 +15,7 @@ const StoreSettings = () => {
   const [temperature, setTemperature] = useState('1');
   const [thinkingBudget, setThinkingBudget] = useState('2000');
   
-  const [templates, setTemplates] = useState([
+  const [templates, setTemplates] = useState<Template[]>([
     {
       id: 1,
       name: 'Patient Assessment',
@@ -69,7 +76,7 @@ const StoreSettings = () => {
   ]);
   
   const [showTemplateEditor, setShowTemplateEditor] = useState(false);
-  const [editingTemplate, setEditingTemplate] = useState(null);
+  const [editingTemplate, setEditingTemplate] = useState<Template | null>(null);
   const [newTemplateName, setNewTemplateName] = useState('');
   const [newTemplateContent, setNewTemplateContent] = useState('');
 
@@ -80,7 +87,7 @@ const StoreSettings = () => {
     setShowTemplateEditor(true);
   };
 
-  const handleEditTemplate = (template) => {
+  const handleEditTemplate = (template: Template) => {
     setEditingTemplate(template);
     setNewTemplateName(template.name);
     setNewTemplateContent(template.content);
@@ -106,7 +113,7 @@ const StoreSettings = () => {
     setShowTemplateEditor(false);
   };
 
-  const handleDeleteTemplate = (templateId) => {
+  const handleDeleteTemplate = (templateId: number) => {
     setTemplates(templates.filter(t => t.id !== templateId));
   };
 

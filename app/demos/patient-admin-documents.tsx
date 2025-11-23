@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { Download, FileText, MessageSquare, Upload, X } from 'lucide-react';
 
+type Document = {
+  id: number;
+  name: string;
+  uploadDate: string;
+  source: string;
+  type: string;
+};
+
 const PatientAdminDocuments = () => {
-  const [documents, setDocuments] = useState([
+  const [documents, setDocuments] = useState<Document[]>([
     {
       id: 1,
       name: "MEDICAL_HISTORY_1.PDF",
@@ -41,11 +49,11 @@ const PatientAdminDocuments = () => {
   ]);
 
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [uploadSuccess, setUploadSuccess] = useState(false);
 
-  const handleFileSelect = (event) => {
-    const file = event.target.files[0];
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (file) {
       setSelectedFile(file);
     }
@@ -70,7 +78,7 @@ const PatientAdminDocuments = () => {
     }
   };
 
-  const handleDownload = (doc) => {
+  const handleDownload = (doc: Document) => {
     console.log('Downloading:', doc.name);
     // Simulate download
     alert(`Downloading ${doc.name}`);

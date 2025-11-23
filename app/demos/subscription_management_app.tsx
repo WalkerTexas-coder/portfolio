@@ -81,7 +81,7 @@ const SubscriptionManager = () => {
     setCurrentView('edit');
   };
 
-  const handleVariantChange = (variantId) => {
+  const handleVariantChange = (variantId: string) => {
     const selectedVariantData = availableVariants.find(v => v.id === variantId);
     if (selectedVariantData) {
       setSelectedVariant(variantId);
@@ -132,13 +132,13 @@ const SubscriptionManager = () => {
     console.log('Denying subscription');
   };
 
-  const updateMedicationDose = (index, newDose) => {
+  const updateMedicationDose = (index: number, newDose: string) => {
     const updatedMedications = [...editData.medications];
     updatedMedications[index].dose = parseFloat(newDose);
     setEditData({ ...editData, medications: updatedMedications });
   };
 
-  const updateMedicationUnit = (index, newUnit) => {
+  const updateMedicationUnit = (index: number, newUnit: string) => {
     const updatedMedications = [...editData.medications];
     updatedMedications[index].unit = newUnit;
     setEditData({ ...editData, medications: updatedMedications });
@@ -517,20 +517,20 @@ const SubscriptionManager = () => {
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Patient Directions</label>
-              <textarea 
+              <textarea
                 value={editData.patientDirections}
                 onChange={(e) => setEditData({...editData, patientDirections: e.target.value})}
-                rows="3" 
+                rows={3} 
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
                 placeholder="Enter patient directions for medication use..."
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Notes to Pharmacy</label>
-              <textarea 
+              <textarea
                 value={editData.pharmacyNotes}
                 onChange={(e) => setEditData({...editData, pharmacyNotes: e.target.value})}
-                rows="3" 
+                rows={3} 
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
                 placeholder="Enter any special instructions for pharmacy..."
               />

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Send, Package, Clock, CheckCircle, AlertCircle, Copy, Check } from 'lucide-react';
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
+import { Send, Package, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import PrototypeShowcase from '../PrototypeShowcase';
 
 const PharmacyFulfillmentDemo = () => {
@@ -15,7 +15,8 @@ const PharmacyFulfillmentDemo = () => {
         5: 'Ready to Send',
         6: 'Ready to Send'
     });
-    const [copiedField, setCopiedField] = useState<string | null>(null);
+
+    const selectAllCheckboxRef = useRef<HTMLInputElement>(null);
 
     const approvedMedications = [
         {
@@ -105,20 +106,26 @@ const PharmacyFulfillmentDemo = () => {
     ];
 
     // Add status to medications
-    const medicationsWithStatus = approvedMedications.map(med => ({
-        ...med,
-        status: medicationStatuses[med.id]
-    }));
+    const medicationsWithStatus = useMemo(() =>
+        approvedMedications.map(med => ({
+            ...med,
+            status: medicationStatuses[med.id]
+        })),
+        [medicationStatuses]
+    );
 
     // Group medications by pharmacy
-    const medicationsByPharmacy = medicationsWithStatus.reduce((groups, med) => {
-        const pharmacy = med.pharmacy;
-        if (!groups[pharmacy]) {
-            groups[pharmacy] = [];
-        }
-        groups[pharmacy].push(med);
-        return groups;
-    }, {} as Record<string, typeof medicationsWithStatus>);
+    const medicationsByPharmacy = useMemo(() =>
+        medicationsWithStatus.reduce((groups, med) => {
+            const pharmacy = med.pharmacy;
+            if (!groups[pharmacy]) {
+                groups[pharmacy] = [];
+            }
+            groups[pharmacy].push(med);
+            return groups;
+        }, {} as Record<string, typeof medicationsWithStatus>),
+        [medicationsWithStatus]
+    );
 
     const pharmacyGroups = Object.entries(medicationsByPharmacy);
     const currentPharmacy = pharmacyGroups[currentPharmacyIndex];
@@ -128,7 +135,16 @@ const PharmacyFulfillmentDemo = () => {
     // Check if all medications in current group are sent
     const allCurrentMedicationsSent = currentMedications.every(med => med.status === 'Sent to Pharmacy');
 
-    const handleUpdateStatus = (medicationId: number, newStatus: string) => {
+    // Handle indeterminate state for select all checkbox
+    useEffect(() => {
+        if (selectAllCheckboxRef.current) {
+            const isIndeterminate = selectedMedications.length > 0 &&
+                                   selectedMedications.length < currentMedications.length;
+            selectAllCheckboxRef.current.indeterminate = isIndeterminate;
+        }
+    }, [selectedMedications, currentMedications]);
+
+    const handleUpdateStatus = useCallback((medicationId: number, newStatus: string) => {
         setMedicationStatuses(prev => ({
             ...prev,
             [medicationId]: newStatus
@@ -138,17 +154,17 @@ const PharmacyFulfillmentDemo = () => {
         if (newStatus === 'Sent to Pharmacy') {
             setSelectedMedications(prev => prev.filter(id => id !== medicationId));
         }
-    };
+    }, []);
 
-    const handleSelectMedication = (id: number) => {
+    const handleSelectMedication = useCallback((id: number) => {
         setSelectedMedications(prev =>
             prev.includes(id)
                 ? prev.filter(medId => medId !== id)
                 : [...prev, id]
         );
-    };
+    }, []);
 
-    const handleBulkAction = (action: string) => {
+    const handleBulkAction = useCallback(() => {
         // Mark all selected medications as sent
         const updatedStatuses = { ...medicationStatuses };
         selectedMedications.forEach(medId => {
@@ -160,7 +176,7 @@ const PharmacyFulfillmentDemo = () => {
         // Check if this completes the current pharmacy
         const currentMedIds = currentMedications.map(med => med.id);
         const allCurrentSent = currentMedIds.every(id =>
-            selectedMedications.includes(id) || medicationStatuses[id] === 'Sent to Pharmacy'
+            selectedMedications.includes(id) || updatedStatuses[id] === 'Sent to Pharmacy'
         );
 
         // Auto-advance to next pharmacy if all current medications are now sent
@@ -169,30 +185,23 @@ const PharmacyFulfillmentDemo = () => {
                 setCurrentPharmacyIndex(prev => prev + 1);
             }, 1000); // Small delay to show the status update
         }
-    };
+    }, [medicationStatuses, selectedMedications, currentMedications, currentPharmacyIndex, pharmacyGroups]);
 
-    const handleCopyToClipboard = (text: string, fieldType: string, medicationId: number) => {
-        navigator.clipboard.writeText(text).then(() => {
-            setCopiedField(`${fieldType}-${medicationId}`);
-            setTimeout(() => setCopiedField(null), 2000);
-        });
-    };
-
-    const handleNextPharmacy = () => {
+    const handleNextPharmacy = useCallback(() => {
         if (currentPharmacyIndex < pharmacyGroups.length - 1) {
             setCurrentPharmacyIndex(prev => prev + 1);
             setSelectedMedications([]);
         }
-    };
+    }, [currentPharmacyIndex, pharmacyGroups]);
 
-    const handlePreviousPharmacy = () => {
+    const handlePreviousPharmacy = useCallback(() => {
         if (currentPharmacyIndex > 0) {
             setCurrentPharmacyIndex(prev => prev - 1);
             setSelectedMedications([]);
         }
-    };
+    }, [currentPharmacyIndex]);
 
-    const getStatusBadge = (status: string) => {
+    const getStatusBadge = useCallback((status: string) => {
         const statusConfig: Record<string, { color: string, icon: any }> = {
             'Ready to Send': { color: 'bg-blue-100 text-blue-800', icon: Send },
             'Sent to Pharmacy': { color: 'bg-yellow-100 text-yellow-800', icon: Clock },
@@ -209,17 +218,17 @@ const PharmacyFulfillmentDemo = () => {
                 {status}
             </span>
         );
-    };
+    }, []);
 
-    const getOrderTypeBadge = (orderType: string) => {
+    const getOrderTypeBadge = useCallback((orderType: string) => {
         const colors: Record<string, string> = {
             'Subscription': 'bg-blue-100 text-blue-800',
             'One-Time Purchase': 'bg-purple-100 text-purple-800'
         };
         return colors[orderType] || 'bg-gray-100 text-gray-800';
-    };
+    }, []);
 
-    const getPharmacyBadgeColor = (pharmacy: string) => {
+    const getPharmacyBadgeColor = useCallback((pharmacy: string) => {
         const colors: Record<string, string> = {
             'Crafted RX': 'bg-purple-100 text-purple-800',
             'RX Outreach': 'bg-blue-100 text-blue-800',
@@ -227,7 +236,7 @@ const PharmacyFulfillmentDemo = () => {
             'Patient local pharmacy': 'bg-orange-100 text-orange-800'
         };
         return colors[pharmacy] || 'bg-gray-100 text-gray-800';
-    };
+    }, []);
 
     return (
         <PrototypeShowcase
@@ -295,7 +304,7 @@ const handleBulkAction = (action) => {
                             </button>
                             {selectedMedications.length > 0 && (
                                 <button
-                                    onClick={() => handleBulkAction('Mark as Sent')}
+                                    onClick={handleBulkAction}
                                     className="px-3 py-2 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 flex items-center"
                                 >
                                     <CheckCircle className="w-4 h-4 mr-1" />
@@ -326,6 +335,7 @@ const handleBulkAction = (action) => {
                             <tr>
                                 <th className="px-6 py-3 text-left">
                                     <input
+                                        ref={selectAllCheckboxRef}
                                         type="checkbox"
                                         className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                                         onChange={(e) => {
