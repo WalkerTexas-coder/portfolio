@@ -16,7 +16,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ slug, title, subtitle, problem, solution, impact, readTime, tags }: ProjectCardProps) {
   return (
-    <Link href={`/projects/${slug}`} className="block group">
+    <Link href={`/case-studies/${slug}`} className="block group">
       <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 h-full border-t-4 border-purple-500 hover:border-blue-500">
         <div className="flex items-center justify-between mb-4">
           <span className="text-sm text-gray-500 dark:text-gray-400">{readTime}</span>
