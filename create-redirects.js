@@ -3,11 +3,19 @@ const path = require('path');
 
 // Redirect mapping: old URL -> new URL
 const redirects = {
+  // Experience pages migrated to Journey
   '/experience/hedfirst': '/journey/teligant-hedfirst',
   '/experience/teligant': '/journey/teligant-hedfirst',
   '/experience/compoundlive': '/journey/compoundlive',
   '/experience/rugiet-health': '/journey/rugiet',
   '/experience/learn-academy': '/journey/learn-academy',
+
+  // Projects renamed to Case Studies
+  '/projects': '/case-studies',
+  '/projects/pharmacy-fulfillment': '/case-studies/pharmacy-fulfillment',
+  '/projects/choose-health-labs': '/case-studies/choose-health-labs',
+  '/projects/platform-launch': '/case-studies/platform-launch',
+  '/projects/paytheory-billing': '/case-studies/paytheory-billing',
 };
 
 // HTML template for redirect pages

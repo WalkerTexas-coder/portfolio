@@ -1,6 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Plus, Trash2 } from 'lucide-react';
 
+type CartItem = {
+  id: number;
+  productType: string;
+  productName: string;
+  variantName: string;
+  price: number;
+  priceType: string;
+  quantity: number;
+  requiresApproval: boolean;
+  isRecurring: boolean;
+  needsShipping: boolean;
+  isAutoAdded?: boolean;
+  diseaseState?: string | null;
+};
+
 const OrderCreationModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProductType, setSelectedProductType] = useState('');
@@ -8,7 +23,7 @@ const OrderCreationModal = () => {
   const [selectedProduct, setSelectedProduct] = useState('');
   const [selectedVariant, setSelectedVariant] = useState('');
   const [quantity, setQuantity] = useState(1);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [shippingAddress, setShippingAddress] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
@@ -19,17 +34,17 @@ const OrderCreationModal = () => {
     'migraine' // Austin has had a migraine consultation
   ]);
 
-  const searchRef = useRef(null);
+  const searchRef = useRef<HTMLDivElement>(null);
 
   // Close search results when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSearchResults(false);
       }
     };
 
-    const handleEscapeKey = (event) => {
+    const handleEscapeKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setShowSearchResults(false);
         setSearchTerm('');
@@ -165,24 +180,26 @@ const OrderCreationModal = () => {
   const addItemToCart = () => {
     if (!selectedProduct || !selectedVariant) return;
 
-    const product = products[selectedProductType].find(p => p.value === selectedProduct);
-    const variant = variants[selectedProduct].find(v => v.value === selectedVariant);
-    
-    let itemsToAdd = [];
-    
+    const product = products[selectedProductType as keyof typeof products]?.find(p => p.value === selectedProduct);
+    const variant = variants[selectedProduct as keyof typeof variants]?.find(v => v.value === selectedVariant);
+
+    if (!product || !variant) return;
+
+    let itemsToAdd: CartItem[] = [];
+
     // Auto-consultation logic for prescription items
-    if (selectedProductType === 'physical' && product.diseaseState) {
-      const hasConsultation = patientConsultationHistory.includes(product.diseaseState);
+    if (selectedProductType === 'physical' && 'diseaseState' in product && product.diseaseState) {
+      const hasConsultation = patientConsultationHistory.includes(product.diseaseState as string);
       
       if (!hasConsultation) {
         // Find the consultation for this disease state
         const consultationKey = `${product.diseaseState}-consultation`;
         const consultationProduct = products.service.find(s => s.value === consultationKey);
-        
-        if (consultationProduct && variants[consultationKey]) {
-          const consultationVariant = variants[consultationKey][0];
+
+        if (consultationProduct && variants[consultationKey as keyof typeof variants]) {
+          const consultationVariant = variants[consultationKey as keyof typeof variants][0];
           
-          const consultationItem = {
+          const consultationItem: CartItem = {
             id: Date.now() - 1,
             productType: 'service',
             productName: consultationProduct.label,
@@ -194,11 +211,11 @@ const OrderCreationModal = () => {
             isRecurring: false,
             needsShipping: false,
             isAutoAdded: true,
-            diseaseState: product.diseaseState
+            diseaseState: product.diseaseState as string
           };
           
           itemsToAdd.push(consultationItem);
-          setPatientConsultationHistory(prev => [...prev, product.diseaseState]);
+          setPatientConsultationHistory(prev => [...prev, product.diseaseState as string]);
         }
       }
     }
@@ -215,7 +232,7 @@ const OrderCreationModal = () => {
       requiresApproval: selectedProductType === 'physical' && variant.type === 'subscription',
       isRecurring: variant.type === 'recurring' || variant.type === 'subscription',
       needsShipping: selectedProductType === 'physical' || selectedProductType === 'lab',
-      diseaseState: product.diseaseState || null
+      diseaseState: ('diseaseState' in product ? product.diseaseState : null) as string | null
     };
 
     itemsToAdd.push(newItem);
@@ -231,7 +248,7 @@ const OrderCreationModal = () => {
     setShowSearchResults(false);
   };
 
-  const removeItem = (id) => {
+  const removeItem = (id: number) => {
     const itemToRemove = cartItems.find(item => item.id === id);
     
     // If removing a prescription item, check if we should also remove auto-added consultation
@@ -278,8 +295,8 @@ const OrderCreationModal = () => {
 
   const totals = calculateTotals();
 
-  const getProductTypeColor = (type) => {
-    const colors = {
+  const getProductTypeColor = (type: string) => {
+    const colors: Record<string, string> = {
       physical: 'bg-blue-100 text-blue-800',
       service: 'bg-green-100 text-green-800',
       membership: 'bg-purple-100 text-purple-800',
@@ -288,14 +305,103 @@ const OrderCreationModal = () => {
     return colors[type] || 'bg-gray-100 text-gray-800';
   };
 
-  const getProductTypeLabel = (type) => {
-    const labels = {
+  const getProductTypeLabel = (type: string) => {
+    const labels: Record<string, string> = {
       physical: 'Physical Product',
       service: 'Service',
       membership: 'Membership',
       lab: 'Lab Test'
     };
     return labels[type] || type;
+  };
+
+  // Search functionality
+  const searchResults = searchTerm.length >= 2 ? (() => {
+    const term = searchTerm.toLowerCase();
+    const results: Array<{
+      productType: string;
+      value: string;
+      label: string;
+      diseaseState?: string;
+      productTypeLabel: string;
+    }> = [];
+
+    // Search physical products
+    products.physical.forEach(product => {
+      if (product.label.toLowerCase().includes(term)) {
+        results.push({
+          productType: 'physical',
+          value: product.value,
+          label: product.label,
+          diseaseState: product.diseaseState,
+          productTypeLabel: getProductTypeLabel('physical')
+        });
+      }
+    });
+
+    // Search services
+    products.service.forEach(product => {
+      if (product.label.toLowerCase().includes(term)) {
+        results.push({
+          productType: 'service',
+          value: product.value,
+          label: product.label,
+          diseaseState: 'diseaseState' in product ? product.diseaseState as string : undefined,
+          productTypeLabel: getProductTypeLabel('service')
+        });
+      }
+    });
+
+    // Search memberships
+    products.membership.forEach(product => {
+      if (product.label.toLowerCase().includes(term)) {
+        results.push({
+          productType: 'membership',
+          value: product.value,
+          label: product.label,
+          productTypeLabel: getProductTypeLabel('membership')
+        });
+      }
+    });
+
+    // Search labs
+    products.lab.forEach(product => {
+      if (product.label.toLowerCase().includes(term)) {
+        results.push({
+          productType: 'lab',
+          value: product.value,
+          label: product.label,
+          productTypeLabel: getProductTypeLabel('lab')
+        });
+      }
+    });
+
+    return results;
+  })() : [];
+
+  const highlightSearchTerm = (text: string, term: string) => {
+    if (!term) return text;
+
+    const regex = new RegExp(`(${term})`, 'gi');
+    const parts = text.split(regex);
+
+    return parts.map((part, index) =>
+      regex.test(part) ? (
+        <span key={index} className="bg-yellow-200 font-semibold">{part}</span>
+      ) : (
+        part
+      )
+    );
+  };
+
+  const selectSearchResult = (result: typeof searchResults[0]) => {
+    setSelectedProductType(result.productType);
+    if (result.diseaseState) {
+      setSelectedDiseaseState(result.diseaseState);
+    }
+    setSelectedProduct(result.value);
+    setSearchTerm('');
+    setShowSearchResults(false);
   };
 
   if (!isOpen) {
@@ -486,8 +592,8 @@ const OrderCreationModal = () => {
                           className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
                         >
                           <option value="">Select product</option>
-                          {products[selectedProductType]?.filter(p => 
-                            !productTypes.find(pt => pt.value === selectedProductType)?.hasDisease || p.diseaseState === selectedDiseaseState
+                          {products[selectedProductType as keyof typeof products]?.filter(p =>
+                            !productTypes.find(pt => pt.value === selectedProductType)?.hasDisease || ('diseaseState' in p && p.diseaseState === selectedDiseaseState)
                           ).map(product => (
                             <option key={product.value} value={product.value}>{product.label}</option>
                           ))}
@@ -509,7 +615,7 @@ const OrderCreationModal = () => {
                         data-variant-select
                       >
                         <option value="">Select variant</option>
-                        {variants[selectedProduct]?.map(variant => (
+                        {variants[selectedProduct as keyof typeof variants]?.map(variant => (
                           <option key={variant.value} value={variant.value}>
                             {variant.label} - ${variant.price.toFixed(2)}{variant.type === 'recurring' ? '/month' : variant.type === 'subscription' ? '/cycle' : ''}
                           </option>

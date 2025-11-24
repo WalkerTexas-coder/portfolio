@@ -22,14 +22,14 @@ const ChartNotesAISettings = () => {
     alert('Chart Notes AI settings saved successfully!');
   };
 
-  const handleModelChange = (e) => {
+  const handleModelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSettings(prev => ({
       ...prev,
       model: e.target.value
     }));
   };
 
-  const handleTemperatureChange = (e) => {
+  const handleTemperatureChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(e.target.value);
     if (!isNaN(value) && value >= 0 && value <= 1) {
       setSettings(prev => ({

@@ -1,6 +1,33 @@
 import React, { useState } from 'react';
 import { Settings, MessageSquare, Save, Plus, Trash2, Send, Loader2, Edit3 } from 'lucide-react';
 
+type ChatSetting = {
+  id: string;
+  name: string;
+  prompt: string;
+  temperature: number;
+  topK: number;
+  topP: number;
+  maxTokens: number;
+};
+
+type Message = {
+  id: number;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: Date;
+  isError?: boolean;
+};
+
+type ChatHistory = {
+  id: string;
+  title: string;
+  date: string;
+  messages: Message[];
+  settingId: string;
+  settingName: string;
+};
+
 const HealthPlatformAIApp = () => {
   const [activeView, setActiveView] = useState('settings');
   const [activeTab, setActiveTab] = useState('shipping');
@@ -9,14 +36,14 @@ const HealthPlatformAIApp = () => {
   const [showNewChatModal, setShowNewChatModal] = useState(false);
 
   // Messages for the current conversation
-  const [messages, setMessages] = useState([]);
-  
+  const [messages, setMessages] = useState<Message[]>([]);
+
   // Chat history for sidebar
-  const [chatHistory, setChatHistory] = useState([]);
-  const [currentChatId, setCurrentChatId] = useState(null);
+  const [chatHistory, setChatHistory] = useState<ChatHistory[]>([]);
+  const [currentChatId, setCurrentChatId] = useState<string | null>(null);
 
   // Chat Settings
-  const [chatSettings, setChatSettings] = useState([
+  const [chatSettings, setChatSettings] = useState<ChatSetting[]>([
     {
       id: 'clinical-standard',
       name: 'Clinical Assessment - Standard',
@@ -64,16 +91,16 @@ const HealthPlatformAIApp = () => {
     }
   ]);
 
-  const [newChatSetting, setNewChatSetting] = useState({ 
-    name: '', 
-    prompt: '', 
-    temperature: 0.5, 
-    topK: 40, 
-    topP: 0.9, 
-    maxTokens: 2000 
+  const [newChatSetting, setNewChatSetting] = useState<Omit<ChatSetting, 'id'>>({
+    name: '',
+    prompt: '',
+    temperature: 0.5,
+    topK: 40,
+    topP: 0.9,
+    maxTokens: 2000
   });
   const [isAddingSetting, setIsAddingSetting] = useState(false);
-  const [editingSetting, setEditingSetting] = useState(null);
+  const [editingSetting, setEditingSetting] = useState<ChatSetting | null>(null);
   const [defaultSetting, setDefaultSetting] = useState('clinical-standard');
   const [selectedSettingForNewChat, setSelectedSettingForNewChat] = useState('clinical-standard');
 
@@ -95,7 +122,7 @@ const HealthPlatformAIApp = () => {
     }
   };
 
-  const deleteChatSetting = (id) => {
+  const deleteChatSetting = (id: string) => {
     setChatSettings(chatSettings.filter(p => p.id !== id));
     if (defaultSetting === id) {
       setDefaultSetting(chatSettings[0]?.id || '');
@@ -126,7 +153,7 @@ const HealthPlatformAIApp = () => {
     setShowNewChatModal(false);
   };
 
-  const switchToChat = (chatId) => {
+  const switchToChat = (chatId: string) => {
     const chat = chatHistory.find(c => c.id === chatId);
     if (chat) {
       setCurrentChatId(chatId);
@@ -145,12 +172,12 @@ const HealthPlatformAIApp = () => {
   const sendMessage = async () => {
     if (!currentInput.trim() || isLoading || !currentChatId) return;
 
-    const currentCombo = getCurrentCombo();
-    if (!currentCombo) return;
+    const currentChatSetting = getCurrentChatSetting();
+    if (!currentChatSetting) return;
 
     const userMessage = {
       id: Date.now(),
-      role: 'user',
+      role: 'user' as const,
       content: currentInput.trim(),
       timestamp: new Date()
     };
@@ -164,12 +191,12 @@ const HealthPlatformAIApp = () => {
     try {
       // Prepare messages for API (include conversation history)
       const recentMessages = messages.slice(-10).map(msg => ({
-        role: msg.role === 'assistant' ? 'assistant' : 'user',
+        role: msg.role === 'assistant' ? 'assistant' as const : 'user' as const,
         content: msg.content
       }));
 
       // Add new message
-      const allMessages = [...recentMessages, { role: 'user', content: userMessage.content }];
+      const allMessages = [...recentMessages, { role: 'user' as const, content: userMessage.content }];
 
       // Call Claude API with the chat settings
       const response = await fetch("https://api.anthropic.com/v1/messages", {
@@ -195,7 +222,7 @@ const HealthPlatformAIApp = () => {
       const data = await response.json();
       const assistantResponse = data.content[0].text;
 
-      const assistantMessage = {
+      const assistantMessage: Message = {
         id: Date.now() + 1,
         role: 'assistant',
         content: assistantResponse,
@@ -220,7 +247,7 @@ const HealthPlatformAIApp = () => {
     } catch (error) {
       console.error('Error sending message:', error);
       
-      const errorMessage = {
+      const errorMessage: Message = {
         id: Date.now() + 1,
         role: 'assistant',
         content: 'I apologize, but I encountered an error while processing your request. Please try again.',
@@ -234,7 +261,7 @@ const HealthPlatformAIApp = () => {
     }
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
@@ -340,9 +367,9 @@ const HealthPlatformAIApp = () => {
                       <input
                         type="text"
                         value={isAddingSetting ? newChatSetting.name : editingSetting?.name || ''}
-                        onChange={(e) => isAddingSetting 
+                        onChange={(e) => isAddingSetting
                           ? setNewChatSetting({...newChatSetting, name: e.target.value})
-                          : setEditingSetting({...editingSetting, name: e.target.value})
+                          : editingSetting && setEditingSetting({...editingSetting, name: e.target.value})
                         }
                         className="border border-gray-300 rounded-md px-3 py-2 w-full"
                         placeholder="e.g., Treatment Planning - Creative"
@@ -354,9 +381,9 @@ const HealthPlatformAIApp = () => {
                         value={isAddingSetting ? newChatSetting.prompt : editingSetting?.prompt || ''}
                         onChange={(e) => isAddingSetting
                           ? setNewChatSetting({...newChatSetting, prompt: e.target.value})
-                          : setEditingSetting({...editingSetting, prompt: e.target.value})
+                          : editingSetting && setEditingSetting({...editingSetting, prompt: e.target.value})
                         }
-                        rows="4"
+                        rows={4}
                         className="border border-gray-300 rounded-md px-3 py-2 w-full"
                         placeholder="Enter the system prompt instructions..."
                       />
@@ -375,7 +402,7 @@ const HealthPlatformAIApp = () => {
                             const value = parseFloat(e.target.value);
                             isAddingSetting
                               ? setNewChatSetting({...newChatSetting, temperature: value})
-                              : setEditingSetting({...editingSetting, temperature: value});
+                              : editingSetting && setEditingSetting({...editingSetting, temperature: value});
                           }}
                           className="border border-gray-300 rounded-md px-3 py-2 w-full"
                         />
@@ -388,12 +415,12 @@ const HealthPlatformAIApp = () => {
                           min="100"
                           max="4000"
                           step="100"
-                          value={isAddingCombo ? newCombo.maxTokens : editingCombo?.maxTokens || 2000}
+                          value={isAddingSetting ? newChatSetting.maxTokens : editingSetting?.maxTokens || 2000}
                           onChange={(e) => {
                             const value = parseInt(e.target.value);
-                            isAddingCombo
-                              ? setNewCombo({...newCombo, maxTokens: value})
-                              : setEditingCombo({...editingCombo, maxTokens: value});
+                            isAddingSetting
+                              ? setNewChatSetting({...newChatSetting, maxTokens: value})
+                              : editingSetting && setEditingSetting({...editingSetting, maxTokens: value});
                           }}
                           className="border border-gray-300 rounded-md px-3 py-2 w-full"
                         />
@@ -404,12 +431,12 @@ const HealthPlatformAIApp = () => {
                           type="number"
                           min="1"
                           max="100"
-                          value={isAddingCombo ? newCombo.topK : editingCombo?.topK || 40}
+                          value={isAddingSetting ? newChatSetting.topK : editingSetting?.topK || 40}
                           onChange={(e) => {
                             const value = parseInt(e.target.value);
-                            isAddingCombo
-                              ? setNewCombo({...newCombo, topK: value})
-                              : setEditingCombo({...editingCombo, topK: value});
+                            isAddingSetting
+                              ? setNewChatSetting({...newChatSetting, topK: value})
+                              : editingSetting && setEditingSetting({...editingSetting, topK: value});
                           }}
                           className="border border-gray-300 rounded-md px-3 py-2 w-full"
                         />
@@ -421,12 +448,12 @@ const HealthPlatformAIApp = () => {
                           min="0"
                           max="1"
                           step="0.1"
-                          value={isAddingCombo ? newCombo.topP : editingCombo?.topP || 0.9}
+                          value={isAddingSetting ? newChatSetting.topP : editingSetting?.topP || 0.9}
                           onChange={(e) => {
                             const value = parseFloat(e.target.value);
-                            isAddingCombo
-                              ? setNewCombo({...newCombo, topP: value})
-                              : setEditingCombo({...editingCombo, topP: value});
+                            isAddingSetting
+                              ? setNewChatSetting({...newChatSetting, topP: value})
+                              : editingSetting && setEditingSetting({...editingSetting, topP: value});
                           }}
                           className="border border-gray-300 rounded-md px-3 py-2 w-full"
                         />
@@ -559,7 +586,7 @@ const HealthPlatformAIApp = () => {
   );
 
   const renderChatInterface = () => {
-    const currentCombo = getCurrentCombo();
+    const currentCombo = getCurrentChatSetting();
     
     return (
       <div className="max-w-full mx-auto bg-white min-h-screen">
@@ -631,15 +658,15 @@ const HealthPlatformAIApp = () => {
 
           {/* Main Chat Area */}
           <div className="flex-1 flex flex-col">
-            {currentChatId && currentChatSetting ? (
+            {currentChatId && currentCombo ? (
               <>
                 {/* Current Settings Display */}
                 <div className="border-b border-gray-200 p-4 bg-gray-50">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="font-medium text-gray-900">{currentChatSetting.name}</div>
+                      <div className="font-medium text-gray-900">{currentCombo.name}</div>
                       <div className="text-xs text-gray-600 mt-1">
-                        Temperature: {currentChatSetting.temperature} | Max Tokens: {currentChatSetting.maxTokens}
+                        Temperature: {currentCombo.temperature} | Max Tokens: {currentCombo.maxTokens}
                       </div>
                     </div>
                     <div className="text-xs text-gray-500">Settings locked for this conversation</div>
@@ -653,7 +680,7 @@ const HealthPlatformAIApp = () => {
                       <h2 className="text-xl font-semibold text-gray-900 mb-2">Talk to HealthPlatform AI</h2>
                       <p className="text-gray-600 mb-4">Ask questions, summarize patient history, or get help drafting a treatment plan.</p>
                       <div className="bg-blue-50 border border-blue-200 rounded-md p-3 text-sm text-blue-800 mb-6 max-w-2xl mx-auto">
-                        <strong>Using:</strong> {currentChatSetting.name}
+                        <strong>Using:</strong> {currentCombo.name}
                       </div>
                     </div>
                   ) : (
@@ -699,7 +726,7 @@ const HealthPlatformAIApp = () => {
                       onKeyPress={handleKeyPress}
                       placeholder="How can I help you today?"
                       className="flex-1 border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-                      rows="1"
+                      rows={1}
                       disabled={isLoading}
                     />
                     <button 
@@ -712,7 +739,7 @@ const HealthPlatformAIApp = () => {
                     </button>
                   </div>
                   <div className="text-xs text-gray-500 text-center mt-2">
-                    Powered by Claude Sonnet 4 • {currentChatSetting.name}
+                    Powered by Claude Sonnet 4 • {currentCombo.name}
                   </div>
                 </div>
               </>

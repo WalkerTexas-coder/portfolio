@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, User, MapPin, Search, Filter, MoreHorizontal, Video, RefreshCw, X } from 'lucide-react';
 
+type Appointment = {
+  id: number;
+  patient: string;
+  type: string;
+  date: string;
+  time: string;
+  duration: string;
+  status: string;
+  host: string;
+  timezone: string;
+  countdown: string;
+  statusColor: 'green' | 'yellow' | 'red';
+};
+
 const AppointmentDisplayConcepts = () => {
   const [selectedConcept, setSelectedConcept] = useState('table');
 
   // Sample appointment data based on the screenshot
-  const appointments = [
+  const appointments: Appointment[] = [
     {
       id: 1,
       patient: "Bryyyn Tele",
@@ -155,13 +169,13 @@ const AppointmentDisplayConcepts = () => {
     </div>
   );
 
-  const StatusBadge = ({ status, color }) => {
+  const StatusBadge = ({ status, color }: { status: string; color: 'green' | 'yellow' | 'red' }) => {
     const colors = {
       green: 'bg-green-100 text-green-800',
       yellow: 'bg-yellow-100 text-yellow-800',
       red: 'bg-red-100 text-red-800'
     };
-    
+
     return (
       <span className={`px-2 py-1 rounded-full text-xs font-medium ${colors[color]}`}>
         {status}

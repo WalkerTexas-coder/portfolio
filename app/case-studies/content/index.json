@@ -23,16 +23,6 @@
       "tags": ["Integration", "Revenue Growth", "API Design"]
     },
     {
-      "slug": "platform-launch",
-      "title": "Platform Launch: 9 Months to Production",
-      "subtitle": "Product Case Study • Hedfirst",
-      "problem": "Build and launch multi-tenant telehealth platform in 9 months",
-      "solution": "Coordinated product strategy across 4 engineers + CTO",
-      "impact": "$12,475 first-month revenue, 499 medications, 48-state fulfillment",
-      "readTime": "8 min",
-      "tags": ["0-1 Product", "Strategy", "Multi-tenant SaaS"]
-    },
-    {
       "slug": "paytheory-billing",
       "title": "PayTheory Billing Integration",
       "subtitle": "Product Case Study • Teligant Platform",

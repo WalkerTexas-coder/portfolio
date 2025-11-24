@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Send, Package, Clock, CheckCircle, AlertCircle, Copy, Check } from 'lucide-react';
 
 const PharmacyFulfillmentView = () => {
-  const [selectedMedications, setSelectedMedications] = useState([]);
+  const [selectedMedications, setSelectedMedications] = useState<number[]>([]);
   const [currentPharmacyIndex, setCurrentPharmacyIndex] = useState(0);
-  const [medicationStatuses, setMedicationStatuses] = useState({
+  const [medicationStatuses, setMedicationStatuses] = useState<Record<number, string>>({
     1: 'Ready to Send',
-    2: 'Ready to Send', 
+    2: 'Ready to Send',
     3: 'Ready to Send',
     4: 'Ready to Send',
     5: 'Ready to Send',
     6: 'Ready to Send'
   });
-  const [copiedField, setCopiedField] = useState(null);
+  const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const approvedMedications = [
     {
@@ -115,7 +115,7 @@ const PharmacyFulfillmentView = () => {
     }
     groups[pharmacy].push(med);
     return groups;
-  }, {});
+  }, {} as Record<string, typeof medicationsWithStatus>);
 
   const pharmacyGroups = Object.entries(medicationsByPharmacy);
   const currentPharmacy = pharmacyGroups[currentPharmacyIndex];
@@ -125,7 +125,7 @@ const PharmacyFulfillmentView = () => {
   // Check if all medications in current group are sent
   const allCurrentMedicationsSent = currentMedications.every(med => med.status === 'Sent to Pharmacy');
 
-  const handleUpdateStatus = (medicationId, newStatus) => {
+  const handleUpdateStatus = (medicationId: number, newStatus: string) => {
     setMedicationStatuses(prev => ({
       ...prev,
       [medicationId]: newStatus
@@ -137,15 +137,15 @@ const PharmacyFulfillmentView = () => {
     }
   };
 
-  const handleSelectMedication = (id) => {
-    setSelectedMedications(prev => 
-      prev.includes(id) 
+  const handleSelectMedication = (id: number) => {
+    setSelectedMedications(prev =>
+      prev.includes(id)
         ? prev.filter(medId => medId !== id)
         : [...prev, id]
     );
   };
 
-  const handleBulkAction = (action) => {
+  const handleBulkAction = (action: string) => {
     // Mark all selected medications as sent
     const updatedStatuses = { ...medicationStatuses };
     selectedMedications.forEach(medId => {
@@ -168,7 +168,7 @@ const PharmacyFulfillmentView = () => {
     }
   };
 
-  const handleCopyToClipboard = (text, fieldType, medicationId) => {
+  const handleCopyToClipboard = (text: string, fieldType: string, medicationId: number) => {
     navigator.clipboard.writeText(text).then(() => {
       setCopiedField(`${fieldType}-${medicationId}`);
       setTimeout(() => setCopiedField(null), 2000);
@@ -189,14 +189,14 @@ const PharmacyFulfillmentView = () => {
     }
   };
 
-  const getStatusBadge = (status) => {
-    const statusConfig = {
+  const getStatusBadge = (status: string) => {
+    const statusConfig: Record<string, { color: string; icon: React.ComponentType<{ className?: string }> }> = {
       'Ready to Send': { color: 'bg-blue-100 text-blue-800', icon: Send },
       'Sent to Pharmacy': { color: 'bg-yellow-100 text-yellow-800', icon: Clock },
       'Filled': { color: 'bg-green-100 text-green-800', icon: CheckCircle },
       'Pending Review': { color: 'bg-orange-100 text-orange-800', icon: AlertCircle }
     };
-    
+
     const config = statusConfig[status] || { color: 'bg-gray-100 text-gray-800', icon: Package };
     const Icon = config.icon;
     
@@ -208,16 +208,16 @@ const PharmacyFulfillmentView = () => {
     );
   };
 
-  const getOrderTypeBadge = (orderType) => {
-    const colors = {
+  const getOrderTypeBadge = (orderType: string) => {
+    const colors: Record<string, string> = {
       'Subscription': 'bg-blue-100 text-blue-800',
       'One-Time Purchase': 'bg-purple-100 text-purple-800'
     };
     return colors[orderType] || 'bg-gray-100 text-gray-800';
   };
 
-  const getPharmacyBadgeColor = (pharmacy) => {
-    const colors = {
+  const getPharmacyBadgeColor = (pharmacy: string) => {
+    const colors: Record<string, string> = {
       'Crafted RX': 'bg-purple-100 text-purple-800',
       'RX Outreach': 'bg-blue-100 text-blue-800',
       'TXPM/Greenwich': 'bg-green-100 text-green-800',

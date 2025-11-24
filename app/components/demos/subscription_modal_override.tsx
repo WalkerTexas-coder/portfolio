@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AlertTriangle, X } from 'lucide-react';
+import PrototypeShowcase from '../PrototypeShowcase';
 
 const AddSubscriptionModal = () => {
   const [diseaseState, setDiseaseState] = useState('Peptide Therapy');
@@ -222,4 +223,16 @@ const AddSubscriptionModal = () => {
   );
 };
 
-export default AddSubscriptionModal;
+// Wrap the component with PrototypeShowcase
+const SubscriptionModalOverride = () => {
+  return (
+    <PrototypeShowcase
+      title="Price Override & Audit Trail"
+      description="Demonstrates pricing flexibility for special cases (comp subscriptions, discounted trials, uninsured patients) while maintaining HIPAA-compliant audit trails. Price overrides require mandatory justification and are logged for compliance."
+    >
+      <AddSubscriptionModal />
+    </PrototypeShowcase>
+  );
+};
+
+export default SubscriptionModalOverride;

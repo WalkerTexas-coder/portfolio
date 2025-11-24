@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import { Plus, Edit3, Trash2, Save, X } from 'lucide-react';
 
+type Pharmacy = {
+  id: number;
+  name: string;
+  address: string;
+  phone: string;
+  pic: string;
+  shipstationStoreId: string;
+};
+
 const PharmacyManagement = () => {
   const [activeTab, setActiveTab] = useState('pharmacies');
   const [showAddForm, setShowAddForm] = useState(false);
-  const [editingPharmacy, setEditingPharmacy] = useState(null);
-  
-  const [pharmacies, setPharmacies] = useState([
+  const [editingPharmacy, setEditingPharmacy] = useState<Pharmacy | null>(null);
+
+  const [pharmacies, setPharmacies] = useState<Pharmacy[]>([
     {
       id: 1,
       name: "Crafted RX",
@@ -47,7 +56,7 @@ const PharmacyManagement = () => {
     setShowAddForm(true);
   };
 
-  const handleEditPharmacy = (pharmacy) => {
+  const handleEditPharmacy = (pharmacy: Pharmacy) => {
     setFormData({
       name: pharmacy.name,
       address: pharmacy.address,
@@ -79,7 +88,7 @@ const PharmacyManagement = () => {
     setEditingPharmacy(null);
   };
 
-  const handleDeletePharmacy = (id) => {
+  const handleDeletePharmacy = (id: number) => {
     setPharmacies(pharmacies.filter(p => p.id !== id));
   };
 
