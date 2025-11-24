@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PrototypeShowcase from '../PrototypeShowcase';
 
 const SubscriptionManager = () => {
   const [currentView, setCurrentView] = useState('details'); // 'details' or 'edit'
@@ -558,4 +559,16 @@ const SubscriptionManager = () => {
   );
 };
 
-export default SubscriptionManager;
+// Wrap the component with PrototypeShowcase
+const SubscriptionManagementApp = () => {
+  return (
+    <PrototypeShowcase
+      title="Subscription Management"
+      description="Demonstrates variant-based subscription architecture with clinical workflow integration. Providers can select between pre-configured variants or customize medication dosages while maintaining audit trail compliance."
+    >
+      <SubscriptionManager />
+    </PrototypeShowcase>
+  );
+};
+
+export default SubscriptionManagementApp;

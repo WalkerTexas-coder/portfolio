@@ -105,6 +105,19 @@
     {
       "type": "heading",
       "level": 3,
+      "content": "Interactive Demo: Subscription Management"
+    },
+    {
+      "type": "paragraph",
+      "content": "Variant-based subscription architecture enables flexible billing. Prescribers select between product variants—each representing different dosage strengths and price points. PayTheory's billing engine supports different pricing for each variant, enabling tiered subscription models that align with clinical needs."
+    },
+    {
+      "type": "prototype",
+      "componentName": "SubscriptionManagementApp"
+    },
+    {
+      "type": "heading",
+      "level": 3,
       "content": "Phase 4: Development & Integration"
     },
     {
@@ -121,6 +134,19 @@
         "Webhooks: Real-time payment status processing",
         "Error handling: Payment failures, retry logic, customer notifications"
       ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Interactive Demo: Pricing Flexibility & Audit"
+    },
+    {
+      "type": "paragraph",
+      "content": "Business requirements demanded pricing override capabilities for comp subscriptions, discounted trials, and uninsured patient support. This interface shows how admins override pricing while maintaining HIPAA-compliant audit trails. All price overrides require mandatory justification and are logged for compliance."
+    },
+    {
+      "type": "prototype",
+      "componentName": "SubscriptionModalOverride"
     },
     {
       "type": "heading",
@@ -160,6 +186,19 @@
         "Future brands: Flexibility to test different pricing strategies",
         "A/B testing capability for pricing optimization"
       ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Interactive Demo: Webhook Integration & Audit Trail"
+    },
+    {
+      "type": "paragraph",
+      "content": "HIPAA compliance requires comprehensive audit trails for all billing events. PayTheory webhooks feed real-time payment data into this patient history timeline, creating transparency for patients, providers, and compliance auditors. Every subscription creation, payment attempt, and status change is logged with timestamp and actor information."
+    },
+    {
+      "type": "prototype",
+      "componentName": "PatientActionHistory"
     },
     {
       "type": "heading",

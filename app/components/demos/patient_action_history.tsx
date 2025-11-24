@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Filter, ChevronDown, Clock, Activity } from 'lucide-react';
+import PrototypeShowcase from '../PrototypeShowcase';
 
 const PatientHistoryTab = () => {
   const [filterCategory, setFilterCategory] = useState('all');
@@ -244,4 +245,16 @@ const PatientHistoryTab = () => {
   );
 };
 
-export default PatientHistoryTab;
+// Wrap the component with PrototypeShowcase
+const PatientActionHistory = () => {
+  return (
+    <PrototypeShowcase
+      title="Patient Action History & Audit Trail"
+      description="Comprehensive audit trail for all patient actions, demonstrating HIPAA compliance requirements. PayTheory webhooks feed real-time payment events into this timeline, creating transparency for patients, providers, and compliance auditors."
+    >
+      <PatientHistoryTab />
+    </PrototypeShowcase>
+  );
+};
+
+export default PatientActionHistory;
