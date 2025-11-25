@@ -44,12 +44,6 @@ export default function Navbar() {
             My Story
           </Link>
           <Link
-            href="/case-studies"
-            className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
-          >
-            Case Studies
-          </Link>
-          <Link
             href="/resume"
             className={`hover:opacity-70 transition-opacity ${scrolled ? 'text-foreground' : 'text-white'}`}
           >
@@ -121,13 +115,6 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               My Story
-            </Link>
-            <Link
-              href="/case-studies"
-              className="text-foreground hover:opacity-70 transition-opacity"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Case Studies
             </Link>
             <Link
               href="/resume"
