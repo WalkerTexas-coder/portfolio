@@ -52,10 +52,10 @@ export default function Home() {
                 My Journey
               </Link>
               <Link
-                href="#work"
+                href="#connect"
                 className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all text-center"
               >
-                View Work
+                Let's Connect
               </Link>
             </div>
           </div>
