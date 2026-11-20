@@ -91,11 +91,23 @@ export default function ArticleSection({ section }: ArticleSectionProps) {
         : 'list-disc list-inside space-y-2 mb-6';
       return (
         <ListTag className={listClasses}>
-          {(section.content as string[]).map((item, index) => (
-            <li key={index} className="text-lg text-gray-700 dark:text-gray-300">
-              {item}
-            </li>
-          ))}
+          {(section.content as string[]).map((item, index) => {
+            // Parse list item text to extract and render bold text properly
+            const parts = parseMetricText(item);
+            return (
+              <li key={index} className="text-lg text-gray-700 dark:text-gray-300">
+                {parts.map((part, partIndex) => {
+                  if (part.type === 'emoji') {
+                    return <span key={partIndex}>{part.text} </span>;
+                  } else if (part.type === 'bold') {
+                    return <strong key={partIndex}>{part.text}</strong>;
+                  } else {
+                    return <span key={partIndex}>{part.text}</span>;
+                  }
+                })}
+              </li>
+            );
+          })}
         </ListTag>
       );
 
